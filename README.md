@@ -1,2 +1,2 @@
-# EE_309_Project_1
+# IITB - RISC Stage 1 
 Multicycle RISC implementation
