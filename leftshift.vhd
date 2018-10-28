@@ -24,5 +24,5 @@ begin
 		begin
 		--assign the bits
 		z_1: c(i) <= '0';
-		end generate g_2;
+		end generate g_2;	
 	end Struct;

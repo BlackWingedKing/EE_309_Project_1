@@ -1,6 +1,6 @@
 Analysis & Synthesis report for iitb_risc
-Sun Oct 28 14:57:10 2018
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Sun Oct 28 15:46:10 2018
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
 ---------------------
@@ -10,125 +10,194 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
-Your use of Intel Corporation's design tools, logic functions 
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Intel Program License 
-Subscription Agreement, the Intel Quartus Prime License Agreement,
-the Intel FPGA IP License Agreement, or other applicable license
-agreement, including, without limitation, that your use is for
-the sole purpose of programming logic devices manufactured by
-Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 
 
 
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Oct 28 14:57:10 2018           ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Analysis & Synthesis Status ; Successful - Sun Oct 28 15:46:10 2018       ;
+; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name               ; iitb_risc                                   ;
 ; Top-level Entity Name       ; iitb_risc                                   ;
 ; Family                      ; MAX V                                       ;
+; Total logic elements        ; 0                                           ;
+; Total pins                  ; 39                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                              ;
-+------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                           ; Setting            ; Default Value      ;
-+------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                           ; 5M1270ZT144C5      ;                    ;
-; Top-level entity name                                            ; iitb_risc          ; iitb_risc          ;
-; Family name                                                      ; MAX V              ; Cyclone V          ;
-; Use smart compilation                                            ; Off                ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
-; Enable compact report table                                      ; Off                ; Off                ;
-; Restructure Multiplexers                                         ; Auto               ; Auto               ;
-; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
-; Preserve fewer node names                                        ; On                 ; On                 ;
-; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
-; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                         ; Auto               ; Auto               ;
-; Safe State Machine                                               ; Off                ; Off                ;
-; Extract Verilog State Machines                                   ; On                 ; On                 ;
-; Extract VHDL State Machines                                      ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
-; Parallel Synthesis                                               ; On                 ; On                 ;
-; NOT Gate Push-Back                                               ; On                 ; On                 ;
-; Power-Up Don't Care                                              ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
-; Remove Duplicate Registers                                       ; On                 ; On                 ;
-; Ignore CARRY Buffers                                             ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
-; Ignore LCELL Buffers                                             ; Off                ; Off                ;
-; Ignore SOFT Buffers                                              ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
-; Optimization Technique                                           ; Balanced           ; Balanced           ;
-; Carry Chain Length                                               ; 70                 ; 70                 ;
-; Auto Carry Chains                                                ; On                 ; On                 ;
-; Auto Open-Drain Pins                                             ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
-; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
-; Allow Synchronous Control Signals                                ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
-; Auto Resource Sharing                                            ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
-; Report Parameter Settings                                        ; On                 ; On                 ;
-; Report Source Assignments                                        ; On                 ; On                 ;
-; Report Connectivity Checks                                       ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
-; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
-; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
-; HDL message level                                                ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
-; Clock MUX Protection                                             ; On                 ; On                 ;
-; Block Design Naming                                              ; Auto               ; Auto               ;
-; Synthesis Effort                                                 ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
-; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
-+------------------------------------------------------------------+--------------------+--------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; 5M1270ZT144C5      ;                    ;
+; Top-level entity name                                                      ; iitb_risc          ; iitb_risc          ;
+; Family name                                                                ; MAX V              ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                               ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                        ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
+; iitb_risc.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 39    ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |iitb_risc                 ; 0 (0)       ; 0            ; 0          ; 39   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc          ; iitb_risc   ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
 
 
 +-------------------------------+
@@ -136,76 +205,126 @@ refer to the applicable agreement for further details.
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Oct 28 14:56:56 2018
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Sun Oct 28 15:45:58 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iitb_risc -c iitb_risc
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file and_1_16.vhd
+    Info (12022): Found design unit 1: and_1_16-arith File: /home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd Line: 14
+    Info (12023): Found entity 1: and_1_16 File: /home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file or16.vhd
+    Info (12022): Found design unit 1: or16-arith File: /home/ritesh/Desktop/github/IITB_RISC/or16.vhd Line: 13
+    Info (12023): Found entity 1: or16 File: /home/ritesh/Desktop/github/IITB_RISC/or16.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file mux_8_1.vhd
-    Info (12022): Found design unit 1: mux_8_1-Struct File: D:/iitb_risc/mux_8_1.vhd Line: 13
-    Info (12023): Found entity 1: mux_8_1 File: D:/iitb_risc/mux_8_1.vhd Line: 7
+    Info (12022): Found design unit 1: mux_8_1-Struct File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 13
+    Info (12023): Found entity 1: mux_8_1 File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file mux_4_1.vhd
-    Info (12022): Found design unit 1: mux_4_1-Struct File: D:/iitb_risc/mux_4_1.vhd Line: 13
-    Info (12023): Found entity 1: mux_4_1 File: D:/iitb_risc/mux_4_1.vhd Line: 7
+    Info (12022): Found design unit 1: mux_4_1-Struct File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 13
+    Info (12023): Found entity 1: mux_4_1 File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file mux_2_1.vhd
-    Info (12022): Found design unit 1: mux_2_1-Struct File: D:/iitb_risc/mux_2_1.vhd Line: 13
-    Info (12023): Found entity 1: mux_2_1 File: D:/iitb_risc/mux_2_1.vhd Line: 7
+    Info (12022): Found design unit 1: mux_2_1-Struct File: /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd Line: 13
+    Info (12023): Found entity 1: mux_2_1 File: /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
-    Info (12022): Found design unit 1: memory-syn File: D:/iitb_risc/memory.vhd Line: 15
-    Info (12023): Found entity 1: memory File: D:/iitb_risc/memory.vhd Line: 6
+    Info (12022): Found design unit 1: memory-syn File: /home/ritesh/Desktop/github/IITB_RISC/memory.vhd Line: 15
+    Info (12023): Found entity 1: memory File: /home/ritesh/Desktop/github/IITB_RISC/memory.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file priority_encoder.vhd
-    Info (12022): Found design unit 1: priority_encoder-behave File: D:/iitb_risc/priority_encoder.vhd Line: 15
-    Info (12023): Found entity 1: priority_encoder File: D:/iitb_risc/priority_encoder.vhd Line: 9
+    Info (12022): Found design unit 1: priority_encoder-behave File: /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd Line: 15
+    Info (12023): Found entity 1: priority_encoder File: /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file multiplexor_1s.vhd
-    Info (12022): Found design unit 1: multiplexor_1s-Struct File: D:/iitb_risc/multiplexor_1s.vhd Line: 15
-    Info (12023): Found entity 1: multiplexor_1s File: D:/iitb_risc/multiplexor_1s.vhd Line: 8
+    Info (12022): Found design unit 1: multiplexor_1s-Struct File: /home/ritesh/Desktop/github/IITB_RISC/multiplexor_1s.vhd Line: 15
+    Info (12023): Found entity 1: multiplexor_1s File: /home/ritesh/Desktop/github/IITB_RISC/multiplexor_1s.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file leftshift.vhd
-    Info (12022): Found design unit 1: leftshift-Struct File: D:/iitb_risc/leftshift.vhd Line: 13
-    Info (12023): Found entity 1: leftshift File: D:/iitb_risc/leftshift.vhd Line: 7
+    Info (12022): Found design unit 1: leftshift-Struct File: /home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd Line: 13
+    Info (12023): Found entity 1: leftshift File: /home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file inverter_16bit.vhd
-    Info (12022): Found design unit 1: inverter_16bit-Struct File: D:/iitb_risc/inverter_16bit.vhd Line: 11
-    Info (12023): Found entity 1: inverter_16bit File: D:/iitb_risc/inverter_16bit.vhd Line: 7
+    Info (12022): Found design unit 1: inverter_16bit-Struct File: /home/ritesh/Desktop/github/IITB_RISC/inverter_16bit.vhd Line: 11
+    Info (12023): Found entity 1: inverter_16bit File: /home/ritesh/Desktop/github/IITB_RISC/inverter_16bit.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file subtractor.vhd
-    Info (12022): Found design unit 1: subtractor-arith File: D:/iitb_risc/subtractor.vhd Line: 15
-    Info (12023): Found entity 1: subtractor File: D:/iitb_risc/subtractor.vhd Line: 5
+    Info (12022): Found design unit 1: subtractor-arith File: /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd Line: 15
+    Info (12023): Found entity 1: subtractor File: /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file full_sub.vhd
-    Info (12022): Found design unit 1: full_sub-arith File: D:/iitb_risc/full_sub.vhd Line: 15
-    Info (12023): Found entity 1: full_sub File: D:/iitb_risc/full_sub.vhd Line: 7
+    Info (12022): Found design unit 1: full_sub-arith File: /home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd Line: 15
+    Info (12023): Found entity 1: full_sub File: /home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file adder.vhd
-    Info (12022): Found design unit 1: adder-arith File: D:/iitb_risc/adder.vhd Line: 15
-    Info (12023): Found entity 1: adder File: D:/iitb_risc/adder.vhd Line: 5
+    Info (12022): Found design unit 1: adder-arith File: /home/ritesh/Desktop/github/IITB_RISC/adder.vhd Line: 15
+    Info (12023): Found entity 1: adder File: /home/ritesh/Desktop/github/IITB_RISC/adder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file full_adder.vhd
-    Info (12022): Found design unit 1: full_adder-arith File: D:/iitb_risc/full_adder.vhd Line: 13
-    Info (12023): Found entity 1: full_adder File: D:/iitb_risc/full_adder.vhd Line: 5
+    Info (12022): Found design unit 1: full_adder-arith File: /home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd Line: 13
+    Info (12023): Found entity 1: full_adder File: /home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file iitb_risc.vhd
-    Info (12022): Found design unit 1: iitb_risc-behave File: D:/iitb_risc/iitb_risc.vhd Line: 27
-    Info (12023): Found entity 1: iitb_risc File: D:/iitb_risc/iitb_risc.vhd Line: 16
+    Info (12022): Found design unit 1: iitb_risc-behave File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 27
+    Info (12023): Found entity 1: iitb_risc File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file nand16.vhd
-    Info (12022): Found design unit 1: nand16-arith File: D:/iitb_risc/nand16.vhd Line: 14
-    Info (12023): Found entity 1: nand16 File: D:/iitb_risc/nand16.vhd Line: 6
+    Info (12022): Found design unit 1: nand16-arith File: /home/ritesh/Desktop/github/IITB_RISC/nand16.vhd Line: 14
+    Info (12023): Found entity 1: nand16 File: /home/ritesh/Desktop/github/IITB_RISC/nand16.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file signextender.vhd
-    Info (12022): Found design unit 1: signextender-arith File: D:/iitb_risc/signextender.vhd Line: 14
-    Info (12023): Found entity 1: signextender File: D:/iitb_risc/signextender.vhd Line: 6
+    Info (12022): Found design unit 1: signextender-arith File: /home/ritesh/Desktop/github/IITB_RISC/signextender.vhd Line: 14
+    Info (12023): Found entity 1: signextender File: /home/ritesh/Desktop/github/IITB_RISC/signextender.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file wrapper7.vhd
-    Info (12022): Found design unit 1: wrapper7-arith File: D:/iitb_risc/wrapper7.vhd Line: 14
-    Info (12023): Found entity 1: wrapper7 File: D:/iitb_risc/wrapper7.vhd Line: 6
+    Info (12022): Found design unit 1: wrapper7-arith File: /home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd Line: 14
+    Info (12023): Found entity 1: wrapper7 File: /home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file wrapper10.vhd
-    Info (12022): Found design unit 1: wrapper10-arith File: D:/iitb_risc/wrapper10.vhd Line: 14
-    Info (12023): Found entity 1: wrapper10 File: D:/iitb_risc/wrapper10.vhd Line: 6
+    Info (12022): Found design unit 1: wrapper10-arith File: /home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd Line: 14
+    Info (12023): Found entity 1: wrapper10 File: /home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file dflip.vhd
-    Info (12022): Found design unit 1: dflip-seqnt File: D:/iitb_risc/dflip.vhd Line: 16
-    Info (12023): Found entity 1: dflip File: D:/iitb_risc/dflip.vhd Line: 8
+    Info (12022): Found design unit 1: dflip-seqnt File: /home/ritesh/Desktop/github/IITB_RISC/dflip.vhd Line: 16
+    Info (12023): Found entity 1: dflip File: /home/ritesh/Desktop/github/IITB_RISC/dflip.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file register16.vhd
-    Info (12022): Found design unit 1: register16-seqnt File: D:/iitb_risc/register16.vhd Line: 16
-    Info (12023): Found entity 1: register16 File: D:/iitb_risc/register16.vhd Line: 8
+    Info (12022): Found design unit 1: register16-seqnt File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 16
+    Info (12023): Found entity 1: register16 File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
-    Info (12022): Found design unit 1: alu-behave File: D:/iitb_risc/alu.vhd Line: 14
-    Info (12023): Found entity 1: alu File: D:/iitb_risc/alu.vhd Line: 5
-Error (10381): VHDL Type Mismatch error at alu.vhd(51): indexed name returns a value whose type does not match "std_logic_vector", the type of the target expression File: D:/iitb_risc/alu.vhd Line: 51
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4780 megabytes
-    Error: Processing ended: Sun Oct 28 14:57:10 2018
-    Error: Elapsed time: 00:00:14
-    Error: Total CPU time (on all processors): 00:00:24
+    Info (12022): Found design unit 1: alu-behave File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 14
+    Info (12023): Found entity 1: alu File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 5
+Info (12127): Elaborating entity "iitb_risc" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at iitb_risc.vhd(21): used implicit default value for signal "output" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "output[0]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[1]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[2]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[3]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[4]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[5]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[6]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[7]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[8]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[9]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[10]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[11]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[12]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[13]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[14]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+    Warning (13410): Pin "output[15]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 21
+Warning (21074): Design contains 23 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "memRd" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "memWr" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "regWr" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "irWr" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "pcWr" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "pcWrCnd" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "prEn" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "pcSrc" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "rfB" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "IorD" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "rfA" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "dCon" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 18
+    Warning (15610): No output dependent on input pin "aluOp[0]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 19
+    Warning (15610): No output dependent on input pin "aluOp[1]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 19
+    Warning (15610): No output dependent on input pin "aluSrcA[0]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 19
+    Warning (15610): No output dependent on input pin "aluSrcA[1]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 19
+    Warning (15610): No output dependent on input pin "mReg[0]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 19
+    Warning (15610): No output dependent on input pin "mReg[1]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 19
+    Warning (15610): No output dependent on input pin "rDst[0]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 19
+    Warning (15610): No output dependent on input pin "rDst[1]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 19
+    Warning (15610): No output dependent on input pin "aluSrcB[0]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 20
+    Warning (15610): No output dependent on input pin "aluSrcB[1]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 20
+    Warning (15610): No output dependent on input pin "aluSrcB[2]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 20
+Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 16 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 1226 megabytes
+    Info: Processing ended: Sun Oct 28 15:46:10 2018
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:28
 
 

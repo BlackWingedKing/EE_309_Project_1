@@ -1,9 +1,11 @@
-Analysis & Synthesis Status : Successful - Sun Oct 28 15:46:10 2018
+Fitter Status : Successful - Sun Oct 28 15:46:12 2018
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : iitb_risc
 Top-level Entity Name : iitb_risc
 Family : MAX V
-Total logic elements : 0
-Total pins : 39
+Device : 5M1270ZT144C5
+Timing Models : Final
+Total logic elements : 0 / 1,270 ( 0 % )
+Total pins : 39 / 114 ( 34 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )
