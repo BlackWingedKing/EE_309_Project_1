@@ -3,7 +3,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 
-entity wrapper7 is
+entity wrapper10 is
 
 	port(xin: in std_logic_vector(5 downto 0);
 		  zout: out std_logic_vector(15 downto 0));
@@ -11,7 +11,7 @@ entity wrapper7 is
 end entity;
 
 
-architecture arith of wrapper7 is
+architecture arith of wrapper10 is
 
 begin
 	zout(0) <= xin(0);
