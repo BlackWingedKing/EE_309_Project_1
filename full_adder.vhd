@@ -11,7 +11,6 @@ end entity;
 
 
 architecture arith of full_adder is
-	
 	signal xor_i: std_logic;
 	
 begin
