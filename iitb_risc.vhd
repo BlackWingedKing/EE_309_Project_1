@@ -81,5 +81,27 @@ architecture behave of iitb_risc is
 		  dout : out std_logic);
 	end component;
 	
+	component mux_2_1 is
+		port(inp: in std_logic_vector(1 downto 0);
+			  sel: in std_logic;
+           outp: out std_logic);
+	end component;
+	
+	component mux_4_1 is
+		port(inp: in std_logic_vector(3 downto 0);
+			  sel: in std_logic_vector(1 downto 0);
+           outp: out std_logic);
+	end component;
+	
+	component mux_8_1 is
+		port(inp: in std_logic_vector(7 downto 0);
+			  sel: in std_logic_vector(2 downto 0);
+           outp: out std_logic);
+	end component;
+	
+	
+	
 begin 
  -- FSM Coding Logic
+  
+end behave;
