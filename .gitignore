@@ -4,4 +4,10 @@
 *.rpt
 *.map
 *.smart_action.txt
-*.tis_db_list.ddb
+*.ddb
+*.rdb
+*.db_info
+*.hdb
+*.qmsg
+*.flock
+*.sci
