@@ -10,7 +10,6 @@ entity nand16 is
 
 end entity;
 
-
 architecture arith of nand16 is
 
 begin
