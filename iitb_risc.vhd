@@ -3,25 +3,21 @@ use ieee.std_logic_1164.all;
 
 
 % Component Declarations %
-component full_adder is
-	port(cin,xin,yin: in std_logic;
-		  cout,sum: out std_logic);
+component multiplexor_1s is
+   port(x0,x1,s: in std_logic;
+        o: out std_logic);
 end component;
-component adder is
-	port(xin,yin: in std_logic_vector(15 downto 0);
-		  cin: in std_logic;
-		  sum: out std_logic_vector(15 downto 0);
-		  cout: out std_logic);
+component priority_encoder is
+	port(inp : in std_logic_vector (7 downto 0);
+		  outp: out std_logic_vector(2 downto 0);
+		  zero: out std_logic);
 end component;
-component full_sub is
-	port(bin,xin,yin: in std_logic;
-		  bout,diff: out std_logic);
-end component;
-component subtractor is
-	port(xin,yin: in std_logic_vector(15 downto 0);
-		  bin: in std_logic;
-		  diff: out std_logic_vector(15 downto 0);
-		  bout: out std_logic);
+component alu is
+	port(inp1,inp2: in std_logic_vector(15 downto 0);
+		  enable, reset: in std_logic;
+		  outp: out std_logic_vector(15 downto 0);
+		  carry: out std_logic;
+		  zero: out std_logic);
 end component;
 
 
