@@ -1,7 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-
 entity adder is
 
 	port(xin,yin: in std_logic_vector(15 downto 0);
