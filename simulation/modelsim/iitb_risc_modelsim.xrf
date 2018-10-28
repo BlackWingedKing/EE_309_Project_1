@@ -6,7 +6,6 @@ source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/memory.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd
-source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/multiplexor_1s.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/inverter_16bit.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd

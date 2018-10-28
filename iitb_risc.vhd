@@ -22,17 +22,9 @@ entity iitb_risc is
 		  
 end entity;
 
-
-
 architecture behave of iitb_risc is 
  
- -- Component Declarations
-	
-	component multiplexor_1s is
-		port(x0,x1,s: in std_logic;
-        o: out std_logic);
-	end component;
-	
+ -- Component Declarations	
 	component priority_encoder is
 		port(inp : in std_logic_vector (7 downto 0);
 		  outp: out std_logic_vector(2 downto 0);
@@ -102,16 +94,17 @@ architecture behave of iitb_risc is
 	end component;
 	
 	component memory is 
-		port (clk : in std_logic;  
-        we  : in std_logic;   
+  port (clk : in std_logic;  
+        mr  : in std_logic;   
+        mw  : in std_logic;
         a   : in unsigned(15 downto 0);   
         di  : in unsigned(15 downto 0);   
-        do  : out unsigned(15 downto 0));   
+        do  : out unsigned(15 downto 0));  
 	end component;
 	
  -- Initial Values for state 0
- 
 begin 
  -- FSM Coding Logic
-  
+
+ 
 end behave;

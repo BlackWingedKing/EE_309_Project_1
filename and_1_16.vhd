@@ -10,7 +10,6 @@ entity and_1_16 is
 
 end entity;
 
-
 architecture arith of and_1_16 is
 
 begin

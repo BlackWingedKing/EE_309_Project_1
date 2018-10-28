@@ -2,8 +2,6 @@ library ieee;
 
 use ieee.std_logic_1164.all;
 
-
-
 entity full_sub is
 
 	port(bin,xin,yin: in std_logic;
