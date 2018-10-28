@@ -14,7 +14,6 @@ architecture Struct of mux_8_1 is
    signal ns0, ns1, ns2, o1, o2, o3: std_logic ;
 
 begin
-	--just implemented x0.s'+x1.s
 	s_1: ns0 <= not (sel(0));
 	s_2: ns1 <= not (sel(1));
 	s_3: ns2 <= not (sel(2));
