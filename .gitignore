@@ -12,3 +12,9 @@
 *.flock
 *.sci
 *.qpf
+*.cdb
+*.logdb
+*.hif
+*.tdb
+*.summary
+*.sdo
