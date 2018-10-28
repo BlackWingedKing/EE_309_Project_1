@@ -1,7 +1,7 @@
 *.vhd.bak
 *.rdr.flock
 *.cmp
+*.rpt
 *.map
 *.smart_action.txt
 *.tis_db_list.ddb
-*.flow
