@@ -4,7 +4,6 @@ use std.standard.all;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all; 
 
-
 entity dflip is    
 
   port (din  : in  std_logic; en: in std_logic; clk: in std_logic;

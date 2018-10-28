@@ -9,7 +9,6 @@ entity or16 is
 
 end entity;
 
-
 architecture arith of or16 is
 
 begin

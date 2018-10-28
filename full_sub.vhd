@@ -11,7 +11,6 @@ end entity;
 
 
 architecture arith of full_sub is
-
 	signal xor_i: std_logic;
 
 begin

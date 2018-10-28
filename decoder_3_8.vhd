@@ -13,7 +13,6 @@ entity decoder_3_8 is
 end entity;
 
 architecture behave of decoder_3_8 is
-
 begin
 	process (inp) 
 	begin

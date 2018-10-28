@@ -19,3 +19,4 @@ begin
 		c_1: zout(i) <= xin(i) and yin;
 		end generate g_1;
 end arith;
+	

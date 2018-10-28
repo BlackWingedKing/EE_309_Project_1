@@ -9,7 +9,6 @@ entity mux_2_1 is
 		  sel: in std_logic;
         outp: out std_logic);
 end entity;
-
 architecture Struct of mux_2_1 is
    signal y,y1,w: std_logic;
 
