@@ -1,4 +1,6 @@
 vendor_name = ModelSim
+source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/decoder_3_8.vhd
+source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/registerfile.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/or16.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd
@@ -20,6 +22,7 @@ source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/dflip.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/register16.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/alu.vhd
+source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/ir.vhd
 source_file = 1, /home/ritesh/altera_lite/16.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, /home/ritesh/altera_lite/16.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, /home/ritesh/altera_lite/16.0/quartus/libraries/vhdl/ieee/timing_b.vhd

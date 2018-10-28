@@ -53,6 +53,7 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim (VHDL)"
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name VHDL_FILE decoder_3_8.vhd
 set_global_assignment -name VHDL_FILE registerfile.vhd
 set_global_assignment -name VHDL_FILE and_1_16.vhd
 set_global_assignment -name VHDL_FILE or16.vhd
@@ -75,3 +76,4 @@ set_global_assignment -name VHDL_FILE wrapper10.vhd
 set_global_assignment -name VHDL_FILE dflip.vhd
 set_global_assignment -name VHDL_FILE register16.vhd
 set_global_assignment -name VHDL_FILE alu.vhd
+set_global_assignment -name VHDL_FILE ir.vhd
