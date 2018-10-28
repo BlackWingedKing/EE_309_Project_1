@@ -13,7 +13,7 @@ entity memory is
 end memory;
 
 architecture syn of memory is   
-  type ram_type is array (1023 downto 0) of unsigned (15 downto 0);   
+  type ram_type is array (0 to 1023) of unsigned (15 downto 0);   
 
 	function init_ram
 		return ram_type is 

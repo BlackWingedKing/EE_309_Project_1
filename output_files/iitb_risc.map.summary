@@ -1,9 +1,9 @@
-Analysis & Synthesis Status : Successful - Sun Oct 28 21:47:05 2018
+Analysis & Synthesis Status : Successful - Sun Oct 28 23:54:33 2018
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : iitb_risc
-Top-level Entity Name : alu
+Top-level Entity Name : iitb_risc
 Family : MAX V
-Total logic elements : 96
-Total pins : 54
+Total logic elements : 0
+Total pins : 50
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )
