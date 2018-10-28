@@ -17,12 +17,12 @@ begin
 	g_1: for i in 0 to 8 generate
 		begin
 		--assign the bits
-		c_1: b(7+i) <= a(i);
+		c_1: c(7+i) <= a(i);
 		end generate g_1;
 	
 	g_2: for i in 0 to 6 generate
 		begin
 		--assign the bits
-		z_1: b(i) <= '0';
+		z_1: c(i) <= '0';
 		end generate g_2;
 	end Struct;

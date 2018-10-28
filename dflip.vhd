@@ -1,4 +1,5 @@
 library std;
+library ieee;
 use std.standard.all;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all; 
@@ -19,7 +20,7 @@ begin
 	process(clk)
 	begin 
 		if(clk'event and clk = '1') then
-			if enable = '1' then
+			if en = '1' then
 				dout <= din;
 			end if;
 		end if;

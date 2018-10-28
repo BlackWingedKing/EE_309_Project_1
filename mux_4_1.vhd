@@ -17,5 +17,5 @@ begin
 	--just implemented x0.s'+x1.s
 	s_1: ns0 <= not (sel(0));
 	s_2: ns1 <= not (sel(1));
-	o_1: o <= (inp(0) and sel(1) and sel(0)) or (inp(1) and sel(1) and ns0) or (inp(2) and ns1 and sel(0)) or (inp(3) and ns1 and ns0);
+	o_1: outp <= (inp(0) and sel(1) and sel(0)) or (inp(1) and sel(1) and ns0) or (inp(2) and ns1 and sel(0)) or (inp(3) and ns1 and ns0);
 end Struct;

@@ -2,6 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 library std;
 use std.standard.all;
+use ieee.numeric_std.all;
+
 
 -- The control word mapping to control signals is as follows 
 --- 1 Bit Signals ->

@@ -6,7 +6,7 @@ use ieee.numeric_std.all;
 entity memory is 
   port (clk : in std_logic;  
         mr  : in std_logic;   
-        mw  : in std_logic
+        mw  : in std_logic;
         a   : in unsigned(15 downto 0);   
         di  : in unsigned(15 downto 0);   
         do  : out unsigned(15 downto 0));   

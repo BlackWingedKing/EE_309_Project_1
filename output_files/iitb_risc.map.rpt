@@ -1,5 +1,5 @@
 Analysis & Synthesis report for iitb_risc
-Sun Oct 28 14:30:34 2018
+Sun Oct 28 14:57:10 2018
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Oct 28 14:30:34 2018           ;
+; Analysis & Synthesis Status ; Failed - Sun Oct 28 14:57:10 2018           ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; iitb_risc                                   ;
 ; Top-level Entity Name       ; iitb_risc                                   ;
@@ -137,33 +137,31 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Oct 28 14:30:06 2018
+    Info: Processing started: Sun Oct 28 14:56:56 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iitb_risc -c iitb_risc
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
-Error (10500): VHDL syntax error at mux_8_1.vhd(14) near text ";";  expecting ":", or "," File: D:/iitb_risc/mux_8_1.vhd Line: 14
-Info (12021): Found 0 design units, including 0 entities, in source file mux_8_1.vhd
-Error (10500): VHDL syntax error at mux_4_1.vhd(14) near text ";";  expecting ":", or "," File: D:/iitb_risc/mux_4_1.vhd Line: 14
-Info (12021): Found 0 design units, including 0 entities, in source file mux_4_1.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file mux_8_1.vhd
+    Info (12022): Found design unit 1: mux_8_1-Struct File: D:/iitb_risc/mux_8_1.vhd Line: 13
+    Info (12023): Found entity 1: mux_8_1 File: D:/iitb_risc/mux_8_1.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file mux_4_1.vhd
+    Info (12022): Found design unit 1: mux_4_1-Struct File: D:/iitb_risc/mux_4_1.vhd Line: 13
+    Info (12023): Found entity 1: mux_4_1 File: D:/iitb_risc/mux_4_1.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file mux_2_1.vhd
     Info (12022): Found design unit 1: mux_2_1-Struct File: D:/iitb_risc/mux_2_1.vhd Line: 13
     Info (12023): Found entity 1: mux_2_1 File: D:/iitb_risc/mux_2_1.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file memory.vhd
-    Info (12022): Found design unit 1: memory-syn File: D:/iitb_risc/memory.vhd Line: 14
-    Info (12023): Found entity 1: memory File: D:/iitb_risc/memory.vhd Line: 5
+    Info (12022): Found design unit 1: memory-syn File: D:/iitb_risc/memory.vhd Line: 15
+    Info (12023): Found entity 1: memory File: D:/iitb_risc/memory.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file priority_encoder.vhd
     Info (12022): Found design unit 1: priority_encoder-behave File: D:/iitb_risc/priority_encoder.vhd Line: 15
     Info (12023): Found entity 1: priority_encoder File: D:/iitb_risc/priority_encoder.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file multiplexor_1s.vhd
     Info (12022): Found design unit 1: multiplexor_1s-Struct File: D:/iitb_risc/multiplexor_1s.vhd Line: 15
     Info (12023): Found entity 1: multiplexor_1s File: D:/iitb_risc/multiplexor_1s.vhd Line: 8
-Error (10500): VHDL syntax error at leftshift.vhd(10) near text ":";  expecting ";", or ")" File: D:/iitb_risc/leftshift.vhd Line: 10
-Error (10500): VHDL syntax error at leftshift.vhd(21) near text "end generate g_1;";  expecting ";" File: D:/iitb_risc/leftshift.vhd Line: 21
-Error (10500): VHDL syntax error at leftshift.vhd(21) near text  File: D:/iitb_risc/leftshift.vhd Line: 21
-Error (10500): VHDL syntax error at leftshift.vhd(26) near text "end generate g_2;";  expecting ";" File: D:/iitb_risc/leftshift.vhd Line: 26
-Error (10500): VHDL syntax error at leftshift.vhd(26) near text  File: D:/iitb_risc/leftshift.vhd Line: 26
-Error (10522): VHDL Syntax error at leftshift.vhd(26): experienced unexpected end-of-file  File: D:/iitb_risc/leftshift.vhd Line: 26
-Info (12021): Found 0 design units, including 0 entities, in source file leftshift.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file leftshift.vhd
+    Info (12022): Found design unit 1: leftshift-Struct File: D:/iitb_risc/leftshift.vhd Line: 13
+    Info (12023): Found entity 1: leftshift File: D:/iitb_risc/leftshift.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file inverter_16bit.vhd
     Info (12022): Found design unit 1: inverter_16bit-Struct File: D:/iitb_risc/inverter_16bit.vhd Line: 11
     Info (12023): Found entity 1: inverter_16bit File: D:/iitb_risc/inverter_16bit.vhd Line: 7
@@ -179,8 +177,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file adder.v
 Info (12021): Found 2 design units, including 1 entities, in source file full_adder.vhd
     Info (12022): Found design unit 1: full_adder-arith File: D:/iitb_risc/full_adder.vhd Line: 13
     Info (12023): Found entity 1: full_adder File: D:/iitb_risc/full_adder.vhd Line: 5
-Error (10500): VHDL syntax error at iitb_risc.vhd(56) near text ":";  expecting ";", or ")" File: D:/iitb_risc/iitb_risc.vhd Line: 56
-Info (12021): Found 0 design units, including 0 entities, in source file iitb_risc.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file iitb_risc.vhd
+    Info (12022): Found design unit 1: iitb_risc-behave File: D:/iitb_risc/iitb_risc.vhd Line: 27
+    Info (12023): Found entity 1: iitb_risc File: D:/iitb_risc/iitb_risc.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file nand16.vhd
     Info (12022): Found design unit 1: nand16-arith File: D:/iitb_risc/nand16.vhd Line: 14
     Info (12023): Found entity 1: nand16 File: D:/iitb_risc/nand16.vhd Line: 6
@@ -194,18 +193,19 @@ Info (12021): Found 2 design units, including 1 entities, in source file wrapper
     Info (12022): Found design unit 1: wrapper10-arith File: D:/iitb_risc/wrapper10.vhd Line: 14
     Info (12023): Found entity 1: wrapper10 File: D:/iitb_risc/wrapper10.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file dflip.vhd
-    Info (12022): Found design unit 1: dflip-seqnt File: D:/iitb_risc/dflip.vhd Line: 15
-    Info (12023): Found entity 1: dflip File: D:/iitb_risc/dflip.vhd Line: 7
+    Info (12022): Found design unit 1: dflip-seqnt File: D:/iitb_risc/dflip.vhd Line: 16
+    Info (12023): Found entity 1: dflip File: D:/iitb_risc/dflip.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file register16.vhd
-    Info (12022): Found design unit 1: register16-seqnt File: D:/iitb_risc/register16.vhd Line: 15
-    Info (12023): Found entity 1: register16 File: D:/iitb_risc/register16.vhd Line: 7
+    Info (12022): Found design unit 1: register16-seqnt File: D:/iitb_risc/register16.vhd Line: 16
+    Info (12023): Found entity 1: register16 File: D:/iitb_risc/register16.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
     Info (12022): Found design unit 1: alu-behave File: D:/iitb_risc/alu.vhd Line: 14
     Info (12023): Found entity 1: alu File: D:/iitb_risc/alu.vhd Line: 5
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 9 errors, 1 warning
-    Error: Peak virtual memory: 4782 megabytes
-    Error: Processing ended: Sun Oct 28 14:30:34 2018
-    Error: Elapsed time: 00:00:28
-    Error: Total CPU time (on all processors): 00:00:31
+Error (10381): VHDL Type Mismatch error at alu.vhd(51): indexed name returns a value whose type does not match "std_logic_vector", the type of the target expression File: D:/iitb_risc/alu.vhd Line: 51
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
+    Error: Peak virtual memory: 4780 megabytes
+    Error: Processing ended: Sun Oct 28 14:57:10 2018
+    Error: Elapsed time: 00:00:14
+    Error: Total CPU time (on all processors): 00:00:24
 
 
