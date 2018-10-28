@@ -52,7 +52,7 @@ architecture behave of iitb_risc is
 
 	component leftshift is
 		port(a: in std_logic_vector(15 downto 0);
-		  s: in std_logic
+		  s: in std_logic;
 		  c: out std_logic_vector(15 downto 0));
 	end component;
 	
@@ -99,8 +99,16 @@ architecture behave of iitb_risc is
            outp: out std_logic);
 	end component;
 	
+	component memory is 
+		port (clk : in std_logic;  
+        we  : in std_logic;   
+        a   : in unsigned(15 downto 0);   
+        di  : in unsigned(15 downto 0);   
+        do  : out unsigned(15 downto 0));   
+	end component;
 	
-	
+ -- Initial Values for state 0
+ 
 begin 
  -- FSM Coding Logic
   
