@@ -4,8 +4,7 @@ library std;
 use std.standard.all;
 use ieee.numeric_std.all;
 
-
--- The control word mapping to control signals is as follows 
+--- The control word mapping to control signals is as follows 
 --- 1 Bit Signals ->
 -- regWr: regwrite, memWr: memwrite, memRd: memread, irWr: IRwrite, pcWr: pcwrite, pcWrCnd: pcwritecond, prEn: priorityenable, pcSrc: PCsource, rfB: rfB, IorD: IorD, dCon: datacon, rfA: rfToA
 --- 2 Bit Signals ->  

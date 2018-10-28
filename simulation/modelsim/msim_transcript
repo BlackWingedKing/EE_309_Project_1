@@ -1,0 +1,117 @@
+# do iitb_risc_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying /home/ritesh/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:47:35 on Oct 28,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity and_1_16
+# -- Compiling architecture arith of and_1_16
+# End time: 21:47:35 on Oct 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:47:35 on Oct 28,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity subtractor
+# -- Compiling architecture arith of subtractor
+# End time: 21:47:35 on Oct 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:47:35 on Oct 28,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity full_sub
+# -- Compiling architecture arith of full_sub
+# End time: 21:47:35 on Oct 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/adder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:47:35 on Oct 28,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder
+# -- Compiling architecture arith of adder
+# End time: 21:47:35 on Oct 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:47:35 on Oct 28,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity full_adder
+# -- Compiling architecture arith of full_adder
+# End time: 21:47:35 on Oct 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/nand16.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:47:35 on Oct 28,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/nand16.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nand16
+# -- Compiling architecture arith of nand16
+# End time: 21:47:35 on Oct 28,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/alu.vhd}
+# Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:47:35 on Oct 28,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/alu.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity alu
+# -- Compiling architecture behave of alu
+# End time: 21:47:36 on Oct 28,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+vsim work.alu
+# vsim work.alu 
+# Start time: 21:47:42 on Oct 28,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.alu(behave)
+# Loading work.adder(arith)
+# Loading work.full_adder(arith)
+# Loading work.subtractor(arith)
+# Loading work.full_sub(arith)
+# Loading work.nand16(arith)
+# Loading work.and_1_16(arith)
+add wave -position insertpoint sim:/alu/*
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 1 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 2 times, errno 11
+# ** Error: Unable to lock WLF file "vsim.wlf". Retrying 3 times, errno 11
+# ** Error: Cannot lock WLF file: "vsim.wlf"
+#           errno 11: Resource temporarily unavailable.
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: unknown  Hostname: blackwingedking  ProcessID: 28135
+#           Attempting to use alternate WLF file "./wlftBvF84s".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftBvF84s
+# End time: 21:48:18 on Oct 28,2018, Elapsed time: 0:00:36
+# Errors: 4, Warnings: 2
