@@ -78,3 +78,6 @@ set_global_assignment -name VHDL_FILE dflip.vhd
 set_global_assignment -name VHDL_FILE register16.vhd
 set_global_assignment -name VHDL_FILE alu.vhd
 set_global_assignment -name VHDL_FILE ir.vhd
+set_global_assignment -name VHDL_FILE mux3_2_1.vhd
+set_global_assignment -name VHDL_FILE mux3_4_1.vhd
+set_global_assignment -name VHDL_FILE wrapper13.vhd

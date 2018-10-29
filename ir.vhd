@@ -12,7 +12,7 @@ entity ir is
 		  ra: out std_logic_vector(2 downto 0); --9-11
 		  rb: out std_logic_vector(2 downto 0); --6-8
 		  rc: out std_logic_vector(2 downto 0); --3-5
-		  cz: out std_logic_vector(1 downto 0); --0-1
+		  cz: out std_logic_vector(1 downto 0); --0-1 -- 0 is z and 1 is c
 		  immediate9: out std_logic_vector(8 downto 0); --0-8
 		  immediate8: out std_logic_vector(7 downto 0) --0-7
 		  );
@@ -21,21 +21,21 @@ end entity;
 
 
 architecture behave of ir is
+component register16 is    
+  port (din  : in  std_logic_vector(15 downto 0); en: in std_logic; clk: in std_logic;
+		  dout : out std_logic_vector(15 downto 0));
+
+end component;
+signal ir_regout: std_logic_vector(15 downto 0);
 
 begin
-	process(clk)
-	begin 
-		if(clk'event and clk = '1') then
-			if(irwrite = '1') then
-				opcode <= inp(12 downto 15);
-				immediate6 <= inp(5 downto 0);
-				ra <= inp(11 downto 9);
-				rb <= inp(8 downto 6);
-				rc <= inp(5 downto 3);
-				cz <= inp(1 downto 0);
-				immediate9 <= inp(8 downto 0);
-				immediate8 <= inp(7 downto 0);
-			end if;
-		end if;
-	end process;
+	r_1: register16 port map (inp,irwrite,clk,ir_regout);
+	opcode <= ir_regout(15 downto 12);
+	immediate6 <= ir_regout(5 downto 0);
+	ra <= ir_regout(11 downto 9);
+	rb <= ir_regout(8 downto 6);
+	rc <= ir_regout(5 downto 3);
+	cz <= ir_regout(1 downto 0);
+	immediate9 <= ir_regout(8 downto 0);
+	immediate8 <= ir_regout(7 downto 0);
 end behave;

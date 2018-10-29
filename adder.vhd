@@ -21,7 +21,7 @@ architecture arith of adder is
 	signal ctemp: std_logic_vector(15 downto 0);
 	
 begin
-	ctemp(0) <= cin;
+	ctemp(0) <= '0';
 	a1: full_adder port map(ctemp(0), xin(0), yin(0), ctemp(1), sum(0));
 	a2: full_adder port map(ctemp(1), xin(1), yin(1), ctemp(2), sum(1));
 	a3: full_adder port map(ctemp(2), xin(2), yin(2), ctemp(3), sum(2));
