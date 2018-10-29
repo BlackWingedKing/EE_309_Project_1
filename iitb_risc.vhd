@@ -162,6 +162,7 @@ signal alusrcb,regs_b,rf_in: std_logic_vector(2 downto 0);
 
 -- define signals for registers
 -- registers are pc,a,b,mdr,t1 (it is the alu_out register)
+<<<<<<< HEAD
 signal a_en,b_en,mdr_en,alu_en, alud: std_logic;
 signal z_flag,c_flag: std_logic; -- here c_flag and z_flag are carry and zero flags
 signal add_in,d_in,d_out: std_logic_vector(15 downto 0);
@@ -213,6 +214,31 @@ e_4: wrapper13 port map(pr_en,pr_3_16);
 
 -- register file
 reg_1: registerfile port map(clk,mreg_in,ra, regs_b,rf_in,regwr,r_outa,r_outb);
+=======
+signal pc_en,a_en,b_en,mdr_en,t1_en,z_en,c_en: std_logic;
+signal z_flag,c_flag: std_logic; -- here c_flag and z_flag are carry and zero flags
+signal a_in,d_in,d_out: std_logic_vector(15 downto 0);
+signal pc_in,pc_out,a_in,a_out,b_in,b_out,mdr_in,mdr_out,t1_in,t1_out : std_logic_vector(15 downto 0);
+signal carry_in, carry, zero: std_logic;
+signal alu_inp1, alu_inp2, alu_out: std_logic_vector(15 downto 0);
+signal 
+signal state, next_state : std_logic_vector(4 downto 0) := "00000";
+
+begin 
+--- register declaration
+pc: register16 port map(pc_in,pc_en,clk,pc_out);
+a: register16 port map(a_in,a_en,clk,a_out);
+b: register16 port map(b_in,b_en,clk,b_out);
+mdr: register16 port map(mdr_in,mdr_en,clk,mdr_out);
+t1: register16 port map(t1_in,t1_en,clk,t1_out);
+
+z_flag: register1 port map(zero,z_en,clk,z_flag);
+c_flag: register1 port map(carry,c_en,clk,c_flag);
+
+-- memory and alu declaration
+mem: memory port map(clk,memRd,memWr,a_in,d_in,d_out);
+alu: alu port map(alu_inp1, alu_inp2, carry_in, reset, alu_sel, alu_out, carry, zero);
+>>>>>>> d4d384a4fdb5f7b024ac12dbcd402686d798ef16
 
 -- priority encoder
 p_1: priority_encoder port map(immediate8,pr_en);
@@ -301,5 +327,9 @@ begin
 		
 		
 	end if;
+<<<<<<< HEAD
+=======
+
+>>>>>>> d4d384a4fdb5f7b024ac12dbcd402686d798ef16
 end process;
 end behave;
