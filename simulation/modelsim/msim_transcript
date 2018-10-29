@@ -9,35 +9,142 @@
 # Copying /home/ritesh/altera_lite/16.0/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd}
+# vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/register16.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 19:14:48 on Oct 29,2018
-# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd 
+# Start time: 00:34:09 on Oct 30,2018
+# vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/register16.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity mux_2_1
-# -- Compiling architecture Struct of mux_2_1
-# End time: 19:14:48 on Oct 29,2018, Elapsed time: 0:00:00
+# -- Loading package NUMERIC_STD
+# -- Compiling entity register16
+# -- Compiling architecture seqnt of register16
+# End time: 00:34:09 on Oct 30,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 
 # stdin: <EOF>
-vsim work.mux_2_1
-# vsim work.mux_2_1 
-# Start time: 19:15:09 on Oct 29,2018
+vsim work.register16
+# vsim work.register16 
+# Start time: 00:34:20 on Oct 30,2018
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.mux_2_1(struct)
-add wave -position insertpoint sim:/mux_2_1/*
-force -freeze sim:/mux_2_1/a1 1 0
-force -freeze sim:/mux_2_1/a0 0 0
-force -freeze sim:/mux_2_1/sel 1 0
+# Loading ieee.numeric_std(body)
+# Loading work.register16(seqnt)
+# couldn't load file "/home/ritesh/altera_lite/16.0/modelsim_ase/linuxaloem/ScintillaTk/libScintillaTk0.36.so": libstdc++.so.6: wrong ELF class: ELFCLASS64
+add wave -position insertpoint sim:/register16/*
+force -freeze sim:/register16/din 000000000000 0
+# Value length (12) does not equal array index length (16).
+# 
+# ** Error: (vsim-4011) Invalid force value: 000000000000 0.
+# 
+force -freeze sim:/register16/en 1 0
+force -freeze sim:/register16/clk 1 0
 run
-force -freeze sim:/mux_2_1/sel 0 0
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
 run
-force -freeze sim:/mux_2_1/a0 1 0
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
 run
-# End time: 19:16:25 on Oct 29,2018, Elapsed time: 0:01:16
-# Errors: 0, Warnings: 0
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+# WARNING: No extended dataflow license exists
+force -freeze sim:/register16/din 000000000000 0
+# Value length (12) does not equal array index length (16).
+# 
+# ** Error: (vsim-4011) Invalid force value: 000000000000 0.
+# 
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -continue
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -continue
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -continue
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -continue
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -continue
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -all
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -all
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -continue
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -all
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+force -freeze sim:/register16/din 1111111111111111 0
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -continue
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -all
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run -all
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+force -freeze sim:/register16/din 1111111111111111 0
+force -drive sim:/register16/en 1 0
+force -drive sim:/register16/clk 1 0
+force -drive sim:/register16/din 1111111111111111 0
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 5000 reached at time 0 ps.
+# End time: 00:52:00 on Oct 30,2018, Elapsed time: 0:17:40
+# Errors: 50, Warnings: 1

@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition"
 
--- DATE "10/30/2018 00:01:25"
+-- DATE "10/30/2018 00:48:26"
 
 -- 
 -- Device: Altera 5M1270ZT144C5 Package TQFP144
@@ -32,19 +32,19 @@ LIBRARY MAXV;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE MAXV.MAXV_COMPONENTS.ALL;
 
-ENTITY 	iitb_risc IS
+ENTITY 	register16 IS
     PORT (
+	din : IN std_logic_vector(15 DOWNTO 0);
+	en : IN std_logic;
 	clk : IN std_logic;
-	extmeminit : IN std_logic;
-	input : IN std_logic_vector(31 DOWNTO 0);
-	output : OUT std_logic_vector(15 DOWNTO 0)
+	dout : BUFFER std_logic_vector(15 DOWNTO 0)
 	);
-END iitb_risc;
+END register16;
 
 -- Design Ports Information
 
 
-ARCHITECTURE structure OF iitb_risc IS
+ARCHITECTURE structure OF register16 IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -54,26 +54,579 @@ SIGNAL devpor : std_logic := '1';
 SIGNAL ww_devoe : std_logic;
 SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
+SIGNAL ww_din : std_logic_vector(15 DOWNTO 0);
+SIGNAL ww_en : std_logic;
 SIGNAL ww_clk : std_logic;
-SIGNAL ww_extmeminit : std_logic;
-SIGNAL ww_input : std_logic_vector(31 DOWNTO 0);
-SIGNAL ww_output : std_logic_vector(15 DOWNTO 0);
-SIGNAL \clk~combout\ : std_logic;
-SIGNAL \extmeminit~combout\ : std_logic;
-SIGNAL state : std_logic_vector(4 DOWNTO 0);
-SIGNAL next_state : std_logic_vector(4 DOWNTO 0);
+SIGNAL ww_dout : std_logic_vector(15 DOWNTO 0);
+SIGNAL \en~combout\ : std_logic;
+SIGNAL \dout[0]$latch~combout\ : std_logic;
+SIGNAL \dout[1]$latch~combout\ : std_logic;
+SIGNAL \dout[2]$latch~combout\ : std_logic;
+SIGNAL \dout[3]$latch~combout\ : std_logic;
+SIGNAL \dout[4]$latch~combout\ : std_logic;
+SIGNAL \dout[5]$latch~combout\ : std_logic;
+SIGNAL \dout[6]$latch~combout\ : std_logic;
+SIGNAL \dout[7]$latch~combout\ : std_logic;
+SIGNAL \dout[8]$latch~combout\ : std_logic;
+SIGNAL \dout[9]$latch~combout\ : std_logic;
+SIGNAL \dout[10]$latch~combout\ : std_logic;
+SIGNAL \dout[11]$latch~combout\ : std_logic;
+SIGNAL \dout[12]$latch~combout\ : std_logic;
+SIGNAL \dout[13]$latch~combout\ : std_logic;
+SIGNAL \dout[14]$latch~combout\ : std_logic;
+SIGNAL \dout[15]$latch~combout\ : std_logic;
+SIGNAL \din~combout\ : std_logic_vector(15 DOWNTO 0);
 
 BEGIN
 
+ww_din <= din;
+ww_en <= en;
 ww_clk <= clk;
-ww_extmeminit <= extmeminit;
-ww_input <= input;
-output <= ww_output;
+dout <= ww_dout;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
+-- Location: PIN_97,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[0]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(0),
+	combout => \din~combout\(0));
+
 -- Location: PIN_18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\en~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_en,
+	combout => \en~combout\);
+
+-- Location: LC_X16_Y6_N4
+\dout[0]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[0]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(0))) # (!GLOBAL(\en~combout\) & ((\dout[0]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ccf0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \din~combout\(0),
+	datac => \dout[0]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[0]$latch~combout\);
+
+-- Location: PIN_114,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[1]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(1),
+	combout => \din~combout\(1));
+
+-- Location: LC_X10_Y10_N3
+\dout[1]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[1]$latch~combout\ = ((GLOBAL(\en~combout\) & ((\din~combout\(1)))) # (!GLOBAL(\en~combout\) & (\dout[1]$latch~combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ccaa",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \dout[1]$latch~combout\,
+	datab => \din~combout\(1),
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[1]$latch~combout\);
+
+-- Location: PIN_111,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[2]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(2),
+	combout => \din~combout\(2));
+
+-- Location: LC_X15_Y10_N2
+\dout[2]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[2]$latch~combout\ = ((GLOBAL(\en~combout\) & ((\din~combout\(2)))) # (!GLOBAL(\en~combout\) & (\dout[2]$latch~combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0cc",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \dout[2]$latch~combout\,
+	datac => \din~combout\(2),
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[2]$latch~combout\);
+
+-- Location: PIN_113,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[3]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(3),
+	combout => \din~combout\(3));
+
+-- Location: LC_X13_Y10_N2
+\dout[3]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[3]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(3))) # (!GLOBAL(\en~combout\) & ((\dout[3]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "aacc",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \din~combout\(3),
+	datab => \dout[3]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[3]$latch~combout\);
+
+-- Location: PIN_60,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[4]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(4),
+	combout => \din~combout\(4));
+
+-- Location: LC_X9_Y4_N6
+\dout[4]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[4]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(4))) # (!GLOBAL(\en~combout\) & ((\dout[4]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "aaf0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \din~combout\(4),
+	datac => \dout[4]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[4]$latch~combout\);
+
+-- Location: PIN_129,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[5]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(5),
+	combout => \din~combout\(5));
+
+-- Location: LC_X9_Y7_N4
+\dout[5]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[5]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(5))) # (!GLOBAL(\en~combout\) & ((\dout[5]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ccf0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \din~combout\(5),
+	datac => \dout[5]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[5]$latch~combout\);
+
+-- Location: PIN_12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[6]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(6),
+	combout => \din~combout\(6));
+
+-- Location: LC_X4_Y7_N4
+\dout[6]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[6]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(6))) # (!GLOBAL(\en~combout\) & ((\dout[6]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ccf0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \din~combout\(6),
+	datac => \dout[6]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[6]$latch~combout\);
+
+-- Location: PIN_48,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[7]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(7),
+	combout => \din~combout\(7));
+
+-- Location: LC_X7_Y4_N6
+\dout[7]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[7]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(7))) # (!GLOBAL(\en~combout\) & ((\dout[7]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "aaf0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \din~combout\(7),
+	datac => \dout[7]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[7]$latch~combout\);
+
+-- Location: PIN_141,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[8]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(8),
+	combout => \din~combout\(8));
+
+-- Location: LC_X5_Y10_N5
+\dout[8]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[8]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(8))) # (!GLOBAL(\en~combout\) & ((\dout[8]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "ccf0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \din~combout\(8),
+	datac => \dout[8]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[8]$latch~combout\);
+
+-- Location: PIN_127,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[9]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(9),
+	combout => \din~combout\(9));
+
+-- Location: LC_X9_Y10_N4
+\dout[9]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[9]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(9))) # (!GLOBAL(\en~combout\) & ((\dout[9]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "aaf0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \din~combout\(9),
+	datac => \dout[9]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[9]$latch~combout\);
+
+-- Location: PIN_137,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[10]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(10),
+	combout => \din~combout\(10));
+
+-- Location: LC_X8_Y10_N2
+\dout[10]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[10]$latch~combout\ = ((GLOBAL(\en~combout\) & ((\din~combout\(10)))) # (!GLOBAL(\en~combout\) & (\dout[10]$latch~combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0cc",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \dout[10]$latch~combout\,
+	datac => \din~combout\(10),
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[10]$latch~combout\);
+
+-- Location: PIN_123,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[11]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(11),
+	combout => \din~combout\(11));
+
+-- Location: LC_X10_Y10_N7
+\dout[11]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[11]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(11))) # (!GLOBAL(\en~combout\) & ((\dout[11]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "aaf0",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \din~combout\(11),
+	datac => \dout[11]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[11]$latch~combout\);
+
+-- Location: PIN_125,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[12]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(12),
+	combout => \din~combout\(12));
+
+-- Location: LC_X9_Y10_N2
+\dout[12]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[12]$latch~combout\ = ((GLOBAL(\en~combout\) & ((\din~combout\(12)))) # (!GLOBAL(\en~combout\) & (\dout[12]$latch~combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0cc",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \dout[12]$latch~combout\,
+	datac => \din~combout\(12),
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[12]$latch~combout\);
+
+-- Location: PIN_16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[13]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(13),
+	combout => \din~combout\(13));
+
+-- Location: LC_X2_Y7_N2
+\dout[13]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[13]$latch~combout\ = ((GLOBAL(\en~combout\) & (\din~combout\(13))) # (!GLOBAL(\en~combout\) & ((\dout[13]$latch~combout\))))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "aacc",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	dataa => \din~combout\(13),
+	datab => \dout[13]$latch~combout\,
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[13]$latch~combout\);
+
+-- Location: PIN_81,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[14]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(14),
+	combout => \din~combout\(14));
+
+-- Location: LC_X16_Y4_N2
+\dout[14]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[14]$latch~combout\ = ((GLOBAL(\en~combout\) & ((\din~combout\(14)))) # (!GLOBAL(\en~combout\) & (\dout[14]$latch~combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0cc",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \dout[14]$latch~combout\,
+	datac => \din~combout\(14),
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[14]$latch~combout\);
+
+-- Location: PIN_132,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\din[15]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_din(15),
+	combout => \din~combout\(15));
+
+-- Location: LC_X7_Y10_N2
+\dout[15]$latch\ : maxv_lcell
+-- Equation(s):
+-- \dout[15]$latch~combout\ = ((GLOBAL(\en~combout\) & ((\din~combout\(15)))) # (!GLOBAL(\en~combout\) & (\dout[15]$latch~combout\)))
+
+-- pragma translate_off
+GENERIC MAP (
+	lut_mask => "f0cc",
+	operation_mode => "normal",
+	output_mode => "comb_only",
+	register_cascade_mode => "off",
+	sum_lutc_input => "datac",
+	synch_mode => "off")
+-- pragma translate_on
+PORT MAP (
+	datab => \dout[15]$latch~combout\,
+	datac => \din~combout\(15),
+	datad => \en~combout\,
+	devclrn => ww_devclrn,
+	devpor => ww_devpor,
+	combout => \dout[15]$latch~combout\);
+
+-- Location: PIN_21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \clk~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -81,609 +634,183 @@ GENERIC MAP (
 -- pragma translate_on
 PORT MAP (
 	oe => GND,
-	padio => ww_clk,
-	combout => \clk~combout\);
-
--- Location: PIN_96,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\extmeminit~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_extmeminit,
-	combout => \extmeminit~combout\);
-
--- Location: LC_X16_Y6_N6
-\state[0]\ : maxv_lcell
--- Equation(s):
--- state(0) = DFFEAS((((next_state(0)))), GLOBAL(\clk~combout\), VCC, , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "ff00",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \clk~combout\,
-	datad => next_state(0),
-	aclr => GND,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => state(0));
-
--- Location: LC_X16_Y6_N7
-\next_state[1]\ : maxv_lcell
--- Equation(s):
--- next_state(1) = DFFEAS(((state(1) & (next_state(1))) # (!state(1) & ((state(0))))), GLOBAL(\clk~combout\), VCC, , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "ccf0",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \clk~combout\,
-	datab => next_state(1),
-	datac => state(0),
-	datad => state(1),
-	aclr => GND,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => next_state(1));
-
--- Location: LC_X16_Y6_N8
-\state[1]\ : maxv_lcell
--- Equation(s):
--- state(1) = DFFEAS(GND, GLOBAL(\clk~combout\), VCC, , , next_state(1), , , VCC)
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "0000",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "on")
--- pragma translate_on
-PORT MAP (
-	clk => \clk~combout\,
-	datac => next_state(1),
-	aclr => GND,
-	sload => VCC,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => state(1));
-
--- Location: LC_X16_Y6_N9
-\next_state[0]\ : maxv_lcell
--- Equation(s):
--- next_state(0) = DFFEAS((state(1) & (((next_state(0))))) # (!state(1) & (!\extmeminit~combout\ & ((!state(0))))), GLOBAL(\clk~combout\), VCC, , , , , , )
-
--- pragma translate_off
-GENERIC MAP (
-	lut_mask => "cc05",
-	operation_mode => "normal",
-	output_mode => "reg_only",
-	register_cascade_mode => "off",
-	sum_lutc_input => "datac",
-	synch_mode => "off")
--- pragma translate_on
-PORT MAP (
-	clk => \clk~combout\,
-	dataa => \extmeminit~combout\,
-	datab => next_state(0),
-	datac => state(0),
-	datad => state(1),
-	aclr => GND,
-	devclrn => ww_devclrn,
-	devpor => ww_devpor,
-	regout => next_state(0));
-
--- Location: PIN_3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(0));
-
--- Location: PIN_62,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(1));
-
--- Location: PIN_42,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(2));
-
--- Location: PIN_106,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[3]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(3));
-
--- Location: PIN_91,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[4]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(4));
-
--- Location: PIN_43,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[5]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(5));
-
--- Location: PIN_51,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[6]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(6));
-
--- Location: PIN_16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[7]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(7));
-
--- Location: PIN_2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[8]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(8));
-
--- Location: PIN_76,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[9]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(9));
-
--- Location: PIN_75,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[10]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(10));
-
--- Location: PIN_70,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[11]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(11));
-
--- Location: PIN_15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[12]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(12));
-
--- Location: PIN_129,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[13]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(13));
-
--- Location: PIN_141,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[14]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(14));
-
--- Location: PIN_85,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[15]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(15));
-
--- Location: PIN_112,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[16]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(16));
-
--- Location: PIN_30,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[17]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(17));
-
--- Location: PIN_134,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[18]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(18));
-
--- Location: PIN_32,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[19]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(19));
-
--- Location: PIN_4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[20]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(20));
-
--- Location: PIN_53,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[21]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(21));
-
--- Location: PIN_80,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[22]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(22));
-
--- Location: PIN_5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[23]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(23));
-
--- Location: PIN_120,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[24]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(24));
-
--- Location: PIN_124,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[25]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(25));
-
--- Location: PIN_113,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[26]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(26));
-
--- Location: PIN_98,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[27]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(27));
-
--- Location: PIN_45,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[28]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(28));
-
--- Location: PIN_67,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[29]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(29));
-
--- Location: PIN_127,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[30]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(30));
-
--- Location: PIN_105,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\input[31]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_input(31));
-
--- Location: PIN_97,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => next_state(0),
-	oe => VCC,
-	padio => ww_output(0));
-
--- Location: PIN_95,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => next_state(1),
-	oe => VCC,
-	padio => ww_output(1));
-
--- Location: PIN_50,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_output(2));
-
--- Location: PIN_132,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[3]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_output(3));
-
--- Location: PIN_143,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[4]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_output(4));
+	padio => ww_clk);
 
 -- Location: PIN_94,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[5]~I\ : maxv_io
+\dout[0]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => state(0),
+	datain => \dout[0]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(5));
+	padio => ww_dout(0));
 
--- Location: PIN_93,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[6]~I\ : maxv_io
+-- Location: PIN_120,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[1]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => state(1),
+	datain => \dout[1]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(6));
+	padio => ww_dout(1));
 
--- Location: PIN_123,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[7]~I\ : maxv_io
+-- Location: PIN_108,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[2]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \dout[2]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(7));
+	padio => ww_dout(2));
 
--- Location: PIN_87,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[8]~I\ : maxv_io
+-- Location: PIN_107,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[3]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \dout[3]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(8));
+	padio => ww_dout(3));
 
--- Location: PIN_22,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[9]~I\ : maxv_io
+-- Location: PIN_59,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[4]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \dout[4]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(9));
+	padio => ww_dout(4));
 
--- Location: PIN_8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[10]~I\ : maxv_io
+-- Location: PIN_52,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[5]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \dout[5]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(10));
+	padio => ww_dout(5));
 
--- Location: PIN_6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[11]~I\ : maxv_io
+-- Location: PIN_42,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[6]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \dout[6]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(11));
+	padio => ww_dout(6));
 
--- Location: PIN_125,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[12]~I\ : maxv_io
+-- Location: PIN_50,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[7]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \dout[7]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(12));
+	padio => ww_dout(7));
 
--- Location: PIN_117,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[13]~I\ : maxv_io
+-- Location: PIN_139,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[8]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \dout[8]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(13));
+	padio => ww_dout(8));
 
--- Location: PIN_61,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[14]~I\ : maxv_io
+-- Location: PIN_131,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[9]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \dout[9]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(14));
+	padio => ww_dout(9));
 
--- Location: PIN_49,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\output[15]~I\ : maxv_io
+-- Location: PIN_130,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[10]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	datain => GND,
+	datain => \dout[10]$latch~combout\,
 	oe => VCC,
-	padio => ww_output(15));
+	padio => ww_dout(10));
+
+-- Location: PIN_122,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[11]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => \dout[11]$latch~combout\,
+	oe => VCC,
+	padio => ww_dout(11));
+
+-- Location: PIN_124,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[12]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => \dout[12]$latch~combout\,
+	oe => VCC,
+	padio => ww_dout(12));
+
+-- Location: PIN_27,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[13]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => \dout[13]$latch~combout\,
+	oe => VCC,
+	padio => ww_dout(13));
+
+-- Location: PIN_79,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[14]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => \dout[14]$latch~combout\,
+	oe => VCC,
+	padio => ww_dout(14));
+
+-- Location: PIN_104,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\dout[15]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => \dout[15]$latch~combout\,
+	oe => VCC,
+	padio => ww_dout(15));
 END structure;
 
 

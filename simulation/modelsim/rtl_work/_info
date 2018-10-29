@@ -8,42 +8,44 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/ritesh/Desktop/github/IITB_RISC/simulation/modelsim
-Emux_2_1
-Z1 w1540820530
-Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Eregister16
+Z1 w1540839805
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z4 8/home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd
-Z5 F/home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd
+Z5 8/home/ritesh/Desktop/github/IITB_RISC/register16.vhd
+Z6 F/home/ritesh/Desktop/github/IITB_RISC/register16.vhd
 l0
-L7
-VCOPFYKP45E2bnV<kU2A3U2
-!s100 zAm8a=^B=fRKo<Pd7K>Gz1
-Z6 OV;C;10.4d;61
+L8
+VZDi=02[N2m8?1Q__B=jOH3
+!s100 GnF5JP4?1RZ7cEok;9onU0
+Z7 OV;C;10.4d;61
 31
-Z7 !s110 1540820688
+Z8 !s110 1540839849
 !i10b 1
-Z8 !s108 1540820688.000000
-Z9 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd|
-Z10 !s107 /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd|
+Z9 !s108 1540839849.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/register16.vhd|
+Z11 !s107 /home/ritesh/Desktop/github/IITB_RISC/register16.vhd|
 !i113 1
-Z11 o-93 -work work
-Z12 tExplicit 1
-Astruct
+Z12 o-93 -work work
+Z13 tExplicit 1
+Aseqnt
 R2
 R3
-DEx4 work 7 mux_2_1 0 22 COPFYKP45E2bnV<kU2A3U2
-l15
-L13
-VP7H<_=o`i_9R5NhB]AE<]1
-!s100 [3OUDLoK>iG6LH6o6?FN;0
-R6
-31
+R4
+DEx4 work 10 register16 0 22 ZDi=02[N2m8?1Q__B=jOH3
+l18
+L16
+Vj1[8jH^g`ASo=H79iQ2jR3
+!s100 EmH6BDb>3SFncNII[b@Un2
 R7
-!i10b 1
+31
 R8
+!i10b 1
 R9
 R10
-!i113 1
 R11
+!i113 1
 R12
+R13

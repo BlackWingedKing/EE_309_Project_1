@@ -1,5 +1,5 @@
 Analysis & Synthesis report for iitb_risc
-Tue Oct 30 00:01:21 2018
+Tue Oct 30 00:48:20 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -13,23 +13,9 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Port Connectivity Checks: "mux_8_1:m_8"
- 12. Port Connectivity Checks: "mux_4_1:m_7"
- 13. Port Connectivity Checks: "mux_4_1:m_3"
- 14. Port Connectivity Checks: "mux_4_1:m_2"
- 15. Port Connectivity Checks: "mux_4_1:m_1"
- 16. Port Connectivity Checks: "priority_encoder:p_1"
- 17. Port Connectivity Checks: "alu:alu_1|adder:opr1|full_adder:a1"
- 18. Port Connectivity Checks: "alu:alu_1"
- 19. Port Connectivity Checks: "register16:b"
- 20. Port Connectivity Checks: "register16:a"
- 21. Port Connectivity Checks: "register16:mdr"
- 22. Port Connectivity Checks: "ir:ir_1"
- 23. Port Connectivity Checks: "memory:mem"
- 24. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Analysis & Synthesis Messages
 
 
 
@@ -56,13 +42,13 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Oct 30 00:01:21 2018       ;
+; Analysis & Synthesis Status ; Successful - Tue Oct 30 00:48:20 2018       ;
 ; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name               ; iitb_risc                                   ;
-; Top-level Entity Name       ; iitb_risc                                   ;
+; Top-level Entity Name       ; register16                                  ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 4                                           ;
-; Total pins                  ; 50                                          ;
+; Total logic elements        ; 16                                          ;
+; Total pins                  ; 34                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -74,7 +60,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; 5M1270ZT144C5      ;                    ;
-; Top-level entity name                                                      ; iitb_risc          ; iitb_risc          ;
+; Top-level entity name                                                      ; register16         ; iitb_risc          ;
 ; Family name                                                                ; MAX V              ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -151,36 +137,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                      ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
-; register1.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/register1.vhd        ;         ;
-; registerfile.vhd                 ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/registerfile.vhd     ;         ;
-; and_1_16.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd         ;         ;
-; mux_8_1.vhd                      ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd          ;         ;
-; mux_4_1.vhd                      ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd          ;         ;
-; mux_2_1.vhd                      ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd          ;         ;
-; memory.vhd                       ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/memory.vhd           ;         ;
-; priority_encoder.vhd             ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd ;         ;
-; leftshift.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd        ;         ;
-; subtractor.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd       ;         ;
-; full_sub.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd         ;         ;
-; adder.vhd                        ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/adder.vhd            ;         ;
-; full_adder.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd       ;         ;
-; iitb_risc.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd        ;         ;
-; nand16.vhd                       ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/nand16.vhd           ;         ;
-; signextender.vhd                 ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/signextender.vhd     ;         ;
-; wrapper7.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd         ;         ;
-; wrapper10.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd        ;         ;
-; register16.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/register16.vhd       ;         ;
-; alu.vhd                          ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/alu.vhd              ;         ;
-; ir.vhd                           ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/ir.vhd               ;         ;
-; mux3_2_1.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd         ;         ;
-; mux3_4_1.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd         ;         ;
-; wrapper13.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd        ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
+; register16.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/register16.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -188,32 +151,32 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 4     ;
-;     -- Combinational with no register       ; 0     ;
-;     -- Register only                        ; 2     ;
-;     -- Combinational with a register        ; 2     ;
+; Total logic elements                        ; 16    ;
+;     -- Combinational with no register       ; 16    ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 1     ;
-;     -- 3 input functions                    ; 1     ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 16    ;
 ;     -- 2 input functions                    ; 0     ;
 ;     -- 1 input functions                    ; 0     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 4     ;
+;     -- normal mode                          ; 16    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
 ;     -- synchronous clear/load mode          ; 0     ;
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 4     ;
-; I/O pins                                    ; 50    ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 4     ;
-; Total fan-out                               ; 17    ;
-; Average fan-out                             ; 0.31  ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 34    ;
+; Maximum fan-out node                        ; en    ;
+; Maximum fan-out                             ; 16    ;
+; Total fan-out                               ; 64    ;
+; Average fan-out                             ; 1.28  ;
 +---------------------------------------------+-------+
 
 
@@ -222,32 +185,35 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-; |iitb_risc                 ; 4 (4)       ; 4            ; 0          ; 50   ; 0            ; 0 (0)        ; 2 (2)             ; 2 (2)            ; 0 (0)           ; 0 (0)      ; |iitb_risc          ; iitb_risc   ; work         ;
+; |register16                ; 16 (16)     ; 0            ; 0          ; 34   ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |register16         ; register16  ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; next_state[3,4]                       ; Merged with next_state[2]              ;
-; state[3,4]                            ; Merged with state[2]                   ;
-; next_state[2]                         ; Stuck at GND due to stuck port data_in ;
-; state[2]                              ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 6 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; next_state[2] ; Stuck at GND              ; state[2]                               ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; dout[0]$latch                                       ; en                  ; yes                    ;
+; dout[1]$latch                                       ; en                  ; yes                    ;
+; dout[2]$latch                                       ; en                  ; yes                    ;
+; dout[3]$latch                                       ; en                  ; yes                    ;
+; dout[4]$latch                                       ; en                  ; yes                    ;
+; dout[5]$latch                                       ; en                  ; yes                    ;
+; dout[6]$latch                                       ; en                  ; yes                    ;
+; dout[7]$latch                                       ; en                  ; yes                    ;
+; dout[8]$latch                                       ; en                  ; yes                    ;
+; dout[9]$latch                                       ; en                  ; yes                    ;
+; dout[10]$latch                                      ; en                  ; yes                    ;
+; dout[11]$latch                                      ; en                  ; yes                    ;
+; dout[12]$latch                                      ; en                  ; yes                    ;
+; dout[13]$latch                                      ; en                  ; yes                    ;
+; dout[14]$latch                                      ; en                  ; yes                    ;
+; dout[15]$latch                                      ; en                  ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -255,7 +221,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 4     ;
+; Total registers                              ; 0     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -265,138 +231,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "mux_8_1:m_8"     ;
-+-----------+-------+----------+--------------+
-; Port      ; Type  ; Severity ; Details      ;
-+-----------+-------+----------+--------------+
-; a6[2..0]  ; Input ; Info     ; Stuck at VCC ;
-; a6[15..3] ; Input ; Info     ; Stuck at GND ;
-; a3        ; Input ; Info     ; Stuck at GND ;
-; a2[15..1] ; Input ; Info     ; Stuck at GND ;
-; a2[0]     ; Input ; Info     ; Stuck at VCC ;
-; a1[15..2] ; Input ; Info     ; Stuck at GND ;
-; a1[1]     ; Input ; Info     ; Stuck at VCC ;
-; a1[0]     ; Input ; Info     ; Stuck at GND ;
-+-----------+-------+----------+--------------+
-
-
-+-----------------------------------------+
-; Port Connectivity Checks: "mux_4_1:m_7" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; a3   ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
-
-
-+-----------------------------------------+
-; Port Connectivity Checks: "mux_4_1:m_3" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; a3   ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
-
-
-+-----------------------------------------+
-; Port Connectivity Checks: "mux_4_1:m_2" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; a3   ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
-
-
-+-----------------------------------------+
-; Port Connectivity Checks: "mux_4_1:m_1" ;
-+------+-------+----------+---------------+
-; Port ; Type  ; Severity ; Details       ;
-+------+-------+----------+---------------+
-; a3   ; Input ; Info     ; Stuck at GND  ;
-+------+-------+----------+---------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "priority_encoder:p_1"                                                               ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------+
-; Port Connectivity Checks: "alu:alu_1|adder:opr1|full_adder:a1" ;
-+------+-------+----------+--------------------------------------+
-; Port ; Type  ; Severity ; Details                              ;
-+------+-------+----------+--------------------------------------+
-; cin  ; Input ; Info     ; Stuck at GND                         ;
-+------+-------+----------+--------------------------------------+
-
-
-+-----------------------------------------+
-; Port Connectivity Checks: "alu:alu_1"   ;
-+-------+-------+----------+--------------+
-; Port  ; Type  ; Severity ; Details      ;
-+-------+-------+----------+--------------+
-; cin   ; Input ; Info     ; Stuck at GND ;
-; reset ; Input ; Info     ; Stuck at GND ;
-+-------+-------+----------+--------------+
-
-
-+------------------------------------------+
-; Port Connectivity Checks: "register16:b" ;
-+------+-------+----------+----------------+
-; Port ; Type  ; Severity ; Details        ;
-+------+-------+----------+----------------+
-; en   ; Input ; Info     ; Stuck at VCC   ;
-+------+-------+----------+----------------+
-
-
-+------------------------------------------+
-; Port Connectivity Checks: "register16:a" ;
-+------+-------+----------+----------------+
-; Port ; Type  ; Severity ; Details        ;
-+------+-------+----------+----------------+
-; en   ; Input ; Info     ; Stuck at VCC   ;
-+------+-------+----------+----------------+
-
-
-+--------------------------------------------+
-; Port Connectivity Checks: "register16:mdr" ;
-+------+-------+----------+------------------+
-; Port ; Type  ; Severity ; Details          ;
-+------+-------+----------+------------------+
-; en   ; Input ; Info     ; Stuck at VCC     ;
-+------+-------+----------+------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ir:ir_1"                                                                              ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; opcode ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------+
-; Port Connectivity Checks: "memory:mem" ;
-+------+-------+----------+--------------+
-; Port ; Type  ; Severity ; Details      ;
-+------+-------+----------+--------------+
-; init ; Input ; Info     ; Stuck at GND ;
-+------+-------+----------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Tue Oct 30 00:01:09 2018
+    Info: Processing started: Tue Oct 30 00:48:08 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iitb_risc -c iitb_risc
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file register1.vhd
@@ -483,129 +324,34 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux3_4_
 Info (12021): Found 2 design units, including 1 entities, in source file wrapper13.vhd
     Info (12022): Found design unit 1: wrapper13-arith File: /home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd Line: 14
     Info (12023): Found entity 1: wrapper13 File: /home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd Line: 6
-Info (12127): Elaborating entity "iitb_risc" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at iitb_risc.vhd(173): object "opcode" assigned a value but never read File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 173
-Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(244): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 244
-Warning (10492): VHDL Process Statement warning at iitb_risc.vhd(245): signal "next_state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 245
-Warning (10873): Using initial value X (don't care) for net "output[15..10]" at iitb_risc.vhd(11) File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-Info (12128): Elaborating entity "memory" for hierarchy "memory:mem" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 187
-Info (12128): Elaborating entity "ir" for hierarchy "ir:ir_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 190
-Info (12128): Elaborating entity "register16" for hierarchy "ir:ir_1|register16:r_1" File: /home/ritesh/Desktop/github/IITB_RISC/ir.vhd Line: 32
-Info (12128): Elaborating entity "register1" for hierarchy "register1:zero_flag" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 201
-Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 205
-Info (12128): Elaborating entity "adder" for hierarchy "alu:alu_1|adder:opr1" File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 45
-Info (12128): Elaborating entity "full_adder" for hierarchy "alu:alu_1|adder:opr1|full_adder:a1" File: /home/ritesh/Desktop/github/IITB_RISC/adder.vhd Line: 25
-Info (12128): Elaborating entity "subtractor" for hierarchy "alu:alu_1|subtractor:opr2" File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 46
-Info (12128): Elaborating entity "full_sub" for hierarchy "alu:alu_1|subtractor:opr2|full_sub:s1" File: /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd Line: 26
-Info (12128): Elaborating entity "nand16" for hierarchy "alu:alu_1|nand16:opr3" File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 47
-Info (12128): Elaborating entity "and_1_16" for hierarchy "alu:alu_1|and_1_16:opr4" File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 51
-Info (12128): Elaborating entity "wrapper10" for hierarchy "wrapper10:e_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 208
-Info (12128): Elaborating entity "signextender" for hierarchy "signextender:e_2" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 209
-Info (12128): Elaborating entity "wrapper7" for hierarchy "wrapper7:e_3" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 210
-Info (12128): Elaborating entity "leftshift" for hierarchy "leftshift:l_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 211
-Info (12128): Elaborating entity "wrapper13" for hierarchy "wrapper13:e_4" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 212
-Info (12128): Elaborating entity "registerfile" for hierarchy "registerfile:reg_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 215
-Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:p_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 218
-Warning (10631): VHDL Process Statement warning at priority_encoder.vhd(18): inferring latch(es) for signal or variable "outp", which holds its previous value in one or more paths through the process File: /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd Line: 18
-Info (10041): Inferred latch for "outp[0]" at priority_encoder.vhd(18) File: /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd Line: 18
-Info (10041): Inferred latch for "outp[1]" at priority_encoder.vhd(18) File: /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd Line: 18
-Info (10041): Inferred latch for "outp[2]" at priority_encoder.vhd(18) File: /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd Line: 18
-Info (12128): Elaborating entity "mux_4_1" for hierarchy "mux_4_1:m_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 220
-Warning (10492): VHDL Process Statement warning at mux_4_1.vhd(20): signal "a3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 20
-Warning (10492): VHDL Process Statement warning at mux_4_1.vhd(22): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 22
-Warning (10492): VHDL Process Statement warning at mux_4_1.vhd(24): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 24
-Warning (10492): VHDL Process Statement warning at mux_4_1.vhd(26): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 26
-Info (12128): Elaborating entity "mux3_2_1" for hierarchy "mux3_2_1:m_4" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 223
-Warning (10492): VHDL Process Statement warning at mux3_2_1.vhd(20): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd Line: 20
-Warning (10492): VHDL Process Statement warning at mux3_2_1.vhd(22): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd Line: 22
-Info (12128): Elaborating entity "mux3_4_1" for hierarchy "mux3_4_1:m_5" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 224
-Warning (10492): VHDL Process Statement warning at mux3_4_1.vhd(20): signal "a3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd Line: 20
-Warning (10492): VHDL Process Statement warning at mux3_4_1.vhd(22): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd Line: 22
-Warning (10492): VHDL Process Statement warning at mux3_4_1.vhd(24): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd Line: 24
-Warning (10492): VHDL Process Statement warning at mux3_4_1.vhd(26): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd Line: 26
-Info (12128): Elaborating entity "mux_2_1" for hierarchy "mux_2_1:m_6" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 225
-Warning (10492): VHDL Process Statement warning at mux_2_1.vhd(20): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd Line: 20
-Warning (10492): VHDL Process Statement warning at mux_2_1.vhd(22): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd Line: 22
-Info (12128): Elaborating entity "mux_8_1" for hierarchy "mux_8_1:m_8" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 227
-Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(20): signal "a7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 20
-Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(22): signal "a6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 22
-Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(24): signal "a5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 24
-Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(26): signal "a4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 26
-Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(28): signal "a3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 28
-Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(30): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 30
-Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(32): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 32
-Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(34): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 34
-Warning (10631): VHDL Process Statement warning at mux_8_1.vhd(16): inferring latch(es) for signal or variable "outp", which holds its previous value in one or more paths through the process File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[0]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[1]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[2]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[3]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[4]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[5]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[6]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[7]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[8]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[9]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[10]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[11]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[12]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[13]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[14]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Info (10041): Inferred latch for "outp[15]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "output[2]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[3]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[4]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[7]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[8]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[9]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[10]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[11]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[12]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[13]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[14]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-    Warning (13410): Pin "output[15]" is stuck at GND File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 11
-Warning (21074): Design contains 32 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "input[0]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[1]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[2]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[3]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[4]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[5]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[6]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[7]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[8]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[9]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[10]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[11]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[12]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[13]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[14]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[15]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[16]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[17]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[18]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[19]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[20]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[21]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[22]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[23]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[24]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[25]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[26]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[27]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[28]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[29]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[30]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-    Warning (15610): No output dependent on input pin "input[31]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-Info (21057): Implemented 54 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 34 input pins
+Info (12127): Elaborating entity "register16" for the top level hierarchy
+Warning (10631): VHDL Process Statement warning at register16.vhd(20): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[0]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[1]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[2]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[3]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[4]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[5]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[6]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[7]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[8]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[9]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[10]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[11]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[12]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[13]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[14]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (10041): Inferred latch for "dout[15]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 10
+Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 4 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 73 warnings
-    Info: Peak virtual memory: 1229 megabytes
-    Info: Processing ended: Tue Oct 30 00:01:21 2018
+    Info (21061): Implemented 16 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 1233 megabytes
+    Info: Processing ended: Tue Oct 30 00:48:20 2018
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:29
 
 

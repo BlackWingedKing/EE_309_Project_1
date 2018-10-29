@@ -296,7 +296,9 @@ begin
 			pcwr <= '0';
 			irwr <= '0';
 			
-			if(opcode <= "")
+--			if(opcode <= "") then
+--			end if 
+		
 		end if;
 		
 		

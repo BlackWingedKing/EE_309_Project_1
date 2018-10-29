@@ -17,13 +17,13 @@ architecture seqnt of register16 is
 
 begin
 	
-	process(clk)
+	process(en,din)
 	begin 
-		if(clk'event and clk = '1') then
+--		if(clk'event and clk = '1') then
 			if en = '1' then
 				dout <= din;
 			end if;
-		end if;
+--		end if;
 	end process;
 
 end seqnt;
