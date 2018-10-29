@@ -15,17 +15,37 @@ end entity;
 
 architecture behave of iitb_risc is 
  -- Component Declarations	
+	component ir is
+--input is 16 bit instruction
+	port(clk: in std_logic;
+		  irwrite: in std_logic;
+		  inp: in std_logic_vector(15 downto 0);
+		  opcode: out std_logic_vector(3 downto 0); -- 12-15
+		  immediate6: out std_logic_vector(5 downto 0); --0-5
+		  ra: out std_logic_vector(2 downto 0); --9-11
+		  rb: out std_logic_vector(2 downto 0); --6-8
+		  rc: out std_logic_vector(2 downto 0); --3-5
+		  cz: out std_logic_vector(1 downto 0); --0-1
+		  immediate9: out std_logic_vector(8 downto 0); --0-8
+		  immediate8: out std_logic_vector(7 downto 0) --0-7
+		  );
+
+	end component;
+	
 	component priority_encoder is
 		port(inp : in std_logic_vector (7 downto 0);
 		  outp: out std_logic_vector(2 downto 0);
 		  zero: out std_logic);
 	end component;
 	
+	-- note here I can keep an enable for alu and make it 
+	-- it execute only on the rising edge if things fail need to try that
 	component alu is
-		port(inp1,inp2: in std_logic_vector(15 downto 0);
-		  enable, reset: in std_logic;
+	port(inp1,inp2: in std_logic_vector(15 downto 0);
+		  cin, reset: in std_logic;
+		  sel: in std_logic_vector(1 downto 0);
 		  outp: out std_logic_vector(15 downto 0);
-		  carry: out std_logic;
+		  cout: out std_logic;
 		  zero: out std_logic);
 	end component;
 	
@@ -111,21 +131,30 @@ signal aluOp, aluSrcA, mReg, rDst: std_logic_vector(1 downto 0);
 signal aluSrcB: std_logic_vector(2 downto 0);
 
 -- define signals for registers
--- registers are pc,a,b,mdr,alu_out
-signal pc_en,a_en,b_en,mdr_en,alu_out_en: std_logic;
-signal pc_in,pc_out,a_in,a_out,b_in,b_out,mdr_in,mdr_out,alu_out_in,alu_out_out : std_logic_vector(15 downto 0);
-
-
+-- registers are pc,a,b,mdr,t1 (it is the alu_out register)
+signal pc_en,a_en,b_en,mdr_en,t1_en,z_en,c_en: std_logic;
+signal z_flag,c_flag: std_logic; -- here c_flag and z_flag are carry and zero flags
+signal a_in,d_in,d_out: std_logic_vector(15 downto 0);
+signal pc_in,pc_out,a_in,a_out,b_in,b_out,mdr_in,mdr_out,t1_in,t1_out : std_logic_vector(15 downto 0);
+signal carry_in, carry, zero: std_logic;
+signal alu_inp1, alu_inp2, alu_out: std_logic_vector(15 downto 0);
+signal 
 signal state, next_state : std_logic_vector(4 downto 0) := "00000";
 
 begin 
 --- register declaration
-r_1: register16 port map(pc_in,pc_en,clk,pc_out);
-r_2: register16 port map(a_in,a_en,clk,a_out);
-r_3: register16 port map(b_in,b_en,clk,b_out);
-r_4: register16 port map(mdr_in,mdr_en,clk,mdr_out);
-r_5: register16 port map(alu_out_in,alu_out_en,clk,alu_out_out);
+pc: register16 port map(pc_in,pc_en,clk,pc_out);
+a: register16 port map(a_in,a_en,clk,a_out);
+b: register16 port map(b_in,b_en,clk,b_out);
+mdr: register16 port map(mdr_in,mdr_en,clk,mdr_out);
+t1: register16 port map(t1_in,t1_en,clk,t1_out);
 
+z_flag: register1 port map(zero,z_en,clk,z_flag);
+c_flag: register1 port map(carry,c_en,clk,c_flag);
+
+-- memory and alu declaration
+mem: memory port map(clk,memRd,memWr,a_in,d_in,d_out);
+alu: alu port map(alu_inp1, alu_inp2, carry_in, reset, alu_sel, alu_out, carry, zero);
 
 process (input,reset, clk)
 begin
@@ -139,6 +168,6 @@ begin
 			end if;
 		end if;
 	end if;
-	
+
 end process;
 end behave;
