@@ -8,7 +8,7 @@ entity iitb_risc is
 
 	port(clk, extmeminit: in std_logic;
 		input: in std_logic_vector(31 downto 0);
-		output: out std_logic_vector(15 downto 0)
+		output: out std_logic_vector(9 downto 0)
 		);
 		  
 end entity;
@@ -33,7 +33,8 @@ architecture behave of iitb_risc is
 	end component;
 	
 	component priority_encoder is
-		port(inp : in std_logic_vector (7 downto 0);
+	port(clk : in std_logic;
+		  inp : in std_logic_vector (7 downto 0);
 		  outp: out std_logic_vector(2 downto 0);
 		  zero: out std_logic);
 	end component;
@@ -113,6 +114,13 @@ architecture behave of iitb_risc is
 		  sel: in std_logic_vector(2 downto 0);
         outp: out std_logic_vector(15 downto 0));
 	end component;
+	
+	component mux8_8_1 is
+   port(a7,a6,a5,a4,a3,a2,a1,a0: in std_logic_vector(7 downto 0);
+		  sel: in std_logic_vector(2 downto 0);
+        outp: out std_logic_vector(7 downto 0));
+   end component;
+	
 
 	component mux3_2_1 is
    port(a1,a0: in std_logic_vector(2 downto 0);
@@ -162,7 +170,7 @@ signal alusrcb,regs_b,rf_in: std_logic_vector(2 downto 0);
 
 -- define signals for registers
 -- registers are pc,a,b,mdr,t1 (it is the alu_out register)
-signal a_en,b_en,mdr_en,alu_en, alud: std_logic;
+signal a_en,b_en,mdr_en,alu_en, alud, lol: std_logic;
 signal z_flag,c_flag: std_logic; -- here c_flag and z_flag are carry and zero flags
 signal add_in,d_in,d_out: std_logic_vector(15 downto 0);
 signal pc_in,pc_out,a_in,a_out,b_out,mdr_in,mdr_out,t1_in,t1_out: std_logic_vector(15 downto 0);
@@ -173,8 +181,8 @@ signal cz: std_logic_vector(1 downto 0);
 signal opcode: std_logic_vector(3 downto 0);
 signal immediate6: std_logic_vector(5 downto 0); --0-5
 signal ra,rb,rc,pr_en: std_logic_vector(2 downto 0); --9-11
-signal immediate9: std_logic_vector(8 downto 0); --0-8
-signal immediate8: std_logic_vector(7 downto 0); --0-7
+signal immediate9,and8: std_logic_vector(8 downto 0); --0-8
+signal immediate8,priorityin: std_logic_vector(7 downto 0); --0-7
 signal imm_6_16,sign_6_16,imm_9_16,lfimm9,mreg_in,r_outa,r_outb: std_logic_vector(15 downto 0);
 signal extadd_in,extdata_in,pr_3_16:std_logic_vector(15 downto 0);
 begin 
@@ -189,7 +197,7 @@ mem: memory port map(clk,'0',memrd,memwr,add_in,d_in,d_out);
 -- ir block
 ir_1: ir port map(clk,irwr,d_out,opcode,immediate6,ra,rb,rc,cz,immediate9,immediate8);
 
---- register declarations
+--- register declarations12
 mdr: register16 port map(d_out,mdr_en,clk,mdr_out); -- mdr saves the data from do
 pc: register16 port map(pc_in,pcwr,clk,pc_out);
 a: register16 port map(a_in,a_en,clk,a_out);
@@ -215,7 +223,7 @@ e_4: wrapper13 port map(pr_en,pr_3_16);
 reg_1: registerfile port map(clk,mreg_in,ra, regs_b,rf_in,regwr,r_outa,r_outb);
 
 -- priority encoder
-p_1: priority_encoder port map(immediate8,pr_en);
+p_1: priority_encoder port map(clk,priorityin,pr_en,lol);
 -- data path starts
 m_1: mux_4_1 port map(X"0000",extadd_in,pc_out,t1_out,iord,add_in);
 m_2: mux_4_1 port map(x"0000",extdata_in,b_out,a_out,dcon,d_in);
@@ -226,11 +234,12 @@ m_6: mux_2_1 port map(t1_out,r_outa,rftoa,a_in);
 m_7: mux_4_1 port map(x"0000",imm_6_16,a_out,pc_out,alusrca,alu_inp1);
 m_8: mux_8_1 port map(pr_3_16,x"0007",imm_6_16,sign_6_16,x"0000",x"0001",x"0002",b_out,alusrcb,alu_inp2);
 m_9: mux_2_1 port map(t1_out,alu_out,pcsrc,pc_in);
-
+m_10:mux8_8_1 port map("01111111","10111111","11011111","11101111","11110111","11111011","11111101","11111110",pr_en,and8);
 -- registers a,b,mdr are always enabled
 a_en <= '1';
 b_en <= '1';
 mdr_en <= '1';
+
 process (clk)
 	begin
 		if (clk'event and clk = '1') then
@@ -241,10 +250,12 @@ end process;
 process(input,extmeminit,clk)
 begin
 	-- output is the current and next state
-	output(9 downto 5) <= state; 
-	output(4 downto 0) <= next_state;
+
 
    if(clk'event and clk = '1') then
+		output(9 downto 5) <= state; 
+		output(4 downto 0) <= next_state;
+		
 		if (state = "00000") then
 			memrd <= '0';
 			memwr <= '1';
@@ -262,6 +273,7 @@ begin
 			rdst <= "00";
 			rftoa <= '0';
 			alud <= '0';
+			
 			if (extmeminit = '0') then
 				next_state <= "00001";
 			else
@@ -285,6 +297,7 @@ begin
 			rdst <= "00";
 			rftoa <= '0';
 			alud <= '1';
+			priorityin<= immediate8;
 			
 			next_state <= "00010";
 		
@@ -296,9 +309,190 @@ begin
 			pcwr <= '0';
 			irwr <= '0';
 			
---			if(opcode <= "") then
---			end if 
+			if(opcode = "0000") then                           --ADD
+				next_state <= "01010";
+			elsif (opcode = "0010") then                     --NAND
+				next_state <= "01001";                       
+			elsif (opcode = "0001") then                     --ADI
+				next_state <= "00111";
+			elsif (opcode = "1000" or opcode = "1001") then  --JAL/ JLR                       CHECK THE "OR" USED IN THIS LINE
+				next_state <= "01110";
+			-- LHI
+			elsif(opcode = "0011") then
+				next_state <= "01101";
+			-- LW
+			elsif(opcode = "0100") then
+				next_state <= "00011";
+			-- SW
+			elsif( opcode= "0101") then
+				next_state <= "00011";
+			-- LM
+			elsif(opcode = "0110") then
+				next_state <= "10010";
+			-- SM
+			elsif(opcode = "0111") then
+				next_state <= "10010";
+			-- BEQ
+			elsif(opcode = "1100") then
+				next_state <= "01100"; 
+			end if; 		
+		 
 		
+		elsif (state = "01010") then                              -- this is ADD 
+			alud <= '0';
+			alusrca <= "01";
+			alusrcb <= "000";
+			aluop <= "00";
+
+			next_state <= "01011";
+
+		elsif (state = "01001") then
+			alud <= '0';
+			alusrca <= "01";
+			alusrcb <= "000";
+			aluop <= "10";
+
+			next_state <= "01011";
+
+		elsif (state = "01011") then
+			memtoreg <= "00";
+			regwr <= '1';
+			rdst <= "00";
+
+			next_state <= "00001";
+
+		elsif (state = "00111") then                            -- this is ADI
+			alusrca <= "01";
+			alusrcb <= "100";
+			aluop <= "00";
+
+			next_state <= "01000";
+
+		elsif (state = "01000") then
+			regwr <= '1';
+			memtoreg <= "00";
+			rdst <= "01";
+
+			next_state <= "00001";	
+
+		elsif (state = "01110") then
+			alusrca <= "00";
+			alusrcb <= "011";
+			aluop <= "00";
+
+			next_state <= "01111";
+
+		elsif (state = "01111") then
+			rdst <= "10";
+			regwr <= '1';
+			memtoreg <= "00";
+
+			if (opcode = "1000") then
+				next_state <= "10000";
+			elsif (opcode = "1001") then
+				next_state <= "10001";
+			end if;
+		
+		elsif (state = "10000") then
+			alusrca <= "00";
+			alusrcb <= "101";
+			pcsrc <= '0';
+			pcwr <= '1';					
+            regwr<='0';
+
+			next_state <= "00001";
+
+		elsif (state = "10000") then
+			regwr <= '0';
+			alusrca <= "11";
+			alusrcb <= "000";
+			pcsrc <= '0';
+			pcwr <= '1';					
+
+			next_state <= "00001";	
+
+		elsif (state = "01101") then
+			memtoreg <= "10";
+			regwr <= '1';
+			rdst <= "10";
+			next_state <= "00001";
+		elsif (state = "00011") then
+			alusrca <= "10";
+			alusrcb <= "000";
+			aluop <= "00";
+			-- LW
+			if(opcode = "0100") then
+				next_state <= "00100";
+			-- SW
+			elsif( opcode= "0101") then
+				next_state <= "00101";
+		   end if;
+		elsif (state = "10010") then
+			alusrca <= "01";
+			alusrcb <= "111";
+			aluop <= "00";
+			-- LM
+			if(opcode = "0110") then
+				next_state <= "10011";
+			-- SM
+			elsif(opcode = "0111") then
+				next_state <= "10100";
+		   end if;
+		elsif (state = "01100") then
+			alusrca <= "01";
+			alusrcb <= "000";
+			aluop <= "01";
+			pcwr <= z_flag;
+			pcsrc <= '1';
+			next_state <= "00001";
+		elsif (state = "00100") then
+			memrd <= '1';
+			iord <= "01";
+			next_state <= "00110";
+		elsif (state = "00110") then
+			regwr <= '1';
+			iord <= "00";
+			memtoreg <= "01";
+			rdst <= "10";
+			memrd <= '0';
+			next_state <= "00001";
+		elsif (state = "00101") then
+			memwr <= '1';
+			dcon <= "00";
+			iord <= "01";
+			next_state <= "00001";
+		elsif (state = "10011") then
+			iord <= "01";
+			memrd <= '1';
+			next_state <= "10101";
+		elsif (state = "10101") then
+			regwr <= '1';
+			memtoreg <= "01";
+			rdst <= "11";
+			memrd <= '0';
+			iord <= "00";
+			next_state <= "10111";
+		elsif (state = "10100") then
+			rfb <= '1';
+			next_state <= "10110";
+		elsif (state = "10110") then
+			dcon <= "01";
+			memwr <= '1';
+			iord <= "01";
+			next_state <= "10111";
+		
+		elsif (state = "10111") then-- couldn't understand
+			priorityin<= priorityin and and8;
+			if(priorityin = "00000000") then
+			   next_state <= "00001";
+			else
+			   next_state<="11000";
+		   end if;
+		elsif (state = "11000") then
+			iord <="00";
+			memwr <='0';
+			regwr <='0';
+			next_state<= "10010";
 		end if;
 		
 		

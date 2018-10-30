@@ -81,3 +81,4 @@ set_global_assignment -name VHDL_FILE ir.vhd
 set_global_assignment -name VHDL_FILE mux3_2_1.vhd
 set_global_assignment -name VHDL_FILE mux3_4_1.vhd
 set_global_assignment -name VHDL_FILE wrapper13.vhd
+set_global_assignment -name VHDL_FILE mux8_8_1.vhd

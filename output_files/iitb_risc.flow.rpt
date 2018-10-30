@@ -1,5 +1,5 @@
 Flow report for iitb_risc
-Tue Oct 30 00:48:26 2018
+Wed Oct 31 00:54:09 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ agreement for further details.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +-----------------------+---------------------------------------------+
-; Flow Status           ; Successful - Tue Oct 30 00:48:26 2018       ;
+; Flow Status           ; Successful - Wed Oct 31 00:54:09 2018       ;
 ; Quartus Prime Version ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name         ; iitb_risc                                   ;
 ; Top-level Entity Name ; register16                                  ;
@@ -60,7 +60,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/30/2018 00:48:08 ;
+; Start date & time ; 10/31/2018 00:53:52 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; iitb_risc           ;
 +-------------------+---------------------+
@@ -71,7 +71,7 @@ agreement for further details.
 +-------------------------------+-----------------------------+---------------+-------------+----------------+
 ; Assignment Name               ; Value                       ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------+-----------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID         ; 0.154084068822780           ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID         ; 0.154092743228420           ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT        ; Vhdl                        ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL           ; ModelSim-Altera (VHDL)      ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                ; 1 ps                        ; --            ; --          ; eda_simulation ;
@@ -88,11 +88,11 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 1233 MB             ; 00:00:29                           ;
-; Fitter                    ; 00:00:01     ; 1.0                     ; 1273 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 1224 MB             ; 00:00:29                           ;
+; Fitter                    ; 00:00:01     ; 1.0                     ; 1272 MB             ; 00:00:01                           ;
 ; Assembler                 ; 00:00:00     ; 1.0                     ; 1046 MB             ; 00:00:00                           ;
 ; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 1012 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1292 MB             ; 00:00:00                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1293 MB             ; 00:00:00                           ;
 ; Total                     ; 00:00:14     ; --                      ; --                  ; 00:00:31                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 

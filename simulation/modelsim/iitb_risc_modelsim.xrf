@@ -27,6 +27,7 @@ source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/ir.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd
 source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd
+source_file = 1, /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd
 source_file = 1, /home/ritesh/altera_lite/16.0/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, /home/ritesh/altera_lite/16.0/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, /home/ritesh/altera_lite/16.0/quartus/libraries/vhdl/ieee/timing_b.vhd

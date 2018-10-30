@@ -1,5 +1,5 @@
 Analysis & Synthesis report for iitb_risc
-Tue Oct 30 00:48:20 2018
+Wed Oct 31 00:54:05 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -42,7 +42,7 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Oct 30 00:48:20 2018       ;
+; Analysis & Synthesis Status ; Successful - Wed Oct 31 00:54:05 2018       ;
 ; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name               ; iitb_risc                                   ;
 ; Top-level Entity Name       ; register16                                  ;
@@ -237,7 +237,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Tue Oct 30 00:48:08 2018
+    Info: Processing started: Wed Oct 31 00:53:52 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iitb_risc -c iitb_risc
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file register1.vhd
@@ -268,7 +268,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file memory.
     Info (12022): Found design unit 1: memory-memory_behave File: /home/ritesh/Desktop/github/IITB_RISC/memory.vhd Line: 17
     Info (12023): Found entity 1: memory File: /home/ritesh/Desktop/github/IITB_RISC/memory.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file priority_encoder.vhd
-    Info (12022): Found design unit 1: priority_encoder-behave File: /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd Line: 15
+    Info (12022): Found design unit 1: priority_encoder-behave File: /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd Line: 16
     Info (12023): Found entity 1: priority_encoder File: /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file leftshift.vhd
     Info (12022): Found design unit 1: leftshift-Struct File: /home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd Line: 12
@@ -324,6 +324,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux3_4_
 Info (12021): Found 2 design units, including 1 entities, in source file wrapper13.vhd
     Info (12022): Found design unit 1: wrapper13-arith File: /home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd Line: 14
     Info (12023): Found entity 1: wrapper13 File: /home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file mux8_8_1.vhd
+    Info (12022): Found design unit 1: mux8_8_1-Struct File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 13
+    Info (12023): Found entity 1: mux8_8_1 File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 7
 Info (12127): Elaborating entity "register16" for the top level hierarchy
 Warning (10631): VHDL Process Statement warning at register16.vhd(20): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
 Info (10041): Inferred latch for "dout[0]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
@@ -349,9 +352,9 @@ Info (21057): Implemented 50 device resources after synthesis - the final resour
     Info (21059): Implemented 16 output pins
     Info (21061): Implemented 16 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 1233 megabytes
-    Info: Processing ended: Tue Oct 30 00:48:20 2018
-    Info: Elapsed time: 00:00:12
+    Info: Peak virtual memory: 1224 megabytes
+    Info: Processing ended: Wed Oct 31 00:54:05 2018
+    Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:29
 
 
