@@ -1,5 +1,5 @@
 Analysis & Synthesis report for iitb_risc
-Wed Oct 31 00:54:05 2018
+Sun Nov  4 23:32:16 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -14,8 +14,24 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Port Connectivity Checks: "mux8_8_1:m_10"
+ 14. Port Connectivity Checks: "mux_8_1:m_8"
+ 15. Port Connectivity Checks: "mux_4_1:m_7"
+ 16. Port Connectivity Checks: "mux_4_1:m_3"
+ 17. Port Connectivity Checks: "mux_4_1:m_2"
+ 18. Port Connectivity Checks: "mux_4_1:m_1"
+ 19. Port Connectivity Checks: "priority_encoder:p_1"
+ 20. Port Connectivity Checks: "alu:alu_1|adder:opr1|full_adder:a1"
+ 21. Port Connectivity Checks: "alu:alu_1"
+ 22. Port Connectivity Checks: "register16:b"
+ 23. Port Connectivity Checks: "register16:a"
+ 24. Port Connectivity Checks: "register16:mdr"
+ 25. Port Connectivity Checks: "memory:mem"
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -42,13 +58,13 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed Oct 31 00:54:05 2018       ;
+; Analysis & Synthesis Status ; Successful - Sun Nov  4 23:32:16 2018       ;
 ; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name               ; iitb_risc                                   ;
-; Top-level Entity Name       ; register16                                  ;
+; Top-level Entity Name       ; iitb_risc                                   ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 16                                          ;
-; Total pins                  ; 34                                          ;
+; Total logic elements        ; 709                                         ;
+; Total pins                  ; 44                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
@@ -60,7 +76,7 @@ agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; 5M1270ZT144C5      ;                    ;
-; Top-level entity name                                                      ; register16         ; iitb_risc          ;
+; Top-level entity name                                                      ; iitb_risc          ; iitb_risc          ;
 ; Family name                                                                ; MAX V              ; Cyclone V          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -137,13 +153,37 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                         ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
-; register16.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/register16.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                      ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
+; register1.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/register1.vhd        ;         ;
+; registerfile.vhd                 ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/registerfile.vhd     ;         ;
+; and_1_16.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd         ;         ;
+; mux_8_1.vhd                      ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd          ;         ;
+; mux_4_1.vhd                      ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd          ;         ;
+; mux_2_1.vhd                      ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd          ;         ;
+; memory.vhd                       ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/memory.vhd           ;         ;
+; priority_encoder.vhd             ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd ;         ;
+; leftshift.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd        ;         ;
+; subtractor.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd       ;         ;
+; full_sub.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd         ;         ;
+; adder.vhd                        ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/adder.vhd            ;         ;
+; full_adder.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd       ;         ;
+; iitb_risc.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd        ;         ;
+; nand16.vhd                       ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/nand16.vhd           ;         ;
+; signextender.vhd                 ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/signextender.vhd     ;         ;
+; wrapper7.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd         ;         ;
+; wrapper10.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd        ;         ;
+; register16.vhd                   ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/register16.vhd       ;         ;
+; alu.vhd                          ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/alu.vhd              ;         ;
+; ir.vhd                           ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/ir.vhd               ;         ;
+; mux3_2_1.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd         ;         ;
+; mux3_4_1.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd         ;         ;
+; wrapper13.vhd                    ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd        ;         ;
+; mux8_8_1.vhd                     ; yes             ; User VHDL File  ; /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd         ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -151,42 +191,87 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 16    ;
-;     -- Combinational with no register       ; 16    ;
-;     -- Register only                        ; 0     ;
-;     -- Combinational with a register        ; 0     ;
+; Total logic elements                        ; 709   ;
+;     -- Combinational with no register       ; 455   ;
+;     -- Register only                        ; 208   ;
+;     -- Combinational with a register        ; 46    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 16    ;
-;     -- 2 input functions                    ; 0     ;
-;     -- 1 input functions                    ; 0     ;
-;     -- 0 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 322   ;
+;     -- 3 input functions                    ; 128   ;
+;     -- 2 input functions                    ; 49    ;
+;     -- 1 input functions                    ; 1     ;
+;     -- 0 input functions                    ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 16    ;
+;     -- normal mode                          ; 709   ;
 ;     -- arithmetic mode                      ; 0     ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 0     ;
+;     -- synchronous clear/load mode          ; 9     ;
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 0     ;
-; I/O pins                                    ; 34    ;
-; Maximum fan-out node                        ; en    ;
-; Maximum fan-out                             ; 16    ;
-; Total fan-out                               ; 64    ;
-; Average fan-out                             ; 1.28  ;
+; Total registers                             ; 254   ;
+; I/O pins                                    ; 44    ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 254   ;
+; Total fan-out                               ; 2473  ;
+; Average fan-out                             ; 3.28  ;
 +---------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
-; |register16                ; 16 (16)     ; 0            ; 0          ; 34   ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |register16         ; register16  ; work         ;
-+----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                   ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                               ; Entity Name      ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------+------------------+--------------+
+; |iitb_risc                 ; 709 (157)   ; 254          ; 0          ; 44   ; 0            ; 455 (112)    ; 208 (16)          ; 46 (29)          ; 0 (0)           ; 0 (0)      ; |iitb_risc                                        ; iitb_risc        ; work         ;
+;    |alu:alu_1|             ; 86 (53)     ; 0            ; 0          ; 0    ; 0            ; 86 (53)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1                              ; alu              ; work         ;
+;       |adder:opr1|         ; 15 (0)      ; 0            ; 0          ; 0    ; 0            ; 15 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1                   ; adder            ; work         ;
+;          |full_adder:a10|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a10    ; full_adder       ; work         ;
+;          |full_adder:a11|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a11    ; full_adder       ; work         ;
+;          |full_adder:a12|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a12    ; full_adder       ; work         ;
+;          |full_adder:a13|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a13    ; full_adder       ; work         ;
+;          |full_adder:a14|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a14    ; full_adder       ; work         ;
+;          |full_adder:a15|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a15    ; full_adder       ; work         ;
+;          |full_adder:a16|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a16    ; full_adder       ; work         ;
+;          |full_adder:a2|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a2     ; full_adder       ; work         ;
+;          |full_adder:a3|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a3     ; full_adder       ; work         ;
+;          |full_adder:a4|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a4     ; full_adder       ; work         ;
+;          |full_adder:a5|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a5     ; full_adder       ; work         ;
+;          |full_adder:a6|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a6     ; full_adder       ; work         ;
+;          |full_adder:a7|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a7     ; full_adder       ; work         ;
+;          |full_adder:a8|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a8     ; full_adder       ; work         ;
+;          |full_adder:a9|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a9     ; full_adder       ; work         ;
+;       |subtractor:opr2|    ; 18 (0)      ; 0            ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2              ; subtractor       ; work         ;
+;          |full_sub:s10|    ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s10 ; full_sub         ; work         ;
+;          |full_sub:s11|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s11 ; full_sub         ; work         ;
+;          |full_sub:s12|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s12 ; full_sub         ; work         ;
+;          |full_sub:s13|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s13 ; full_sub         ; work         ;
+;          |full_sub:s14|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s14 ; full_sub         ; work         ;
+;          |full_sub:s15|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s15 ; full_sub         ; work         ;
+;          |full_sub:s2|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s2  ; full_sub         ; work         ;
+;          |full_sub:s3|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s3  ; full_sub         ; work         ;
+;          |full_sub:s4|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s4  ; full_sub         ; work         ;
+;          |full_sub:s5|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s5  ; full_sub         ; work         ;
+;          |full_sub:s6|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s6  ; full_sub         ; work         ;
+;          |full_sub:s7|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s7  ; full_sub         ; work         ;
+;          |full_sub:s8|     ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s8  ; full_sub         ; work         ;
+;          |full_sub:s9|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s9  ; full_sub         ; work         ;
+;    |ir:ir_1|               ; 12 (0)      ; 0            ; 0          ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|ir:ir_1                                ; ir               ; work         ;
+;       |register16:r_1|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|ir:ir_1|register16:r_1                 ; register16       ; work         ;
+;    |memory:mem|            ; 348 (348)   ; 204          ; 0          ; 0    ; 0            ; 144 (144)    ; 192 (192)         ; 12 (12)          ; 0 (0)           ; 0 (0)      ; |iitb_risc|memory:mem                             ; memory           ; work         ;
+;    |mux_2_1:m_9|           ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_2_1:m_9                            ; mux_2_1          ; work         ;
+;    |mux_4_1:m_1|           ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_4_1:m_1                            ; mux_4_1          ; work         ;
+;    |mux_4_1:m_2|           ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_4_1:m_2                            ; mux_4_1          ; work         ;
+;    |mux_4_1:m_7|           ; 20 (20)     ; 0            ; 0          ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_4_1:m_7                            ; mux_4_1          ; work         ;
+;    |mux_8_1:m_8|           ; 11 (11)     ; 0            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_8_1:m_8                            ; mux_8_1          ; work         ;
+;    |priority_encoder:p_1|  ; 5 (5)       ; 3            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|priority_encoder:p_1                   ; priority_encoder ; work         ;
+;    |register16:pc|         ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|register16:pc                          ; register16       ; work         ;
+;    |register16:t1|         ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|register16:t1                          ; register16       ; work         ;
+;    |register1:carry_flag|  ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|register1:carry_flag                   ; register1        ; work         ;
+;    |register1:zero_flag|   ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|register1:zero_flag                    ; register1        ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -195,25 +280,379 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; dout[0]$latch                                       ; en                  ; yes                    ;
-; dout[1]$latch                                       ; en                  ; yes                    ;
-; dout[2]$latch                                       ; en                  ; yes                    ;
-; dout[3]$latch                                       ; en                  ; yes                    ;
-; dout[4]$latch                                       ; en                  ; yes                    ;
-; dout[5]$latch                                       ; en                  ; yes                    ;
-; dout[6]$latch                                       ; en                  ; yes                    ;
-; dout[7]$latch                                       ; en                  ; yes                    ;
-; dout[8]$latch                                       ; en                  ; yes                    ;
-; dout[9]$latch                                       ; en                  ; yes                    ;
-; dout[10]$latch                                      ; en                  ; yes                    ;
-; dout[11]$latch                                      ; en                  ; yes                    ;
-; dout[12]$latch                                      ; en                  ; yes                    ;
-; dout[13]$latch                                      ; en                  ; yes                    ;
-; dout[14]$latch                                      ; en                  ; yes                    ;
-; dout[15]$latch                                      ; en                  ; yes                    ;
-; Number of user-specified and inferred latches = 16  ;                     ;                        ;
+; ir:ir_1|register16:r_1|dout[12]                     ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[14]                     ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[13]                     ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[15]                     ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[1]                      ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[0]                      ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[2]                      ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[3]                      ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[4]                      ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[5]                      ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[6]                      ; irwr                ; yes                    ;
+; ir:ir_1|register16:r_1|dout[7]                      ; irwr                ; yes                    ;
+; register16:t1|dout[0]                               ; alu_en              ; yes                    ;
+; register16:pc|dout[0]                               ; pcwr                ; yes                    ;
+; register16:t1|dout[1]                               ; alu_en              ; yes                    ;
+; register16:pc|dout[1]                               ; pcwr                ; yes                    ;
+; register16:t1|dout[2]                               ; alu_en              ; yes                    ;
+; register16:pc|dout[2]                               ; pcwr                ; yes                    ;
+; register16:t1|dout[3]                               ; alu_en              ; yes                    ;
+; register16:pc|dout[3]                               ; pcwr                ; yes                    ;
+; register16:pc|dout[14]                              ; pcwr                ; yes                    ;
+; register16:pc|dout[13]                              ; pcwr                ; yes                    ;
+; register16:pc|dout[12]                              ; pcwr                ; yes                    ;
+; register16:pc|dout[11]                              ; pcwr                ; yes                    ;
+; register16:pc|dout[10]                              ; pcwr                ; yes                    ;
+; register16:pc|dout[9]                               ; pcwr                ; yes                    ;
+; register16:pc|dout[8]                               ; pcwr                ; yes                    ;
+; register16:pc|dout[7]                               ; pcwr                ; yes                    ;
+; register16:pc|dout[6]                               ; pcwr                ; yes                    ;
+; register16:pc|dout[5]                               ; pcwr                ; yes                    ;
+; register16:pc|dout[4]                               ; pcwr                ; yes                    ;
+; register16:pc|dout[15]                              ; pcwr                ; yes                    ;
+; register16:t1|dout[14]                              ; alu_en              ; yes                    ;
+; register16:t1|dout[13]                              ; alu_en              ; yes                    ;
+; register16:t1|dout[12]                              ; alu_en              ; yes                    ;
+; register16:t1|dout[11]                              ; alu_en              ; yes                    ;
+; register16:t1|dout[10]                              ; alu_en              ; yes                    ;
+; register16:t1|dout[9]                               ; alu_en              ; yes                    ;
+; register16:t1|dout[8]                               ; alu_en              ; yes                    ;
+; register16:t1|dout[7]                               ; alu_en              ; yes                    ;
+; register16:t1|dout[6]                               ; alu_en              ; yes                    ;
+; register16:t1|dout[5]                               ; alu_en              ; yes                    ;
+; register16:t1|dout[4]                               ; alu_en              ; yes                    ;
+; register16:t1|dout[15]                              ; alu_en              ; yes                    ;
+; Number of user-specified and inferred latches = 44  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; rftoa                                   ; Stuck at GND due to stuck port data_in      ;
+; registerfile:reg_1|doutb[0,1,5..11]     ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|douta[4,5]           ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][5]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][5]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][5]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][5]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][5]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][5]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][5]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][5]           ; Lost fanout                                 ;
+; registerfile:reg_1|douta[6]             ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][6]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][6]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][6]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][6]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][6]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][6]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][6]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][6]           ; Lost fanout                                 ;
+; registerfile:reg_1|douta[7]             ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][7]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][7]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][7]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][7]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][7]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][7]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][7]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][7]           ; Lost fanout                                 ;
+; registerfile:reg_1|douta[8]             ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][8]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][8]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][8]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][8]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][8]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][8]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][8]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][8]           ; Lost fanout                                 ;
+; registerfile:reg_1|douta[9]             ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][9]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][9]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][9]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][9]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][9]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][9]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][9]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][9]           ; Lost fanout                                 ;
+; registerfile:reg_1|doutb[4]             ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][4]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][4]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][4]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][4]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][4]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][4]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][4]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][4]           ; Lost fanout                                 ;
+; registerfile:reg_1|douta[14]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|doutb[14]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][14]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][14]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][14]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][14]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][14]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][14]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][14]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][14]          ; Lost fanout                                 ;
+; registerfile:reg_1|douta[15]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|doutb[15]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][15]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][15]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][15]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][15]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][15]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][15]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][15]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][15]          ; Lost fanout                                 ;
+; registerfile:reg_1|doutb[2,3]           ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|douta[10]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][10]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][10]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][10]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][10]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][10]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][10]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][10]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][10]          ; Lost fanout                                 ;
+; registerfile:reg_1|douta[11]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][11]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][11]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][11]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][11]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][11]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][11]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][11]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][11]          ; Lost fanout                                 ;
+; registerfile:reg_1|douta[3]             ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][3]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][3]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][3]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][3]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][3]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][3]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][3]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][3]           ; Lost fanout                                 ;
+; registerfile:reg_1|douta[2]             ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][2]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][2]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][2]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][2]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][2]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][2]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][2]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][2]           ; Lost fanout                                 ;
+; registerfile:reg_1|douta[1]             ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][1]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][1]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][1]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][1]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][1]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][1]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][1]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][1]           ; Lost fanout                                 ;
+; registerfile:reg_1|douta[0]             ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][0]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][0]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][0]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][0]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][0]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][0]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][0]           ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][0]           ; Lost fanout                                 ;
+; registerfile:reg_1|douta[12]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|doutb[12]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][12]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][12]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][12]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][12]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][12]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][12]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][12]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][12]          ; Lost fanout                                 ;
+; registerfile:reg_1|douta[13]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|doutb[13]            ; Stuck at GND due to stuck port clock_enable ;
+; registerfile:reg_1|data[0][13]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[1][13]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[2][13]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[3][13]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[4][13]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[5][13]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[6][13]          ; Lost fanout                                 ;
+; registerfile:reg_1|data[7][13]          ; Lost fanout                                 ;
+; memory:mem|do[11]                       ; Lost fanout                                 ;
+; memory:mem|mem_reg[0][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[1][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[2][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[3][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[4][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[5][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[6][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[7][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[8][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[9][11]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[10][11]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[11][11]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[12][11]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[13][11]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[14][11]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[15][11]              ; Lost fanout                                 ;
+; memory:mem|do[8]                        ; Lost fanout                                 ;
+; memory:mem|mem_reg[0][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[1][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[2][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[3][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[4][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[5][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[6][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[7][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[8][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[9][8]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[10][8]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[11][8]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[12][8]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[13][8]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[14][8]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[15][8]               ; Lost fanout                                 ;
+; memory:mem|do[10]                       ; Lost fanout                                 ;
+; memory:mem|mem_reg[0][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[1][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[2][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[3][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[4][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[5][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[6][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[7][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[8][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[9][10]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[10][10]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[11][10]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[12][10]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[13][10]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[14][10]              ; Lost fanout                                 ;
+; memory:mem|mem_reg[15][10]              ; Lost fanout                                 ;
+; memory:mem|do[9]                        ; Lost fanout                                 ;
+; memory:mem|mem_reg[0][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[1][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[2][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[3][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[4][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[5][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[6][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[7][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[8][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[9][9]                ; Lost fanout                                 ;
+; memory:mem|mem_reg[10][9]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[11][9]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[12][9]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[13][9]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[14][9]               ; Lost fanout                                 ;
+; memory:mem|mem_reg[15][9]               ; Lost fanout                                 ;
+; regwr                                   ; Lost fanout                                 ;
+; rdst[0,1]                               ; Lost fanout                                 ;
+; rfb                                     ; Lost fanout                                 ;
+; memtoreg[0,1]                           ; Lost fanout                                 ;
+; Total Number of Removed Registers = 235 ;                                             ;
++-----------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                           ;
++------------------------------+--------------------------------+---------------------------------------------------------------------------------------+
+; Register name                ; Reason for Removal             ; Registers Removed due to This Register                                                ;
++------------------------------+--------------------------------+---------------------------------------------------------------------------------------+
+; registerfile:reg_1|douta[4]  ; Stuck at GND                   ; registerfile:reg_1|data[0][4], registerfile:reg_1|data[1][4],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][4], registerfile:reg_1|data[4][4],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][4], registerfile:reg_1|data[6][4], memory:mem|do[11],      ;
+;                              ;                                ; memory:mem|mem_reg[0][11], memory:mem|mem_reg[1][11], memory:mem|mem_reg[2][11],      ;
+;                              ;                                ; memory:mem|do[10], memory:mem|mem_reg[0][10], memory:mem|mem_reg[1][10],              ;
+;                              ;                                ; memory:mem|mem_reg[2][10], memory:mem|do[9], memory:mem|mem_reg[0][9],                ;
+;                              ;                                ; memory:mem|mem_reg[1][9], memory:mem|mem_reg[2][9]                                    ;
+; registerfile:reg_1|doutb[0]  ; Stuck at GND                   ; registerfile:reg_1|data[0][0], registerfile:reg_1|data[4][0],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][0], registerfile:reg_1|data[1][0],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][0], registerfile:reg_1|data[3][0], memory:mem|do[8],       ;
+;                              ;                                ; memory:mem|mem_reg[0][8], memory:mem|mem_reg[1][8], memory:mem|mem_reg[2][8], rfb,    ;
+;                              ;                                ; memtoreg[1], memtoreg[0]                                                              ;
+; registerfile:reg_1|doutb[5]  ; Stuck at GND                   ; registerfile:reg_1|data[0][5], registerfile:reg_1|data[4][5],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][5], registerfile:reg_1|data[1][5],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][5], registerfile:reg_1|data[3][5], regwr, rdst[1], rdst[0] ;
+; registerfile:reg_1|douta[13] ; Stuck at GND                   ; registerfile:reg_1|data[0][13], registerfile:reg_1|data[1][13],                       ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][13], registerfile:reg_1|data[4][13],                       ;
+;                              ;                                ; registerfile:reg_1|data[5][13], registerfile:reg_1|data[6][13]                        ;
+; registerfile:reg_1|douta[12] ; Stuck at GND                   ; registerfile:reg_1|data[0][12], registerfile:reg_1|data[1][12],                       ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][12], registerfile:reg_1|data[4][12],                       ;
+;                              ;                                ; registerfile:reg_1|data[5][12], registerfile:reg_1|data[6][12]                        ;
+; registerfile:reg_1|doutb[2]  ; Stuck at GND                   ; registerfile:reg_1|data[0][2], registerfile:reg_1|data[4][2],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][2], registerfile:reg_1|data[1][2],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][2], registerfile:reg_1|data[3][2]                          ;
+; registerfile:reg_1|doutb[3]  ; Stuck at GND                   ; registerfile:reg_1|data[0][3], registerfile:reg_1|data[4][3],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][3], registerfile:reg_1|data[1][3],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][3], registerfile:reg_1|data[3][3]                          ;
+; registerfile:reg_1|douta[15] ; Stuck at GND                   ; registerfile:reg_1|data[0][15], registerfile:reg_1|data[1][15],                       ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][15], registerfile:reg_1|data[4][15],                       ;
+;                              ;                                ; registerfile:reg_1|data[5][15], registerfile:reg_1|data[6][15]                        ;
+; registerfile:reg_1|douta[14] ; Stuck at GND                   ; registerfile:reg_1|data[0][14], registerfile:reg_1|data[1][14],                       ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][14], registerfile:reg_1|data[4][14],                       ;
+;                              ;                                ; registerfile:reg_1|data[5][14], registerfile:reg_1|data[6][14]                        ;
+; registerfile:reg_1|doutb[9]  ; Stuck at GND                   ; registerfile:reg_1|data[0][9], registerfile:reg_1|data[4][9],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][9], registerfile:reg_1|data[1][9],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][9], registerfile:reg_1|data[3][9]                          ;
+; registerfile:reg_1|doutb[6]  ; Stuck at GND                   ; registerfile:reg_1|data[0][6], registerfile:reg_1|data[4][6],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][6], registerfile:reg_1|data[1][6],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][6], registerfile:reg_1|data[3][6]                          ;
+; registerfile:reg_1|doutb[7]  ; Stuck at GND                   ; registerfile:reg_1|data[0][7], registerfile:reg_1|data[4][7],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][7], registerfile:reg_1|data[1][7],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][7], registerfile:reg_1|data[3][7]                          ;
+; registerfile:reg_1|doutb[8]  ; Stuck at GND                   ; registerfile:reg_1|data[0][8], registerfile:reg_1|data[4][8],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][8], registerfile:reg_1|data[1][8],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][8], registerfile:reg_1|data[3][8]                          ;
+; registerfile:reg_1|doutb[1]  ; Stuck at GND                   ; registerfile:reg_1|data[0][1], registerfile:reg_1|data[4][1],                         ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][1], registerfile:reg_1|data[1][1],                         ;
+;                              ;                                ; registerfile:reg_1|data[5][1], registerfile:reg_1|data[3][1]                          ;
+; registerfile:reg_1|doutb[10] ; Stuck at GND                   ; registerfile:reg_1|data[0][10], registerfile:reg_1|data[4][10],                       ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][10], registerfile:reg_1|data[1][10],                       ;
+;                              ;                                ; registerfile:reg_1|data[5][10], registerfile:reg_1|data[3][10]                        ;
+; registerfile:reg_1|doutb[11] ; Stuck at GND                   ; registerfile:reg_1|data[0][11], registerfile:reg_1|data[4][11],                       ;
+;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][11], registerfile:reg_1|data[1][11],                       ;
+;                              ;                                ; registerfile:reg_1|data[5][11], registerfile:reg_1|data[3][11]                        ;
+; registerfile:reg_1|doutb[4]  ; Stuck at GND                   ; registerfile:reg_1|data[3][4]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|doutb[14] ; Stuck at GND                   ; registerfile:reg_1|data[3][14]                                                        ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[9]  ; Stuck at GND                   ; registerfile:reg_1|data[6][9]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|doutb[15] ; Stuck at GND                   ; registerfile:reg_1|data[3][15]                                                        ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[8]  ; Stuck at GND                   ; registerfile:reg_1|data[6][8]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[7]  ; Stuck at GND                   ; registerfile:reg_1|data[6][7]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[10] ; Stuck at GND                   ; registerfile:reg_1|data[6][10]                                                        ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[11] ; Stuck at GND                   ; registerfile:reg_1|data[6][11]                                                        ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[3]  ; Stuck at GND                   ; registerfile:reg_1|data[6][3]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[2]  ; Stuck at GND                   ; registerfile:reg_1|data[6][2]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[1]  ; Stuck at GND                   ; registerfile:reg_1|data[6][1]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[0]  ; Stuck at GND                   ; registerfile:reg_1|data[6][0]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[6]  ; Stuck at GND                   ; registerfile:reg_1|data[6][6]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|doutb[12] ; Stuck at GND                   ; registerfile:reg_1|data[3][12]                                                        ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|douta[5]  ; Stuck at GND                   ; registerfile:reg_1|data[6][5]                                                         ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
+; registerfile:reg_1|doutb[13] ; Stuck at GND                   ; registerfile:reg_1|data[3][13]                                                        ;
+;                              ; due to stuck port clock_enable ;                                                                                       ;
++------------------------------+--------------------------------+---------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -221,14 +660,177 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 254   ;
+; Number of registers using Synchronous Clear  ; 4     ;
+; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 216   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |iitb_risc|priorityin[1]                ;
+; 32:1               ; 5 bits    ; 105 LEs       ; 35 LEs               ; 70 LEs                 ; Yes        ; |iitb_risc|alusrca[1]                   ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 6 LEs                ; 36 LEs                 ; Yes        ; |iitb_risc|aluop[1]                     ;
+; 17:1               ; 12 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; Yes        ; |iitb_risc|memory:mem|do[14]            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |iitb_risc|dcon[0]                      ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |iitb_risc|priority_encoder:p_1|outp[2] ;
+; 53:1               ; 2 bits    ; 70 LEs        ; 32 LEs               ; 38 LEs                 ; Yes        ; |iitb_risc|next_state[1]                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |iitb_risc|mux_4_1:m_1|outp[3]          ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |iitb_risc|mux_4_1:m_7|outp             ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; No         ; |iitb_risc|mux_8_1:m_8|outp[2]          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "mux8_8_1:m_10"  ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; a7[6..0] ; Input ; Info     ; Stuck at VCC ;
+; a7[7]    ; Input ; Info     ; Stuck at GND ;
+; a6[5..0] ; Input ; Info     ; Stuck at VCC ;
+; a6[7]    ; Input ; Info     ; Stuck at VCC ;
+; a6[6]    ; Input ; Info     ; Stuck at GND ;
+; a5[7..6] ; Input ; Info     ; Stuck at VCC ;
+; a5[4..0] ; Input ; Info     ; Stuck at VCC ;
+; a5[5]    ; Input ; Info     ; Stuck at GND ;
+; a4[7..5] ; Input ; Info     ; Stuck at VCC ;
+; a4[3..0] ; Input ; Info     ; Stuck at VCC ;
+; a4[4]    ; Input ; Info     ; Stuck at GND ;
+; a3[7..4] ; Input ; Info     ; Stuck at VCC ;
+; a3[2..0] ; Input ; Info     ; Stuck at VCC ;
+; a3[3]    ; Input ; Info     ; Stuck at GND ;
+; a2[7..3] ; Input ; Info     ; Stuck at VCC ;
+; a2[1..0] ; Input ; Info     ; Stuck at VCC ;
+; a2[2]    ; Input ; Info     ; Stuck at GND ;
+; a1[7..2] ; Input ; Info     ; Stuck at VCC ;
+; a1[1]    ; Input ; Info     ; Stuck at GND ;
+; a1[0]    ; Input ; Info     ; Stuck at VCC ;
+; a0[7..1] ; Input ; Info     ; Stuck at VCC ;
+; a0[0]    ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "mux_8_1:m_8"     ;
++-----------+-------+----------+--------------+
+; Port      ; Type  ; Severity ; Details      ;
++-----------+-------+----------+--------------+
+; a6[2..0]  ; Input ; Info     ; Stuck at VCC ;
+; a6[15..3] ; Input ; Info     ; Stuck at GND ;
+; a3        ; Input ; Info     ; Stuck at GND ;
+; a2[15..1] ; Input ; Info     ; Stuck at GND ;
+; a2[0]     ; Input ; Info     ; Stuck at VCC ;
+; a1[15..1] ; Input ; Info     ; Stuck at GND ;
+; a1[0]     ; Input ; Info     ; Stuck at VCC ;
++-----------+-------+----------+--------------+
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "mux_4_1:m_7" ;
++------+-------+----------+---------------+
+; Port ; Type  ; Severity ; Details       ;
++------+-------+----------+---------------+
+; a3   ; Input ; Info     ; Stuck at GND  ;
++------+-------+----------+---------------+
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "mux_4_1:m_3" ;
++------+-------+----------+---------------+
+; Port ; Type  ; Severity ; Details       ;
++------+-------+----------+---------------+
+; a3   ; Input ; Info     ; Stuck at GND  ;
++------+-------+----------+---------------+
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "mux_4_1:m_2" ;
++------+-------+----------+---------------+
+; Port ; Type  ; Severity ; Details       ;
++------+-------+----------+---------------+
+; a3   ; Input ; Info     ; Stuck at GND  ;
++------+-------+----------+---------------+
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "mux_4_1:m_1" ;
++------+-------+----------+---------------+
+; Port ; Type  ; Severity ; Details       ;
++------+-------+----------+---------------+
+; a3   ; Input ; Info     ; Stuck at GND  ;
++------+-------+----------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "priority_encoder:p_1"                                                               ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; zero ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------+
+; Port Connectivity Checks: "alu:alu_1|adder:opr1|full_adder:a1" ;
++------+-------+----------+--------------------------------------+
+; Port ; Type  ; Severity ; Details                              ;
++------+-------+----------+--------------------------------------+
+; cin  ; Input ; Info     ; Stuck at GND                         ;
++------+-------+----------+--------------------------------------+
+
+
++-----------------------------------------+
+; Port Connectivity Checks: "alu:alu_1"   ;
++-------+-------+----------+--------------+
+; Port  ; Type  ; Severity ; Details      ;
++-------+-------+----------+--------------+
+; cin   ; Input ; Info     ; Stuck at GND ;
+; reset ; Input ; Info     ; Stuck at GND ;
++-------+-------+----------+--------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "register16:b" ;
++------+-------+----------+----------------+
+; Port ; Type  ; Severity ; Details        ;
++------+-------+----------+----------------+
+; en   ; Input ; Info     ; Stuck at VCC   ;
++------+-------+----------+----------------+
+
+
++------------------------------------------+
+; Port Connectivity Checks: "register16:a" ;
++------+-------+----------+----------------+
+; Port ; Type  ; Severity ; Details        ;
++------+-------+----------+----------------+
+; en   ; Input ; Info     ; Stuck at VCC   ;
++------+-------+----------+----------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "register16:mdr" ;
++------+-------+----------+------------------+
+; Port ; Type  ; Severity ; Details          ;
++------+-------+----------+------------------+
+; en   ; Input ; Info     ; Stuck at VCC     ;
++------+-------+----------+------------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "memory:mem" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; init ; Input ; Info     ; Stuck at GND ;
++------+-------+----------+--------------+
 
 
 +-------------------------------+
@@ -237,7 +839,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Wed Oct 31 00:53:52 2018
+    Info: Processing started: Sun Nov  4 23:32:01 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iitb_risc -c iitb_risc
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file register1.vhd
@@ -327,7 +929,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file wrapper
 Info (12021): Found 2 design units, including 1 entities, in source file mux8_8_1.vhd
     Info (12022): Found design unit 1: mux8_8_1-Struct File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 13
     Info (12023): Found entity 1: mux8_8_1 File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 7
-Info (12127): Elaborating entity "register16" for the top level hierarchy
+Info (12127): Elaborating entity "iitb_risc" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at iitb_risc.vhd(173): object "lol" assigned a value but never read File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 173
+Info (12128): Elaborating entity "memory" for hierarchy "memory:mem" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 195
+Info (12128): Elaborating entity "ir" for hierarchy "ir:ir_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 198
+Info (12128): Elaborating entity "register16" for hierarchy "ir:ir_1|register16:r_1" File: /home/ritesh/Desktop/github/IITB_RISC/ir.vhd Line: 32
 Warning (10631): VHDL Process Statement warning at register16.vhd(20): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
 Info (10041): Inferred latch for "dout[0]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
 Info (10041): Inferred latch for "dout[1]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
@@ -345,16 +951,185 @@ Info (10041): Inferred latch for "dout[12]" at register16.vhd(20) File: /home/ri
 Info (10041): Inferred latch for "dout[13]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
 Info (10041): Inferred latch for "dout[14]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
 Info (10041): Inferred latch for "dout[15]" at register16.vhd(20) File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 10
-Info (21057): Implemented 50 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 16 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 1224 megabytes
-    Info: Processing ended: Wed Oct 31 00:54:05 2018
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:29
+Info (12128): Elaborating entity "register1" for hierarchy "register1:zero_flag" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 209
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 213
+Info (12128): Elaborating entity "adder" for hierarchy "alu:alu_1|adder:opr1" File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 45
+Info (12128): Elaborating entity "full_adder" for hierarchy "alu:alu_1|adder:opr1|full_adder:a1" File: /home/ritesh/Desktop/github/IITB_RISC/adder.vhd Line: 25
+Info (12128): Elaborating entity "subtractor" for hierarchy "alu:alu_1|subtractor:opr2" File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 46
+Info (12128): Elaborating entity "full_sub" for hierarchy "alu:alu_1|subtractor:opr2|full_sub:s1" File: /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd Line: 26
+Info (12128): Elaborating entity "nand16" for hierarchy "alu:alu_1|nand16:opr3" File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 47
+Info (12128): Elaborating entity "and_1_16" for hierarchy "alu:alu_1|and_1_16:opr4" File: /home/ritesh/Desktop/github/IITB_RISC/alu.vhd Line: 51
+Info (12128): Elaborating entity "wrapper10" for hierarchy "wrapper10:e_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 216
+Info (12128): Elaborating entity "signextender" for hierarchy "signextender:e_2" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 217
+Info (12128): Elaborating entity "wrapper7" for hierarchy "wrapper7:e_3" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 218
+Info (12128): Elaborating entity "leftshift" for hierarchy "leftshift:l_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 219
+Info (12128): Elaborating entity "wrapper13" for hierarchy "wrapper13:e_4" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 220
+Info (12128): Elaborating entity "registerfile" for hierarchy "registerfile:reg_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 223
+Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:p_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 226
+Info (12128): Elaborating entity "mux_4_1" for hierarchy "mux_4_1:m_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 228
+Warning (10492): VHDL Process Statement warning at mux_4_1.vhd(20): signal "a3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at mux_4_1.vhd(22): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at mux_4_1.vhd(24): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at mux_4_1.vhd(26): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd Line: 26
+Info (12128): Elaborating entity "mux3_2_1" for hierarchy "mux3_2_1:m_4" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 231
+Warning (10492): VHDL Process Statement warning at mux3_2_1.vhd(20): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at mux3_2_1.vhd(22): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd Line: 22
+Info (12128): Elaborating entity "mux3_4_1" for hierarchy "mux3_4_1:m_5" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 232
+Warning (10492): VHDL Process Statement warning at mux3_4_1.vhd(20): signal "a3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at mux3_4_1.vhd(22): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at mux3_4_1.vhd(24): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at mux3_4_1.vhd(26): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd Line: 26
+Info (12128): Elaborating entity "mux_2_1" for hierarchy "mux_2_1:m_6" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at mux_2_1.vhd(20): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at mux_2_1.vhd(22): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd Line: 22
+Info (12128): Elaborating entity "mux_8_1" for hierarchy "mux_8_1:m_8" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 235
+Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(20): signal "a7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(22): signal "a6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(24): signal "a5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(26): signal "a4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 26
+Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(28): signal "a3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(30): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(32): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at mux_8_1.vhd(34): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 34
+Warning (10631): VHDL Process Statement warning at mux_8_1.vhd(16): inferring latch(es) for signal or variable "outp", which holds its previous value in one or more paths through the process File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[0]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[1]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[2]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[3]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[4]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[5]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[6]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[7]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[8]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[9]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[10]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[11]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[12]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[13]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[14]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[15]" at mux_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Info (12128): Elaborating entity "mux8_8_1" for hierarchy "mux8_8_1:m_10" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 237
+Warning (10492): VHDL Process Statement warning at mux8_8_1.vhd(20): signal "a7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 20
+Warning (10492): VHDL Process Statement warning at mux8_8_1.vhd(22): signal "a6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 22
+Warning (10492): VHDL Process Statement warning at mux8_8_1.vhd(24): signal "a5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 24
+Warning (10492): VHDL Process Statement warning at mux8_8_1.vhd(26): signal "a4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 26
+Warning (10492): VHDL Process Statement warning at mux8_8_1.vhd(28): signal "a3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at mux8_8_1.vhd(30): signal "a2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at mux8_8_1.vhd(32): signal "a1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at mux8_8_1.vhd(34): signal "a0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 34
+Warning (10631): VHDL Process Statement warning at mux8_8_1.vhd(16): inferring latch(es) for signal or variable "outp", which holds its previous value in one or more paths through the process File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[0]" at mux8_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[1]" at mux8_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[2]" at mux8_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[3]" at mux8_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[4]" at mux8_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[5]" at mux8_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[6]" at mux8_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Info (10041): Inferred latch for "outp[7]" at mux8_8_1.vhd(16) File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "register16:b|dout[1]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[2]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[3]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[4]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[5]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[6]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[7]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[8]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[9]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[10]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[11]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[12]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[13]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[14]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[15]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:b|dout[0]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[1]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[2]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[3]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[4]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[5]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[6]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[7]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[8]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[9]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[10]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[11]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[12]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[13]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[14]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[15]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:a|dout[0]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[1]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[2]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[3]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[4]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[5]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[6]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[7]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[8]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[9]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[10]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[11]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[12]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[13]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[14]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[15]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "register16:mdr|dout[0]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[4]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[5]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[6]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[7]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[8]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[9]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[10]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[11]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[12]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[13]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[14]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[15]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux8_8_1:m_10|outp[1]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux8_8_1:m_10|outp[0]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux8_8_1:m_10|outp[2]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux8_8_1:m_10|outp[3]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux8_8_1:m_10|outp[4]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux8_8_1:m_10|outp[5]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux8_8_1:m_10|outp[6]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux8_8_1:m_10|outp[7]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[3]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[0]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[1]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (14026): LATCH primitive "mux_8_1:m_8|outp[2]" is permanently enabled File: /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd Line: 16
+Warning (13012): Latch register16:t1|dout[0] has unsafe behavior File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ir:ir_1|register16:r_1|dout[0] File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (13012): Latch register16:t1|dout[1] has unsafe behavior File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ir:ir_1|register16:r_1|dout[1] File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Warning (13012): Latch register16:t1|dout[2] has unsafe behavior File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ir:ir_1|register16:r_1|dout[1] File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
+Info (17049): 202 registers lost all their fanouts during netlist optimizations.
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "input[4]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[5]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[6]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[7]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[8]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[9]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[10]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[11]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[12]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[13]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[14]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[15]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[27]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[26]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[25]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+    Warning (15610): No output dependent on input pin "input[24]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
+Info (21057): Implemented 753 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 34 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 709 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 128 warnings
+    Info: Peak virtual memory: 1227 megabytes
+    Info: Processing ended: Sun Nov  4 23:32:16 2018
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:31
 
 

@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE 5M1270ZT144C5
-set_global_assignment -name TOP_LEVEL_ENTITY register16
+set_global_assignment -name TOP_LEVEL_ENTITY iitb_risc
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:36:36  OCTOBER 23, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION 16.0.0

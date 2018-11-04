@@ -1,5 +1,5 @@
 Flow report for iitb_risc
-Wed Oct 31 00:54:09 2018
+Sun Nov  4 23:32:27 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +-----------------------+---------------------------------------------+
-; Flow Status           ; Successful - Wed Oct 31 00:54:09 2018       ;
+; Flow Status           ; Successful - Sun Nov  4 23:32:27 2018       ;
 ; Quartus Prime Version ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name         ; iitb_risc                                   ;
-; Top-level Entity Name ; register16                                  ;
+; Top-level Entity Name ; iitb_risc                                   ;
 ; Family                ; MAX V                                       ;
 ; Device                ; 5M1270ZT144C5                               ;
 ; Timing Models         ; Final                                       ;
-; Total logic elements  ; 16 / 1,270 ( 1 % )                          ;
-; Total pins            ; 34 / 114 ( 30 % )                           ;
+; Total logic elements  ; 595 / 1,270 ( 47 % )                        ;
+; Total pins            ; 44 / 114 ( 39 % )                           ;
 ; Total virtual pins    ; 0                                           ;
 ; UFM blocks            ; 0 / 1 ( 0 % )                               ;
 +-----------------------+---------------------------------------------+
@@ -60,7 +60,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/31/2018 00:53:52 ;
+; Start date & time ; 11/04/2018 23:32:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; iitb_risc           ;
 +-------------------+---------------------+
@@ -71,7 +71,7 @@ agreement for further details.
 +-------------------------------+-----------------------------+---------------+-------------+----------------+
 ; Assignment Name               ; Value                       ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------+-----------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID         ; 0.154092743228420           ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID         ; 0.154135452128704           ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT        ; Vhdl                        ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL           ; ModelSim-Altera (VHDL)      ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                ; 1 ps                        ; --            ; --          ; eda_simulation ;
@@ -79,7 +79,6 @@ agreement for further details.
 ; MIN_CORE_JUNCTION_TEMP        ; 0                           ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION ; No Heat Sink With Still Air ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY      ; output_files                ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY              ; register16                  ; iitb_risc     ; --          ; --             ;
 +-------------------------------+-----------------------------+---------------+-------------+----------------+
 
 
@@ -88,12 +87,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 1224 MB             ; 00:00:29                           ;
-; Fitter                    ; 00:00:01     ; 1.0                     ; 1272 MB             ; 00:00:01                           ;
-; Assembler                 ; 00:00:00     ; 1.0                     ; 1046 MB             ; 00:00:00                           ;
-; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 1012 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 1293 MB             ; 00:00:00                           ;
-; Total                     ; 00:00:14     ; --                      ; --                  ; 00:00:31                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 1227 MB             ; 00:00:31                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 1280 MB             ; 00:00:06                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 1047 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 1020 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 1295 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:39                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

@@ -181,8 +181,8 @@ signal cz: std_logic_vector(1 downto 0);
 signal opcode: std_logic_vector(3 downto 0);
 signal immediate6: std_logic_vector(5 downto 0); --0-5
 signal ra,rb,rc,pr_en: std_logic_vector(2 downto 0); --9-11
-signal immediate9,and8: std_logic_vector(8 downto 0); --0-8
-signal immediate8,priorityin: std_logic_vector(7 downto 0); --0-7
+signal immediate9: std_logic_vector(8 downto 0); --0-8
+signal immediate8,priorityin, and8: std_logic_vector(7 downto 0); --0-7
 signal imm_6_16,sign_6_16,imm_9_16,lfimm9,mreg_in,r_outa,r_outb: std_logic_vector(15 downto 0);
 signal extadd_in,extdata_in,pr_3_16:std_logic_vector(15 downto 0);
 begin 
@@ -232,7 +232,7 @@ m_4: mux3_2_1 port map(pr_en,rb,rfb,regs_b);
 m_5: mux3_4_1 port map(pr_en,ra,rb,rc,rdst,rf_in);
 m_6: mux_2_1 port map(t1_out,r_outa,rftoa,a_in);
 m_7: mux_4_1 port map(x"0000",imm_6_16,a_out,pc_out,alusrca,alu_inp1);
-m_8: mux_8_1 port map(pr_3_16,x"0007",imm_6_16,sign_6_16,x"0000",x"0001",x"0002",b_out,alusrcb,alu_inp2);
+m_8: mux_8_1 port map(pr_3_16,x"0007",imm_6_16,sign_6_16,x"0000",x"0001",x"0001",b_out,alusrcb,alu_inp2);
 m_9: mux_2_1 port map(t1_out,alu_out,pcsrc,pc_in);
 m_10:mux8_8_1 port map("01111111","10111111","11011111","11101111","11110111","11111011","11111101","11111110",pr_en,and8);
 -- registers a,b,mdr are always enabled

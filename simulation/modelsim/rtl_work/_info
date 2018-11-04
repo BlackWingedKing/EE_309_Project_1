@@ -8,44 +8,990 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/ritesh/Desktop/github/IITB_RISC/simulation/modelsim
-Eregister16
-Z1 w1540839805
-Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Eadder
+Z1 w1540817063
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z5 8/home/ritesh/Desktop/github/IITB_RISC/register16.vhd
-Z6 F/home/ritesh/Desktop/github/IITB_RISC/register16.vhd
+Z4 8/home/ritesh/Desktop/github/IITB_RISC/adder.vhd
+Z5 F/home/ritesh/Desktop/github/IITB_RISC/adder.vhd
+l0
+L4
+V_L637eZ>Ul:T_1UTK:4IY3
+!s100 S8O=zaSzFRDf4GQE_A0NZ3
+Z6 OV;C;10.4d;61
+31
+Z7 !s110 1541354259
+!i10b 1
+Z8 !s108 1541354258.000000
+Z9 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/adder.vhd|
+Z10 !s107 /home/ritesh/Desktop/github/IITB_RISC/adder.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1
+Aarith
+R2
+R3
+DEx4 work 5 adder 0 22 _L637eZ>Ul:T_1UTK:4IY3
+l23
+L14
+V@UdOhb9G>:H3HJkl:R:U[1
+!s100 S1Rc<HF_Y[`fd0iNK4Mk@0
+R6
+31
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ealu
+Z13 w1540783140
+R2
+R3
+R0
+Z14 8/home/ritesh/Desktop/github/IITB_RISC/alu.vhd
+Z15 F/home/ritesh/Desktop/github/IITB_RISC/alu.vhd
+l0
+L4
+VF5EDj`FBeQ[=09;1g:?RC3
+!s100 OcDQlYibWF7UU_o8zkTnK0
+R6
+31
+R7
+!i10b 1
+Z16 !s108 1541354259.000000
+Z17 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/alu.vhd|
+Z18 !s107 /home/ritesh/Desktop/github/IITB_RISC/alu.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 3 alu 0 22 F5EDj`FBeQ[=09;1g:?RC3
+l43
+L13
+V9lOn22?On1KFLRi2VTNGN2
+!s100 VODh[11H]iCcSz180ioLd3
+R6
+31
+R7
+!i10b 1
+R16
+R17
+R18
+!i113 1
+R11
+R12
+Eand_1_16
+Z19 w1540743574
+R2
+R3
+R0
+Z20 8/home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd
+Z21 F/home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd
+l0
+L5
+V9lcFFO30MN]KFjHmQ3kAP0
+!s100 iK6Y;n_c:@7zJ0Om@;aK^1
+R6
+31
+Z22 !s110 1541354258
+!i10b 1
+R8
+Z23 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd|
+Z24 !s107 /home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd|
+!i113 1
+R11
+R12
+Aarith
+R2
+R3
+DEx4 work 8 and_1_16 0 22 9lcFFO30MN]KFjHmQ3kAP0
+l15
+L13
+VK^bQKo6X?g:[cFIQm4dJ71
+!s100 Pm9Ll?V0:3n5hBWGY?lj82
+R6
+31
+R22
+!i10b 1
+R8
+R23
+R24
+!i113 1
+R11
+R12
+Efull_adder
+R19
+R2
+R3
+R0
+Z25 8/home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd
+Z26 F/home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd
+l0
+L5
+Vf:<8z`=9^=5zS:Cdbgl_92
+!s100 PC24oa00a=znN018DS6<f0
+R6
+31
+R7
+!i10b 1
+R16
+Z27 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd|
+Z28 !s107 /home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd|
+!i113 1
+R11
+R12
+Aarith
+R2
+R3
+DEx4 work 10 full_adder 0 22 f:<8z`=9^=5zS:Cdbgl_92
+l16
+L13
+Vb=Q1VlniJ;e@M@NA27hYK1
+!s100 WLS8aiSzMGgQo:FhfSKoe3
+R6
+31
+R7
+!i10b 1
+R16
+R27
+R28
+!i113 1
+R11
+R12
+Efull_sub
+R19
+R2
+R3
+R0
+Z29 8/home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd
+Z30 F/home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd
+l0
+L5
+VC0]6YbJP[mV8ZlN]O6b9M0
+!s100 ?mYc35c5hiFhok;5fgWiR2
+R6
+31
+R22
+!i10b 1
+R8
+Z31 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd|
+Z32 !s107 /home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd|
+!i113 1
+R11
+R12
+Aarith
+R2
+R3
+DEx4 work 8 full_sub 0 22 C0]6YbJP[mV8ZlN]O6b9M0
+l16
+L13
+V35]]?TbTTRL=mLg]_G70C0
+!s100 IEKcoXAVFR]iKCNCKhRiJ2
+R6
+31
+R22
+!i10b 1
+R8
+R31
+R32
+!i113 1
+R11
+R12
+Eiitb_risc
+Z33 w1541353970
+Z34 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R2
+R3
+R0
+Z35 8/home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd
+Z36 F/home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd
+l0
+L7
+VPhOY2PBc9IDn9;h>[ERaI0
+!s100 feda1zBKz6gjf3k=bYIJN1
+R6
+31
+R7
+!i10b 1
+R16
+Z37 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd|
+Z38 !s107 /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd|
+!i113 1
+R11
+R12
+Abehave
+R34
+R2
+R3
+DEx4 work 9 iitb_risc 0 22 PhOY2PBc9IDn9;h>[ERaI0
+l188
+L16
+VBmc_O;SFI7HfoR`Xe4FAY1
+!s100 ]PzaH2fLUYGjW2[R0OE[j3
+R6
+31
+R7
+!i10b 1
+R16
+R37
+R38
+!i113 1
+R11
+R12
+Eir
+Z39 w1540816683
+R2
+R3
+R0
+Z40 8/home/ritesh/Desktop/github/IITB_RISC/ir.vhd
+Z41 F/home/ritesh/Desktop/github/IITB_RISC/ir.vhd
+l0
+L5
+Vga3BHEYMjd@>_]aQJ1J5m1
+!s100 Cd3Ne9EH403ze]j=IR07S0
+R6
+31
+R7
+!i10b 1
+R16
+Z42 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/ir.vhd|
+Z43 !s107 /home/ritesh/Desktop/github/IITB_RISC/ir.vhd|
+!i113 1
+R11
+R12
+Abehave
+R2
+R3
+DEx4 work 2 ir 0 22 ga3BHEYMjd@>_]aQJ1J5m1
+l31
+L23
+V0>UnTFaYCYM^Fa`IVIoSE1
+!s100 AYhc4P0@<g@Vk:R0b7`f[1
+R6
+31
+R7
+!i10b 1
+R16
+R42
+R43
+!i113 1
+R11
+R12
+Eleftshift
+Z44 w1540826681
+R2
+R3
+R0
+Z45 8/home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd
+Z46 F/home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd
+l0
+L7
+V;HOT:caNmMN:zU]Zkj;m11
+!s100 B_?dgJI17Cah1cdGIb0Vn0
+R6
+31
+R22
+!i10b 1
+R8
+Z47 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd|
+Z48 !s107 /home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 9 leftshift 0 22 ;HOT:caNmMN:zU]Zkj;m11
+l15
+L12
+VRVQ<gnz=YZSA8ZlV5gmHd3
+!s100 HXjFDUTY;j1445A?f^:mW1
+R6
+31
+R22
+!i10b 1
+R8
+R47
+R48
+!i113 1
+R11
+R12
+Ememory
+Z49 w1540825936
+R34
+R2
+R3
+R0
+Z50 8/home/ritesh/Desktop/github/IITB_RISC/memory.vhd
+Z51 F/home/ritesh/Desktop/github/IITB_RISC/memory.vhd
+l0
+L8
+V@Fi?lc5iYOAHWH=VeZkK71
+!s100 hMK=U0cId3E_mSLegKUJe2
+R6
+31
+R22
+!i10b 1
+R8
+Z52 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/memory.vhd|
+Z53 !s107 /home/ritesh/Desktop/github/IITB_RISC/memory.vhd|
+!i113 1
+R11
+R12
+Amemory_behave
+R34
+R2
+R3
+DEx4 work 6 memory 0 22 @Fi?lc5iYOAHWH=VeZkK71
+l20
+L17
+VaVA6kh[o0k?Sj0AzUf<1f2
+!s100 [m`JN_i^Mf:VglZ=Io:io0
+R6
+31
+R22
+!i10b 1
+R8
+R52
+R53
+!i113 1
+R11
+R12
+Emux3_2_1
+Z54 w1540828379
+R2
+R3
+R0
+Z55 8/home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd
+Z56 F/home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd
+l0
+L7
+VY>66_>jY19kbZBO`4_mUQ2
+!s100 ISnnPZM@]_1:N4kln0<hG0
+R6
+31
+R7
+!i10b 1
+R16
+Z57 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd|
+Z58 !s107 /home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 8 mux3_2_1 0 22 Y>66_>jY19kbZBO`4_mUQ2
+l15
+L13
+V>LIKHYoA_2KHmc0cKj<5;3
+!s100 gIA:V8>oUA:@VYEVzelLk3
+R6
+31
+R7
+!i10b 1
+R16
+R57
+R58
+!i113 1
+R11
+R12
+Emux3_4_1
+Z59 w1540828490
+R2
+R3
+R0
+Z60 8/home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd
+Z61 F/home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd
+l0
+L7
+VFi=B[8jmSYGE?hG5lN8Sd2
+!s100 BTmoVeFE8DmQidgkWhH1=3
+R6
+31
+R7
+!i10b 1
+R16
+Z62 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd|
+Z63 !s107 /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 8 mux3_4_1 0 22 Fi=B[8jmSYGE?hG5lN8Sd2
+l15
+L13
+V?S9>G@D3ee;foJn@IY`Na3
+!s100 lX`4=RcXnB[HmgCi4_]:A0
+R6
+31
+R7
+!i10b 1
+R16
+R62
+R63
+!i113 1
+R11
+R12
+Emux8_8_1
+Z64 w1540923208
+R2
+R3
+R0
+Z65 8/home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd
+Z66 F/home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd
+l0
+L7
+V1QIKhAN3JNJX[foAlXc6T2
+!s100 ^KFmZDcIES7TmPE2h8nR<2
+R6
+31
+R7
+!i10b 1
+R16
+Z67 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd|
+Z68 !s107 /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 8 mux8_8_1 0 22 1QIKhAN3JNJX[foAlXc6T2
+l15
+L13
+VOZ]WDKY`EjkH`jFS?[25Q1
+!s100 mV86UK^`M2[aEN?na4FW43
+R6
+31
+R7
+!i10b 1
+R16
+R67
+R68
+!i113 1
+R11
+R12
+Emux_2_1
+Z69 w1540827400
+R2
+R3
+R0
+Z70 8/home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd
+Z71 F/home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd
+l0
+L7
+V9RTcIjEJJAZXYG3bM4b9f0
+!s100 UKZLYE:8gjfM2Wm]0Ga[23
+R6
+31
+R22
+!i10b 1
+R8
+Z72 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd|
+Z73 !s107 /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 7 mux_2_1 0 22 9RTcIjEJJAZXYG3bM4b9f0
+l15
+L13
+ViadVRNKQLaNF:]]Maz[bO0
+!s100 LXTOSHLMNO?TL]9CUHS[N1
+R6
+31
+R22
+!i10b 1
+R8
+R72
+R73
+!i113 1
+R11
+R12
+Emux_4_1
+Z74 w1540830374
+R2
+R3
+R0
+Z75 8/home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd
+Z76 F/home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd
+l0
+L7
+VC?8QNN=m@67_N8U0TMd:_1
+!s100 8W1=9ATbCGn@Og4zP:iBl3
+R6
+31
+R22
+!i10b 1
+R8
+Z77 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd|
+Z78 !s107 /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 7 mux_4_1 0 22 C?8QNN=m@67_N8U0TMd:_1
+l15
+L13
+Vne0[SOZYT2cT=67TO^cC71
+!s100 56e<:mOdbElf[hJobPl380
+R6
+31
+R22
+!i10b 1
+R8
+R77
+R78
+!i113 1
+R11
+R12
+Emux_8_1
+Z79 w1540830382
+R2
+R3
+R0
+Z80 8/home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd
+Z81 F/home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd
+l0
+L7
+V4LO9SbOZf[6nMQ<Vc@IzO2
+!s100 [l[hWZA8UGYNXiPmJzQYU1
+R6
+31
+R22
+!i10b 1
+R8
+Z82 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd|
+Z83 !s107 /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd|
+!i113 1
+R11
+R12
+Astruct
+R2
+R3
+DEx4 work 7 mux_8_1 0 22 4LO9SbOZf[6nMQ<Vc@IzO2
+l15
+L13
+V?LHUIJDd]Yd9VHgg^QIge0
+!s100 lR8I26f0PRP2O><<Taa4n0
+R6
+31
+R22
+!i10b 1
+R8
+R82
+R83
+!i113 1
+R11
+R12
+Enand16
+R19
+R2
+R3
+R0
+Z84 8/home/ritesh/Desktop/github/IITB_RISC/nand16.vhd
+Z85 F/home/ritesh/Desktop/github/IITB_RISC/nand16.vhd
+l0
+L6
+VR<YC4Pj3O=`C7J=EG]I1X3
+!s100 h:hfAVUnE3lnJPhILogNW0
+R6
+31
+R7
+!i10b 1
+R16
+Z86 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/nand16.vhd|
+Z87 !s107 /home/ritesh/Desktop/github/IITB_RISC/nand16.vhd|
+!i113 1
+R11
+R12
+Aarith
+R2
+R3
+DEx4 work 6 nand16 0 22 R<YC4Pj3O=`C7J=EG]I1X3
+l15
+L13
+VKGb_]3Zmh;G4J2GB<lC`b1
+!s100 WfYh<7M>[If<1dNFA2B<?2
+R6
+31
+R7
+!i10b 1
+R16
+R86
+R87
+!i113 1
+R11
+R12
+Epriority_encoder
+Z88 w1540922823
+R34
+R2
+R3
+R0
+Z89 8/home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd
+Z90 F/home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd
+l0
+L9
+VhQQT=iY:flT?9cF5jJ@1Y2
+!s100 ?cDo`j3V6bLe^2J4cON2`0
+R6
+31
+R22
+!i10b 1
+R8
+Z91 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd|
+Z92 !s107 /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd|
+!i113 1
+R11
+R12
+Abehave
+R34
+R2
+R3
+DEx4 work 16 priority_encoder 0 22 hQQT=iY:flT?9cF5jJ@1Y2
+l18
+L16
+V`ASNBS<1:W8@lcCajnKHa1
+!s100 lb4<fDFEc_M<ddf`oFk@;2
+R6
+31
+R22
+!i10b 1
+R8
+R91
+R92
+!i113 1
+R11
+R12
+Eregister1
+Z93 w1540820794
+R34
+R2
+R3
+R0
+Z94 8/home/ritesh/Desktop/github/IITB_RISC/register1.vhd
+Z95 F/home/ritesh/Desktop/github/IITB_RISC/register1.vhd
+l0
+L8
+V6IAHgIU9hFJJeIeVY8<e<3
+!s100 :18DAj@99907O<e0d;X6T3
+R6
+31
+R22
+!i10b 1
+R8
+Z96 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/register1.vhd|
+Z97 !s107 /home/ritesh/Desktop/github/IITB_RISC/register1.vhd|
+!i113 1
+R11
+R12
+Aseqnt
+R34
+R2
+R3
+DEx4 work 9 register1 0 22 6IAHgIU9hFJJeIeVY8<e<3
+l18
+L16
+V@@h4N<HS5@GLf<VRBHiP;2
+!s100 =Kf;hRA8`Pl_J9`34lf9S0
+R6
+31
+R22
+!i10b 1
+R8
+R96
+R97
+!i113 1
+R11
+R12
+Eregister16
+Z98 w1540840552
+R34
+R2
+R3
+R0
+Z99 8/home/ritesh/Desktop/github/IITB_RISC/register16.vhd
+Z100 F/home/ritesh/Desktop/github/IITB_RISC/register16.vhd
 l0
 L8
 VZDi=02[N2m8?1Q__B=jOH3
 !s100 GnF5JP4?1RZ7cEok;9onU0
-Z7 OV;C;10.4d;61
+R6
 31
-Z8 !s110 1540839849
+R7
 !i10b 1
-Z9 !s108 1540839849.000000
-Z10 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/register16.vhd|
-Z11 !s107 /home/ritesh/Desktop/github/IITB_RISC/register16.vhd|
+R16
+Z101 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/register16.vhd|
+Z102 !s107 /home/ritesh/Desktop/github/IITB_RISC/register16.vhd|
 !i113 1
-Z12 o-93 -work work
-Z13 tExplicit 1
+R11
+R12
 Aseqnt
+R34
 R2
 R3
-R4
 DEx4 work 10 register16 0 22 ZDi=02[N2m8?1Q__B=jOH3
 l18
 L16
-Vj1[8jH^g`ASo=H79iQ2jR3
-!s100 EmH6BDb>3SFncNII[b@Un2
-R7
+V8ebnSdd5oO[oQ6e<hY:D73
+!s100 kXTO8_0UFQC]@SKAmaNI52
+R6
 31
-R8
+R7
 !i10b 1
-R9
-R10
-R11
+R16
+R101
+R102
 !i113 1
+R11
 R12
-R13
+Eregisterfile
+Z103 w1540828059
+R34
+R2
+R3
+R0
+Z104 8/home/ritesh/Desktop/github/IITB_RISC/registerfile.vhd
+Z105 F/home/ritesh/Desktop/github/IITB_RISC/registerfile.vhd
+l0
+L7
+VYGod^2niX2fd31GAHFFae0
+!s100 REo?_]OienLDChKCBnk^Z3
+R6
+31
+R22
+!i10b 1
+R8
+Z106 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/registerfile.vhd|
+Z107 !s107 /home/ritesh/Desktop/github/IITB_RISC/registerfile.vhd|
+!i113 1
+R11
+R12
+Abehave
+R34
+R2
+R3
+DEx4 work 12 registerfile 0 22 YGod^2niX2fd31GAHFFae0
+l28
+L19
+VDW?chmBJfII>=ZNejRO`U3
+!s100 aNG@C`DL`I0MLInAhSAL^1
+R6
+31
+R22
+!i10b 1
+R8
+R106
+R107
+!i113 1
+R11
+R12
+Esignextender
+Z108 w1540719228
+R2
+R3
+R0
+Z109 8/home/ritesh/Desktop/github/IITB_RISC/signextender.vhd
+Z110 F/home/ritesh/Desktop/github/IITB_RISC/signextender.vhd
+l0
+L6
+VG80GAg@G`adLBB1c1YVNg3
+!s100 M<8@Wich]=eGZ_o06MYdH1
+R6
+31
+R7
+!i10b 1
+R16
+Z111 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/signextender.vhd|
+Z112 !s107 /home/ritesh/Desktop/github/IITB_RISC/signextender.vhd|
+!i113 1
+R11
+R12
+Aarith
+R2
+R3
+DEx4 work 12 signextender 0 22 G80GAg@G`adLBB1c1YVNg3
+l16
+L14
+VYSjSQOON<]TmKYcZVSo];0
+!s100 NXEBzhBIS`nnc3ChHbHnz2
+R6
+31
+R7
+!i10b 1
+R16
+R111
+R112
+!i113 1
+R11
+R12
+Esubtractor
+R108
+R2
+R3
+R0
+Z113 8/home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd
+Z114 F/home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd
+l0
+L5
+VKIF58>cfQ8V]T=RHN:[4R0
+!s100 oA0?D54_JlDPddn7No_zW0
+R6
+31
+R22
+!i10b 1
+R8
+Z115 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd|
+Z116 !s107 /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd|
+!i113 1
+R11
+R12
+Aarith
+R2
+R3
+DEx4 work 10 subtractor 0 22 KIF58>cfQ8V]T=RHN:[4R0
+l24
+L15
+VF8HgcRT8lFW8261R]mJII3
+!s100 ?^;dWITTWkP4QW:1V2k7n3
+R6
+31
+R22
+!i10b 1
+R8
+R115
+R116
+!i113 1
+R11
+R12
+Ewrapper10
+R108
+R2
+R3
+R0
+Z117 8/home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd
+Z118 F/home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd
+l0
+L6
+V80PQfLOmMOOIM3U:PH`oM3
+!s100 B8B<zS1eQN:k58am5K92G0
+R6
+31
+R7
+!i10b 1
+R16
+Z119 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd|
+Z120 !s107 /home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd|
+!i113 1
+R11
+R12
+Aarith
+R2
+R3
+DEx4 work 9 wrapper10 0 22 80PQfLOmMOOIM3U:PH`oM3
+l16
+L14
+Vl>KGk22GOh=h^BIXzD1bo0
+!s100 64Om0k`Yg]X;TGVgcb[Qz0
+R6
+31
+R7
+!i10b 1
+R16
+R119
+R120
+!i113 1
+R11
+R12
+Ewrapper13
+Z121 w1540835941
+R2
+R3
+R0
+Z122 8/home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd
+Z123 F/home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd
+l0
+L6
+V1U=lbKim0]@c1lWJjkkSe2
+!s100 OYKJElkUgaWNmzlQkOIUo2
+R6
+31
+R7
+!i10b 1
+R16
+Z124 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd|
+Z125 !s107 /home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd|
+!i113 1
+R11
+R12
+Aarith
+R2
+R3
+DEx4 work 9 wrapper13 0 22 1U=lbKim0]@c1lWJjkkSe2
+l16
+L14
+VRZ]SMGP0=;VTWNci9o`Gf3
+!s100 >0?U^6PD[=WbNk^ZKl^@73
+R6
+31
+R7
+!i10b 1
+R16
+R124
+R125
+!i113 1
+R11
+R12
+Ewrapper7
+R108
+R2
+R3
+R0
+Z126 8/home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd
+Z127 F/home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd
+l0
+L6
+V;860_VM2=00MmHHFO`V9b2
+!s100 l:<d]`2O;Z>U0Vc4aQKZJ1
+R6
+31
+R7
+!i10b 1
+R16
+Z128 !s90 -reportprogress|300|-93|-work|work|/home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd|
+Z129 !s107 /home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd|
+!i113 1
+R11
+R12
+Aarith
+R2
+R3
+DEx4 work 8 wrapper7 0 22 ;860_VM2=00MmHHFO`V9b2
+l16
+L14
+VKEZS0BjV95nOz[;@0c>LN2
+!s100 ]MJQAmCZfJd]]2]^@Jf>g1
+R6
+31
+R7
+!i10b 1
+R16
+R128
+R129
+!i113 1
+R11
+R12
