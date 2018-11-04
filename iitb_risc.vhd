@@ -164,7 +164,7 @@ architecture behave of iitb_risc is
 --- 3 Bit Signals ->
 -- aluSrcB: ALUscrB
 	
-signal meminit,memrd, memwr, regwr, irwr, pcwr, prEn, pcsrc, rfb, rftoa: std_logic;
+signal memrd, memwr, regwr, irwr, pcwr, pcsrc, rfb, rftoa: std_logic;
 signal aluop, alusrca, memtoreg, rdst,iord,dcon: std_logic_vector(1 downto 0);
 signal alusrcb,regs_b,rf_in: std_logic_vector(2 downto 0);
 
@@ -173,7 +173,7 @@ signal alusrcb,regs_b,rf_in: std_logic_vector(2 downto 0);
 signal a_en,b_en,mdr_en,alu_en, alud, lol: std_logic;
 signal z_flag,c_flag: std_logic; -- here c_flag and z_flag are carry and zero flags
 signal add_in,d_in,d_out: std_logic_vector(15 downto 0);
-signal pc_in,pc_out,a_in,a_out,b_out,mdr_in,mdr_out,t1_in,t1_out: std_logic_vector(15 downto 0);
+signal pc_in,pc_out,a_in,a_out,b_out,mdr_in,mdr_out,t1_out: std_logic_vector(15 downto 0);
 signal carry, zero: std_logic;
 signal alu_inp1, alu_inp2, alu_out: std_logic_vector(15 downto 0);
 signal state, next_state : std_logic_vector(4 downto 0) := "00000";
@@ -225,7 +225,7 @@ reg_1: registerfile port map(clk,mreg_in,ra, regs_b,rf_in,regwr,r_outa,r_outb);
 -- priority encoder
 p_1: priority_encoder port map(clk,priorityin,pr_en,lol);
 -- data path starts
-m_1: mux_4_1 port map(X"0000",extadd_in,pc_out,t1_out,iord,add_in);
+m_1: mux_4_1 port map(X"0000",extadd_in,t1_out,pc_out,iord,add_in);
 m_2: mux_4_1 port map(x"0000",extdata_in,b_out,a_out,dcon,d_in);
 m_3: mux_4_1 port map(x"0000",lfimm9,mdr_out,t1_out,memtoreg,mreg_in);
 m_4: mux3_2_1 port map(pr_en,rb,rfb,regs_b);

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for iitb_risc
-Sun Nov  4 23:32:16 2018
+Mon Nov  5 01:34:48 2018
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -58,12 +58,12 @@ agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun Nov  4 23:32:16 2018       ;
+; Analysis & Synthesis Status ; Successful - Mon Nov  5 01:34:48 2018       ;
 ; Quartus Prime Version       ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name               ; iitb_risc                                   ;
 ; Top-level Entity Name       ; iitb_risc                                   ;
 ; Family                      ; MAX V                                       ;
-; Total logic elements        ; 709                                         ;
+; Total logic elements        ; 694                                         ;
 ; Total pins                  ; 44                                          ;
 ; Total virtual pins          ; 0                                           ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
@@ -191,20 +191,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 709   ;
-;     -- Combinational with no register       ; 455   ;
+; Total logic elements                        ; 694   ;
+;     -- Combinational with no register       ; 440   ;
 ;     -- Register only                        ; 208   ;
 ;     -- Combinational with a register        ; 46    ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 322   ;
+;     -- 4 input functions                    ; 318   ;
 ;     -- 3 input functions                    ; 128   ;
-;     -- 2 input functions                    ; 49    ;
+;     -- 2 input functions                    ; 38    ;
 ;     -- 1 input functions                    ; 1     ;
 ;     -- 0 input functions                    ; 1     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 709   ;
+;     -- normal mode                          ; 694   ;
 ;     -- arithmetic mode                      ; 0     ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
@@ -215,8 +215,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; I/O pins                                    ; 44    ;
 ; Maximum fan-out node                        ; clk   ;
 ; Maximum fan-out                             ; 254   ;
-; Total fan-out                               ; 2473  ;
-; Average fan-out                             ; 3.28  ;
+; Total fan-out                               ; 2447  ;
+; Average fan-out                             ; 3.32  ;
 +---------------------------------------------+-------+
 
 
@@ -225,8 +225,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                               ; Entity Name      ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------------------------------------+------------------+--------------+
-; |iitb_risc                 ; 709 (157)   ; 254          ; 0          ; 44   ; 0            ; 455 (112)    ; 208 (16)          ; 46 (29)          ; 0 (0)           ; 0 (0)      ; |iitb_risc                                        ; iitb_risc        ; work         ;
-;    |alu:alu_1|             ; 86 (53)     ; 0            ; 0          ; 0    ; 0            ; 86 (53)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1                              ; alu              ; work         ;
+; |iitb_risc                 ; 694 (157)   ; 254          ; 0          ; 44   ; 0            ; 440 (112)    ; 208 (16)          ; 46 (29)          ; 0 (0)           ; 0 (0)      ; |iitb_risc                                        ; iitb_risc        ; work         ;
+;    |alu:alu_1|             ; 84 (53)     ; 0            ; 0          ; 0    ; 0            ; 84 (53)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1                              ; alu              ; work         ;
 ;       |adder:opr1|         ; 15 (0)      ; 0            ; 0          ; 0    ; 0            ; 15 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1                   ; adder            ; work         ;
 ;          |full_adder:a10|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a10    ; full_adder       ; work         ;
 ;          |full_adder:a11|  ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a11    ; full_adder       ; work         ;
@@ -243,11 +243,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |full_adder:a7|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a7     ; full_adder       ; work         ;
 ;          |full_adder:a8|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a8     ; full_adder       ; work         ;
 ;          |full_adder:a9|   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|adder:opr1|full_adder:a9     ; full_adder       ; work         ;
-;       |subtractor:opr2|    ; 18 (0)      ; 0            ; 0          ; 0    ; 0            ; 18 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2              ; subtractor       ; work         ;
-;          |full_sub:s10|    ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s10 ; full_sub         ; work         ;
+;       |subtractor:opr2|    ; 16 (0)      ; 0            ; 0          ; 0    ; 0            ; 16 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2              ; subtractor       ; work         ;
+;          |full_sub:s10|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s10 ; full_sub         ; work         ;
 ;          |full_sub:s11|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s11 ; full_sub         ; work         ;
 ;          |full_sub:s12|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s12 ; full_sub         ; work         ;
-;          |full_sub:s13|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s13 ; full_sub         ; work         ;
+;          |full_sub:s13|    ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s13 ; full_sub         ; work         ;
 ;          |full_sub:s14|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s14 ; full_sub         ; work         ;
 ;          |full_sub:s15|    ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s15 ; full_sub         ; work         ;
 ;          |full_sub:s2|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s2  ; full_sub         ; work         ;
@@ -256,16 +256,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |full_sub:s5|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s5  ; full_sub         ; work         ;
 ;          |full_sub:s6|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s6  ; full_sub         ; work         ;
 ;          |full_sub:s7|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s7  ; full_sub         ; work         ;
-;          |full_sub:s8|     ; 3 (3)       ; 0            ; 0          ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s8  ; full_sub         ; work         ;
+;          |full_sub:s8|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s8  ; full_sub         ; work         ;
 ;          |full_sub:s9|     ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|alu:alu_1|subtractor:opr2|full_sub:s9  ; full_sub         ; work         ;
 ;    |ir:ir_1|               ; 12 (0)      ; 0            ; 0          ; 0    ; 0            ; 12 (0)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|ir:ir_1                                ; ir               ; work         ;
 ;       |register16:r_1|     ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|ir:ir_1|register16:r_1                 ; register16       ; work         ;
-;    |memory:mem|            ; 348 (348)   ; 204          ; 0          ; 0    ; 0            ; 144 (144)    ; 192 (192)         ; 12 (12)          ; 0 (0)           ; 0 (0)      ; |iitb_risc|memory:mem                             ; memory           ; work         ;
+;    |memory:mem|            ; 336 (336)   ; 204          ; 0          ; 0    ; 0            ; 132 (132)    ; 192 (192)         ; 12 (12)          ; 0 (0)           ; 0 (0)      ; |iitb_risc|memory:mem                             ; memory           ; work         ;
 ;    |mux_2_1:m_9|           ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_2_1:m_9                            ; mux_2_1          ; work         ;
 ;    |mux_4_1:m_1|           ; 8 (8)       ; 0            ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_4_1:m_1                            ; mux_4_1          ; work         ;
 ;    |mux_4_1:m_2|           ; 12 (12)     ; 0            ; 0          ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_4_1:m_2                            ; mux_4_1          ; work         ;
 ;    |mux_4_1:m_7|           ; 20 (20)     ; 0            ; 0          ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_4_1:m_7                            ; mux_4_1          ; work         ;
-;    |mux_8_1:m_8|           ; 11 (11)     ; 0            ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_8_1:m_8                            ; mux_8_1          ; work         ;
+;    |mux_8_1:m_8|           ; 10 (10)     ; 0            ; 0          ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|mux_8_1:m_8                            ; mux_8_1          ; work         ;
 ;    |priority_encoder:p_1|  ; 5 (5)       ; 3            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 3 (3)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|priority_encoder:p_1                   ; priority_encoder ; work         ;
 ;    |register16:pc|         ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|register16:pc                          ; register16       ; work         ;
 ;    |register16:t1|         ; 16 (16)     ; 0            ; 0          ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |iitb_risc|register16:t1                          ; register16       ; work         ;
@@ -292,14 +292,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ir:ir_1|register16:r_1|dout[5]                      ; irwr                ; yes                    ;
 ; ir:ir_1|register16:r_1|dout[6]                      ; irwr                ; yes                    ;
 ; ir:ir_1|register16:r_1|dout[7]                      ; irwr                ; yes                    ;
-; register16:t1|dout[0]                               ; alu_en              ; yes                    ;
 ; register16:pc|dout[0]                               ; pcwr                ; yes                    ;
-; register16:t1|dout[1]                               ; alu_en              ; yes                    ;
+; register16:t1|dout[0]                               ; alu_en              ; yes                    ;
 ; register16:pc|dout[1]                               ; pcwr                ; yes                    ;
-; register16:t1|dout[2]                               ; alu_en              ; yes                    ;
+; register16:t1|dout[1]                               ; alu_en              ; yes                    ;
 ; register16:pc|dout[2]                               ; pcwr                ; yes                    ;
-; register16:t1|dout[3]                               ; alu_en              ; yes                    ;
+; register16:t1|dout[2]                               ; alu_en              ; yes                    ;
 ; register16:pc|dout[3]                               ; pcwr                ; yes                    ;
+; register16:t1|dout[3]                               ; alu_en              ; yes                    ;
 ; register16:pc|dout[14]                              ; pcwr                ; yes                    ;
 ; register16:pc|dout[13]                              ; pcwr                ; yes                    ;
 ; register16:pc|dout[12]                              ; pcwr                ; yes                    ;
@@ -570,14 +570,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][4], registerfile:reg_1|data[4][4],                         ;
 ;                              ;                                ; registerfile:reg_1|data[5][4], registerfile:reg_1|data[6][4], memory:mem|do[11],      ;
 ;                              ;                                ; memory:mem|mem_reg[0][11], memory:mem|mem_reg[1][11], memory:mem|mem_reg[2][11],      ;
-;                              ;                                ; memory:mem|do[10], memory:mem|mem_reg[0][10], memory:mem|mem_reg[1][10],              ;
-;                              ;                                ; memory:mem|mem_reg[2][10], memory:mem|do[9], memory:mem|mem_reg[0][9],                ;
-;                              ;                                ; memory:mem|mem_reg[1][9], memory:mem|mem_reg[2][9]                                    ;
+;                              ;                                ; memory:mem|mem_reg[3][11], memory:mem|mem_reg[4][11], memory:mem|do[10],              ;
+;                              ;                                ; memory:mem|mem_reg[0][10], memory:mem|mem_reg[1][10], memory:mem|mem_reg[2][10],      ;
+;                              ;                                ; memory:mem|mem_reg[3][10], memory:mem|mem_reg[4][10], memory:mem|do[9],               ;
+;                              ;                                ; memory:mem|mem_reg[0][9], memory:mem|mem_reg[1][9], memory:mem|mem_reg[2][9],         ;
+;                              ;                                ; memory:mem|mem_reg[3][9], memory:mem|mem_reg[4][9]                                    ;
 ; registerfile:reg_1|doutb[0]  ; Stuck at GND                   ; registerfile:reg_1|data[0][0], registerfile:reg_1|data[4][0],                         ;
 ;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][0], registerfile:reg_1|data[1][0],                         ;
 ;                              ;                                ; registerfile:reg_1|data[5][0], registerfile:reg_1|data[3][0], memory:mem|do[8],       ;
-;                              ;                                ; memory:mem|mem_reg[0][8], memory:mem|mem_reg[1][8], memory:mem|mem_reg[2][8], rfb,    ;
-;                              ;                                ; memtoreg[1], memtoreg[0]                                                              ;
+;                              ;                                ; memory:mem|mem_reg[0][8], memory:mem|mem_reg[1][8], memory:mem|mem_reg[2][8],         ;
+;                              ;                                ; memory:mem|mem_reg[3][8], memory:mem|mem_reg[4][8], rfb, memtoreg[1], memtoreg[0]     ;
 ; registerfile:reg_1|doutb[5]  ; Stuck at GND                   ; registerfile:reg_1|data[0][5], registerfile:reg_1|data[4][5],                         ;
 ;                              ; due to stuck port clock_enable ; registerfile:reg_1|data[2][5], registerfile:reg_1|data[1][5],                         ;
 ;                              ;                                ; registerfile:reg_1|data[5][5], registerfile:reg_1|data[3][5], regwr, rdst[1], rdst[0] ;
@@ -665,7 +667,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Number of registers using Synchronous Load   ; 7     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 216   ;
+; Number of registers using Clock Enable       ; 228   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -676,9 +678,9 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |iitb_risc|priorityin[1]                ;
-; 32:1               ; 5 bits    ; 105 LEs       ; 35 LEs               ; 70 LEs                 ; Yes        ; |iitb_risc|alusrca[1]                   ;
-; 32:1               ; 2 bits    ; 42 LEs        ; 6 LEs                ; 36 LEs                 ; Yes        ; |iitb_risc|aluop[1]                     ;
-; 17:1               ; 12 bits   ; 132 LEs       ; 132 LEs              ; 0 LEs                  ; Yes        ; |iitb_risc|memory:mem|do[14]            ;
+; 16:1               ; 12 bits   ; 120 LEs       ; 120 LEs              ; 0 LEs                  ; Yes        ; |iitb_risc|memory:mem|do[12]            ;
+; 32:1               ; 5 bits    ; 105 LEs       ; 35 LEs               ; 70 LEs                 ; Yes        ; |iitb_risc|alusrcb[2]                   ;
+; 32:1               ; 2 bits    ; 42 LEs        ; 6 LEs                ; 36 LEs                 ; Yes        ; |iitb_risc|aluop[0]                     ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |iitb_risc|dcon[0]                      ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |iitb_risc|priority_encoder:p_1|outp[2] ;
 ; 53:1               ; 2 bits    ; 70 LEs        ; 32 LEs               ; 38 LEs                 ; Yes        ; |iitb_risc|next_state[1]                ;
@@ -839,7 +841,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Sun Nov  4 23:32:01 2018
+    Info: Processing started: Mon Nov  5 01:34:33 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off iitb_risc -c iitb_risc
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file register1.vhd
@@ -932,6 +934,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux8_8_
 Info (12127): Elaborating entity "iitb_risc" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at iitb_risc.vhd(173): object "lol" assigned a value but never read File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 173
 Info (12128): Elaborating entity "memory" for hierarchy "memory:mem" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 195
+Warning (10027): Verilog HDL or VHDL warning at the memory.vhd(71): index expression is not wide enough to address all of the elements in the array File: /home/ritesh/Desktop/github/IITB_RISC/memory.vhd Line: 71
 Info (12128): Elaborating entity "ir" for hierarchy "ir:ir_1" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 198
 Info (12128): Elaborating entity "register16" for hierarchy "ir:ir_1|register16:r_1" File: /home/ritesh/Desktop/github/IITB_RISC/ir.vhd Line: 32
 Warning (10631): VHDL Process Statement warning at register16.vhd(20): inferring latch(es) for signal or variable "dout", which holds its previous value in one or more paths through the process File: /home/ritesh/Desktop/github/IITB_RISC/register16.vhd Line: 20
@@ -1122,14 +1125,14 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "input[26]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
     Warning (15610): No output dependent on input pin "input[25]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
     Warning (15610): No output dependent on input pin "input[24]" File: /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd Line: 10
-Info (21057): Implemented 753 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 738 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 34 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 709 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 128 warnings
-    Info: Peak virtual memory: 1227 megabytes
-    Info: Processing ended: Sun Nov  4 23:32:16 2018
+    Info (21061): Implemented 694 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 129 warnings
+    Info: Peak virtual memory: 1226 megabytes
+    Info: Processing ended: Mon Nov  5 01:34:48 2018
     Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:31
+    Info: Total CPU time (on all processors): 00:00:33
 
 
