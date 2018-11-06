@@ -31,7 +31,7 @@ begin
 --		if(clk'event and clk = '1') then
 			if(regwrite = '1') then
 				--transfer the data from the register to
-				elsif(regselm = "111") then
+				if(regselm = "111") then
 					data(7) <= dinm;
 				elsif(regselm = "110") then
 					data(6) <= dinm;
@@ -47,44 +47,46 @@ begin
 					data(1) <= dinm;
 				elsif(regselm = "000") then
 					data(0) <= dinm;
-			else 
-				if(regsela = "111") then
+				end if;
+			end if;
+			
+			if(regsela = "111") then
 					douta <= data(7);
-				elsif(regsela = "110") then
+			elsif(regsela = "110") then
 					douta <= data(6);
-				elsif(regsela = "101") then
+			elsif(regsela = "101") then
 					douta <= data(5);
-				elsif(regsela = "100") then
+			elsif(regsela = "100") then
 					douta <= data(4);
-				elsif(regsela = "011") then
+			elsif(regsela = "011") then
 					douta <= data(3);
-				elsif(regsela = "010") then
+			elsif(regsela = "010") then
 					douta <= data(2);
-				elsif(regsela = "001") then
+			elsif(regsela = "001") then
 					douta <= data(1);
-				elsif(regsela = "000") then
+			elsif(regsela = "000") then
 					douta <= data(0);
-				end if;
+			end if;
 
-				if(regselb = "111") then
+			if(regselb = "111") then
 					doutb <= data(7);
-				elsif(regselb = "110") then
+			elsif(regselb = "110") then
 					doutb <= data(6);
-				elsif(regselb = "101") then
+			elsif(regselb = "101") then
 					doutb <= data(5);
-				elsif(regselb = "100") then
+			elsif(regselb = "100") then
 					doutb <= data(4);
-				elsif(regselb = "011") then
+			elsif(regselb = "011") then
 					doutb <= data(3);
-				elsif(regselb = "010") then
+			elsif(regselb = "010") then
 					doutb <= data(2);
-				elsif(regselb = "001") then
+			elsif(regselb = "001") then
 					doutb <= data(1);
-				elsif(regselb = "000") then
+			elsif(regselb = "000") then
 					doutb <= data(0);
-				end if;
+			end if;
 				
-			end if;				
+		--	end if;				
 --		end if;		
 	end process;
 end behave;
