@@ -11,7 +11,7 @@
 # 
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/register1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/register1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -19,11 +19,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity register1
 # -- Compiling architecture seqnt of register1
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/registerfile.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/registerfile.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -31,55 +31,55 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity registerfile
 # -- Compiling architecture behave of registerfile
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/and_1_16.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity and_1_16
 # -- Compiling architecture arith of and_1_16
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/mux_8_1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux_8_1
 # -- Compiling architecture Struct of mux_8_1
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/mux_4_1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux_4_1
 # -- Compiling architecture Struct of mux_4_1
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/mux_2_1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux_2_1
 # -- Compiling architecture Struct of mux_2_1
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/memory.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/memory.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -87,11 +87,11 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity memory
 # -- Compiling architecture memory_behave of memory
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/priority_encoder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -99,66 +99,66 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity priority_encoder
 # -- Compiling architecture behave of priority_encoder
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/leftshift.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity leftshift
 # -- Compiling architecture Struct of leftshift
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/subtractor.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity subtractor
 # -- Compiling architecture arith of subtractor
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/full_sub.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity full_sub
 # -- Compiling architecture arith of full_sub
-# End time: 23:27:38 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/adder.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:38 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/adder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity adder
 # -- Compiling architecture arith of adder
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:01
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/full_adder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity full_adder
 # -- Compiling architecture arith of full_adder
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/iitb_risc.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -166,55 +166,55 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity iitb_risc
 # -- Compiling architecture behave of iitb_risc
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/nand16.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/nand16.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity nand16
 # -- Compiling architecture arith of nand16
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/signextender.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/signextender.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity signextender
 # -- Compiling architecture arith of signextender
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/wrapper7.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity wrapper7
 # -- Compiling architecture arith of wrapper7
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/wrapper10.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity wrapper10
 # -- Compiling architecture arith of wrapper10
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:55 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/register16.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:55 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/register16.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -222,80 +222,114 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity register16
 # -- Compiling architecture seqnt of register16
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:56 on Nov 05,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/alu.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:56 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/alu.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity alu
 # -- Compiling architecture behave of alu
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:56 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/ir.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:56 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/ir.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity ir
 # -- Compiling architecture behave of ir
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:56 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:56 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/mux3_2_1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux3_2_1
 # -- Compiling architecture Struct of mux3_2_1
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:56 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:56 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/mux3_4_1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux3_4_1
 # -- Compiling architecture Struct of mux3_4_1
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:56 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:56 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/wrapper13.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity wrapper13
 # -- Compiling architecture arith of wrapper13
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:56 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {/home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd}
 # Model Technology ModelSim ALTERA vcom 10.4d Compiler 2015.12 Dec 30 2015
-# Start time: 23:27:39 on Nov 04,2018
+# Start time: 22:51:56 on Nov 05,2018
 # vcom -reportprogress 300 -93 -work work /home/ritesh/Desktop/github/IITB_RISC/mux8_8_1.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mux8_8_1
 # -- Compiling architecture Struct of mux8_8_1
-# End time: 23:27:39 on Nov 04,2018, Elapsed time: 0:00:00
+# End time: 22:51:56 on Nov 05,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # 
 # stdin: <EOF>
 vsim work.iitb_risc
 # vsim work.iitb_risc 
-# Start time: 23:27:52 on Nov 04,2018
+# Start time: 22:52:04 on Nov 05,2018
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.iitb_risc(behave)
+# Loading work.memory(memory_behave)
+# Loading work.ir(behave)
+# Loading work.register16(seqnt)
+# Loading work.register1(seqnt)
+# Loading work.alu(behave)
+# Loading work.adder(arith)
+# Loading work.full_adder(arith)
+# Loading work.subtractor(arith)
+# Loading work.full_sub(arith)
+# Loading work.nand16(arith)
+# Loading work.and_1_16(arith)
+# Loading work.wrapper10(arith)
+# Loading work.signextender(arith)
+# Loading work.wrapper7(arith)
+# Loading work.leftshift(struct)
+# Loading work.wrapper13(arith)
+# Loading work.registerfile(behave)
+# Loading work.priority_encoder(behave)
+# Loading work.mux_4_1(struct)
+# Loading work.mux3_2_1(struct)
+# Loading work.mux3_4_1(struct)
+# Loading work.mux_2_1(struct)
+# Loading work.mux_8_1(struct)
+# Loading work.mux8_8_1(struct)
+vsim work.iitb_risc
+# End time: 22:52:09 on Nov 05,2018, Elapsed time: 0:00:05
+# Errors: 0, Warnings: 0
+# vsim work.iitb_risc 
+# Start time: 22:52:09 on Nov 05,2018
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -327,10 +361,177 @@ vsim work.iitb_risc
 # Loading work.mux8_8_1(struct)
 add wave -position insertpoint sim:/iitb_risc/*
 force -freeze sim:/iitb_risc/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/iitb_risc/extmeminit 0 0
+force -freeze sim:/iitb_risc/input 00110001011010100000000000000000 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /iitb_risc/mem
+force -freeze sim:/iitb_risc/extmeminit 1 0
+run
+restart
 force -freeze sim:/iitb_risc/clk 1 0, 0 {50 ps} -r 100
 force -freeze sim:/iitb_risc/extmeminit 0 0
-force -freeze sim:/iitb_risc/input 00000000000000000000000000000000 0
+force -freeze sim:/iitb_risc/input 00110001011010100000000000000000 0
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 1  Instance: /iitb_risc/mem
+run
+restart
+force -freeze sim:/iitb_risc/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/iitb_risc/extmeminit 1 0
+force -freeze sim:/iitb_risc/input 00110001011010100000000000000000 0
+run
+force -freeze sim:/iitb_risc/extmeminit 0 0
 run
 run
-# End time: 23:32:15 on Nov 04,2018, Elapsed time: 0:04:23
-# Errors: 0, Warnings: 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 23:01:20 on Nov 05,2018, Elapsed time: 0:09:11
+# Errors: 0, Warnings: 2

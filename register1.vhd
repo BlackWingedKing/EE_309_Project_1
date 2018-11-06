@@ -7,7 +7,7 @@ use ieee.numeric_std.all;
 
 entity register1 is    
 
-  port (din  : in  std_logic; en: in std_logic; clk: in std_logic;
+  port (din  : in  std_logic; en: in std_logic; clk: in std_logic_vector(4 downto 0);
 		  dout : out std_logic);
 
 end entity;
@@ -19,11 +19,11 @@ begin
 	
 	process(clk)
 	begin 
-		if(clk'event and clk = '1') then
+--		if(clk'event and clk = '1') then
 			if en = '1' then
 				dout <= din;
 			end if;
-		end if;
+--		end if;
 	end process;
 
 end seqnt;

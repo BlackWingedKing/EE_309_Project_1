@@ -6,7 +6,7 @@ use ieee.numeric_std.all;
 
 entity registerfile is    
   port(
-		clk : in std_logic;
+		clk : in std_logic_vector(4 downto 0);
 		dinm : in std_logic_vector(15 downto 0);  
 	  	regsela : in std_logic_vector(2 downto 0);
 		regselb	: in std_logic_vector(2 downto 0);
@@ -28,7 +28,7 @@ type t_Memory is array (0 to 7) of std_logic_vector(15 downto 0);
 begin
 	process(clk)
 	begin 
-		if(clk'event and clk = '1') then
+--		if(clk'event and clk = '1') then
 			if(regwrite = '1') then
 				--transfer the data from the register to
 				elsif(regselm = "111") then
@@ -85,6 +85,6 @@ begin
 				end if;
 				
 			end if;				
-		end if;		
+--		end if;		
 	end process;
 end behave;

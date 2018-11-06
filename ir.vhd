@@ -4,7 +4,7 @@ use ieee.std_logic_1164.all;
 
 entity ir is
 --input is 16 bit instruction
-	port(clk: in std_logic;
+	port(clk: in std_logic_vector(4 downto 0);
 		  irwrite: in std_logic;
 		  inp: in std_logic_vector(15 downto 0);
 		  opcode: out std_logic_vector(3 downto 0); -- 12-15
@@ -22,7 +22,7 @@ end entity;
 
 architecture behave of ir is
 component register16 is    
-  port (din  : in  std_logic_vector(15 downto 0); en: in std_logic; clk: in std_logic;
+  port (din  : in  std_logic_vector(15 downto 0); en: in std_logic; clk: in std_logic_vector(4 downto 0);
 		  dout : out std_logic_vector(15 downto 0));
 
 end component;

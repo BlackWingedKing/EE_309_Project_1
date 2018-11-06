@@ -1,9 +1,14 @@
-Analysis & Synthesis Status : Successful - Mon Nov  5 01:34:48 2018
+Analysis & Synthesis Status : Successful - Mon Nov  5 23:10:30 2018
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : iitb_risc
 Top-level Entity Name : iitb_risc
-Family : MAX V
-Total logic elements : 694
+Family : Cyclone IV E
+Total logic elements : 895
+    Total combinational functions : 895
+    Dedicated logic registers : 8
+Total registers : 8
 Total pins : 44
 Total virtual pins : 0
-UFM blocks : 0 / 1 ( 0 % )
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

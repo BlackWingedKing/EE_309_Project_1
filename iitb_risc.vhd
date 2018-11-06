@@ -3,7 +3,6 @@ use ieee.std_logic_1164.all;
 library std;
 use std.standard.all;
 use ieee.numeric_std.all;
-
 entity iitb_risc is 
 
 	port(clk, extmeminit: in std_logic;
@@ -17,7 +16,7 @@ architecture behave of iitb_risc is
  -- Component Declarations	
 	component ir is
 --input is 16 bit instruction
-	port(clk: in std_logic;
+	port(clk: in std_logic_vector(4 downto 0);
 		  irwrite: in std_logic;
 		  inp: in std_logic_vector(15 downto 0);
 		  opcode: out std_logic_vector(3 downto 0); -- 12-15
@@ -88,12 +87,12 @@ architecture behave of iitb_risc is
 	end component;
 
 	component register1 is    
-		port (din  : in  std_logic; en: in std_logic; clk: in std_logic;
+		port (din  : in  std_logic; en: in std_logic; clk: in std_logic_vector(4 downto 0);
 		  dout : out std_logic);
 	end component;
 	
 	component register16 is    
-		port (din  : in  std_logic_vector(15 downto 0); en: in std_logic; clk: in std_logic;
+		port (din  : in  std_logic_vector(15 downto 0); en: in std_logic; clk: in std_logic_vector(4 downto 0);
 		  dout : out std_logic_vector(15 downto 0));
 	end component;
 	
@@ -135,7 +134,8 @@ architecture behave of iitb_risc is
 	end component;
 	
 	component memory is 
-  port (clk,init : in std_logic;  
+  port (clk : in std_logic_vector(4 downto 0);
+	     init : in std_logic;  
         mr  : in std_logic;   
         mw  : in std_logic;
         a   : in std_logic_vector(15 downto 0);   
@@ -145,7 +145,7 @@ architecture behave of iitb_risc is
 
 	component registerfile is 
   port(
-		clk : in std_logic;
+		clk : in std_logic_vector(4 downto 0);
 		dinm : in std_logic_vector(15 downto 0);  
 	  	regsela : in std_logic_vector(2 downto 0);
 		regselb	: in std_logic_vector(2 downto 0);
@@ -170,7 +170,7 @@ signal alusrcb,regs_b,rf_in: std_logic_vector(2 downto 0);
 
 -- define signals for registers
 -- registers are pc,a,b,mdr,t1 (it is the alu_out register)
-signal a_en,b_en,mdr_en,alu_en, alud, lol: std_logic;
+signal a_en,b_en,mdr_en,alu_en, alud, lol,meminit: std_logic;
 signal z_flag,c_flag: std_logic; -- here c_flag and z_flag are carry and zero flags
 signal add_in,d_in,d_out: std_logic_vector(15 downto 0);
 signal pc_in,pc_out,a_in,a_out,b_out,mdr_in,mdr_out,t1_out: std_logic_vector(15 downto 0);
@@ -192,22 +192,22 @@ extadd_in<= input(15 downto 0);
 extdata_in<= input(31 downto 16);
 
 -- initiate the memory block-- note that memory has unsigned inputs
-mem: memory port map(clk,'0',memrd,memwr,add_in,d_in,d_out);
+mem: memory port map(next_state,meminit,memrd,memwr,add_in,d_in,d_out);
 
 -- ir block
-ir_1: ir port map(clk,irwr,d_out,opcode,immediate6,ra,rb,rc,cz,immediate9,immediate8);
+ir_1: ir port map(next_state,irwr,d_out,opcode,immediate6,ra,rb,rc,cz,immediate9,immediate8);
 
 --- register declarations12
-mdr: register16 port map(d_out,mdr_en,clk,mdr_out); -- mdr saves the data from do
-pc: register16 port map(pc_in,pcwr,clk,pc_out);
-a: register16 port map(a_in,a_en,clk,a_out);
-b: register16 port map(r_outb,b_en,clk,b_out);
-t1: register16 port map(alu_out,alu_en,clk,t1_out);
+mdr: register16 port map(d_out,mdr_en,next_state,mdr_out); -- mdr saves the data from do
+pc: register16 port map(pc_in,pcwr,next_state,pc_out);
+a: register16 port map(a_in,a_en,next_state,a_out);
+b: register16 port map(r_outb,b_en,next_state,b_out);
+t1: register16 port map(alu_out,alu_en,next_state,t1_out);
 
 -- alu config..
 alu_en <= (not(cz(0)) and not(cz(1))) or (cz(1) and c_flag) or (cz(0) and z_flag) or alud;
-zero_flag: register1 port map(zero,alu_en,clk,z_flag);
-carry_flag: register1 port map(carry,alu_en,clk,c_flag);
+zero_flag: register1 port map(zero,alu_en,next_state,z_flag);
+carry_flag: register1 port map(carry,alu_en,next_state,c_flag);
 
 -- alu declaration
 alu_1: alu port map(alu_inp1, alu_inp2,'0', '0', aluop, alu_out, carry, zero);
@@ -220,7 +220,7 @@ l_1: leftshift port map(imm_9_16,lfimm9);
 e_4: wrapper13 port map(pr_en,pr_3_16);
 
 -- register file
-reg_1: registerfile port map(clk,mreg_in,ra, regs_b,rf_in,regwr,r_outa,r_outb);
+reg_1: registerfile port map(next_state,mreg_in,ra, regs_b,rf_in,regwr,r_outa,r_outb);
 
 -- priority encoder
 p_1: priority_encoder port map(clk,priorityin,pr_en,lol);
@@ -240,6 +240,10 @@ a_en <= '1';
 b_en <= '1';
 mdr_en <= '1';
 
+-- just some initialisation 
+--t1_out <= x"0000";
+--alu_out <= x"0000";
+
 process (clk)
 	begin
 		if (clk'event and clk = '1') then
@@ -247,47 +251,47 @@ process (clk)
 		end if;
 end process;
 
-process(input,extmeminit,clk)
+process(input,extmeminit,state)--,next_state,immediate8,opcode,z_flag,priorityin,and8
 begin
+--	if (clk'event and clk = '1') then
 	-- output is the current and next state
-
-
-   if(clk'event and clk = '1') then
+--	   state<=next_state;
 		output(9 downto 5) <= state; 
 		output(4 downto 0) <= next_state;
 		
 		if (state = "00000") then
 			memrd <= '0';
+			meminit <= '1';
 			memwr <= '1';
 			iord <= "10";
 			dcon <= "10";
 			regwr <= '0';
 			irwr <= '0';
-			pcwr <= '0';
+			pcwr <= '1';
 			pcsrc <= '0';
 			rfb <= '0';
 			aluop <= "00";
-			alusrca <= "00";
-			alusrcb <= "000";
+			alusrca <= "11";
+			alusrcb <= "011";
 			memtoreg <= "00";
 			rdst <= "00";
 			rftoa <= '0';
 			alud <= '0';
-			
 			if (extmeminit = '0') then
 				next_state <= "00001";
 			else
 				next_state <= "00000";
 			end if;
-		
+
 		elsif (state = "00001") then -- this is the house keeping state
 			memrd <= '1';
+			meminit <= '0';
 			memwr <= '0';
 			iord <= "00";
 			dcon <= "00";
 			regwr <= '0';
 			irwr <= '1';
-			pcwr <= '1';
+			pcwr <= '0';
 			pcsrc <= '0';
 			rfb <= '0';
 			aluop <= "00";
@@ -306,7 +310,7 @@ begin
 			alusrca <= "00";
 			alusrcb <= "101";
 			aluop <= "00";
-			pcwr <= '0';
+			pcwr <= '1';
 			irwr <= '0';
 			
 			if(opcode = "0000") then                           --ADD
@@ -335,6 +339,8 @@ begin
 			-- BEQ
 			elsif(opcode = "1100") then
 				next_state <= "01100"; 
+			else
+				next_state <= "00001";
 			end if; 		
 		 
 		
@@ -343,6 +349,7 @@ begin
 			alusrca <= "01";
 			alusrcb <= "000";
 			aluop <= "00";
+			pcwr <= '0';
 
 			next_state <= "01011";
 
@@ -365,6 +372,7 @@ begin
 			alusrca <= "01";
 			alusrcb <= "100";
 			aluop <= "00";
+			pcwr <= '0';
 
 			next_state <= "01000";
 
@@ -379,6 +387,7 @@ begin
 			alusrca <= "00";
 			alusrcb <= "011";
 			aluop <= "00";
+			pcwr <= '0';
 
 			next_state <= "01111";
 
@@ -402,7 +411,7 @@ begin
 
 			next_state <= "00001";
 
-		elsif (state = "10000") then
+		elsif (state = "10001") then
 			regwr <= '0';
 			alusrca <= "11";
 			alusrcb <= "000";
@@ -415,11 +424,13 @@ begin
 			memtoreg <= "10";
 			regwr <= '1';
 			rdst <= "10";
+			pcwr <= '0';
 			next_state <= "00001";
 		elsif (state = "00011") then
 			alusrca <= "10";
 			alusrcb <= "000";
 			aluop <= "00";
+			pcwr <= '0';
 			-- LW
 			if(opcode = "0100") then
 				next_state <= "00100";
@@ -431,6 +442,7 @@ begin
 			alusrca <= "01";
 			alusrcb <= "111";
 			aluop <= "00";
+			pcwr <= '0';
 			-- LM
 			if(opcode = "0110") then
 				next_state <= "10011";
@@ -494,8 +506,6 @@ begin
 			regwr <='0';
 			next_state<= "10010";
 		end if;
-		
-		
-	end if;
+--	end if;
 end process;
 end behave;
